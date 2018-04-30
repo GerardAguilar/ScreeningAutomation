@@ -93,6 +93,10 @@ public class Pages {
 	    return img;
 		
 	}
+	
+	public int getBaselineImageCount() {		
+		return pageScreenshots.size();
+	}
 	 
 	
 }
