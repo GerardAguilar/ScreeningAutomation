@@ -1,0 +1,22 @@
+---
+Test
+---
+!define TEST_SYSTEM {slim}
+ 
+!path C:\eclipse-workspace\ScreeningAutomation\target\classes
+!path C:\sikulix\sikulixapi.jar
+!path C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-java\3.9.1\selenium-java-3.9.1.jar
+!path C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-api\3.9.1\selenium-api-3.9.1.jar
+!path C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.9.1\selenium-firefox-driver-3.9.1.jar
+
+| com.inhance.testFramework.SimpleFramework|
+| ValueZero | ValueTwo | greaterThan? |
+| 0|2|true|
+
+|import|
+| com.inhance.testFramework|
+
+!|SimpleFramework|
+|ValueZero|ValueTwo|greaterThan?|
+|0|2|true|
+|4|3|false|

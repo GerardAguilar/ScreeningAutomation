@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9791" started-at="2018-04-30T20:12:38Z" finished-at="2018-04-30T20:12:48Z">
+  <suite name="Default suite" duration-ms="8246" started-at="2018-04-30T22:04:24Z" finished-at="2018-04-30T22:04:33Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9791" started-at="2018-04-30T20:12:38Z" finished-at="2018-04-30T20:12:48Z">
-      <class name="SimpleFrameworkWithWaitAndImageComparer">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:SimpleFrameworkWithWaitAndImageComparer@6fb0d3ed]" name="setUp" is-config="true" duration-ms="6612" started-at="2018-04-30T13:12:38Z" finished-at="2018-04-30T13:12:45Z">
+    <test name="Default test" duration-ms="8246" started-at="2018-04-30T22:04:24Z" finished-at="2018-04-30T22:04:33Z">
+      <class name="framework.SimpleFrameworkWithWaitAndImageComparer">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:framework.SimpleFrameworkWithWaitAndImageComparer@5123a213]" name="setUp" is-config="true" duration-ms="4915" started-at="2018-04-30T15:04:24Z" finished-at="2018-04-30T15:04:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="compareBaselineWithScreen()[pri:0, instance:SimpleFrameworkWithWaitAndImageComparer@6fb0d3ed]" name="compareBaselineWithScreen" duration-ms="2352" started-at="2018-04-30T13:12:45Z" finished-at="2018-04-30T13:12:47Z">
+        <test-method status="PASS" signature="compareBaselineWithScreen()[pri:0, instance:framework.SimpleFrameworkWithWaitAndImageComparer@5123a213]" name="compareBaselineWithScreen" duration-ms="2416" started-at="2018-04-30T15:04:29Z" finished-at="2018-04-30T15:04:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- compareBaselineWithScreen -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:SimpleFrameworkWithWaitAndImageComparer@6fb0d3ed]" name="tearDown" is-config="true" duration-ms="802" started-at="2018-04-30T13:12:47Z" finished-at="2018-04-30T13:12:48Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:framework.SimpleFrameworkWithWaitAndImageComparer@5123a213]" name="tearDown" is-config="true" duration-ms="894" started-at="2018-04-30T15:04:32Z" finished-at="2018-04-30T15:04:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SimpleFrameworkWithWaitAndImageComparer -->
+      </class> <!-- framework.SimpleFrameworkWithWaitAndImageComparer -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
