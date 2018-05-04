@@ -1,18 +1,4 @@
 ---
 Test
 ---
-!define TEST_SYSTEM {slim}
- 
-!path C:\eclipse-workspace\ScreeningAutomation\target\classes
- 
-| com.inhance.testFramework.Simple|
-| ValueZero | ValueTwo | greaterThan? |
-| 0|2|true|
-
-|import|
-| com.inhance.testFramework|
-
-!|Simple|
-|ValueZero|ValueTwo|greaterThan?|
-|0|2|true|
-|4|3|false|
+!contents -R2 -g -p -f -h

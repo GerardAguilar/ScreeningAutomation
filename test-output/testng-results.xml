@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20078" started-at="2018-05-03T21:47:00Z" finished-at="2018-05-03T21:47:20Z">
+  <suite name="Default suite" duration-ms="8" started-at="2018-05-04T20:15:26Z" finished-at="2018-05-04T20:15:26Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20078" started-at="2018-05-03T21:47:00Z" finished-at="2018-05-03T21:47:20Z">
-      <class name="com.inhance.testFramework.Simple">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.inhance.testFramework.Simple@f6c48ac]" name="setUp" is-config="true" duration-ms="14912" started-at="2018-05-03T14:47:00Z" finished-at="2018-05-03T14:47:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="SimpleTest()[pri:0, instance:com.inhance.testFramework.Simple@f6c48ac]" name="SimpleTest" duration-ms="5036" started-at="2018-05-03T14:47:15Z" finished-at="2018-05-03T14:47:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SimpleTest -->
-      </class> <!-- com.inhance.testFramework.Simple -->
+    <test name="Default test" duration-ms="8" started-at="2018-05-04T20:15:26Z" finished-at="2018-05-04T20:15:26Z">
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

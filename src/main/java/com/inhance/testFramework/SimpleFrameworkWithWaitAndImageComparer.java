@@ -53,32 +53,6 @@ public class SimpleFrameworkWithWaitAndImageComparer {
 	public List<Pages> pageList;
 	public ArrayList<Pages> pageArrayList;
 	public int diffCount;
-	public int valueZero;
-	public int valueTwo;
-	
-	public int getValueZero() {
-		return valueZero;
-	} 
-	public void setValueZero(int zero) {
-		this.valueZero = zero;
-	}
-	
-	public int getValueTwo() {
-		return valueTwo;
-	}
-	
-	public void setValueTwo(int two) {
-		this.valueTwo = two;
-	}
-	
-	public boolean greaterThan() {
-		if(this.valueZero < this.valueTwo) {
-			return true;
-		}else {
-			return false;
-		}
-		
-	}
 
 //	@BeforeClass(alwaysRun = true)
 //	public void setUp() throws Exception {	
