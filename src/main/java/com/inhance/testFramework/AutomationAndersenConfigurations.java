@@ -15,13 +15,13 @@ import org.sikuli.script.Screen;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Simple {
+public class AutomationAndersenConfigurations {
 	WebDriver driver;
 	String baseUrl;
 	WebDriverWait wait;
 
 	
-	public Simple(){
+	public AutomationAndersenConfigurations(){
 ////	    driver = new FirefoxDriver();
 ////	    baseUrl = "http://www.inhance.com/";
 ////	    driver.get(baseUrl);
@@ -59,8 +59,8 @@ public class Simple {
         System.setProperty("webdriver.gecko.driver", geckodriverLocation);
         
 	    driver = new FirefoxDriver();
-//	    baseUrl = "http://www.google.com/";
-	    baseUrl = "http://inhancemetrics.com:3012/test-new.html";
+	    baseUrl = "http://www.google.com/";
+//	    baseUrl = "http://inhancemetrics.com:3012/test-new.html";
 	    driver.get(baseUrl);
 	    driver.manage().window().maximize(); 
 //	    driver.manage().window().setSize(new Dimension(1024, 768))
@@ -75,13 +75,17 @@ public class Simple {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-			
+	}
+	
+	@Test
+	public void AwningSetup() {
+		
 	}
 	
 	
 	
 	public static void main(String[] args) {
-		Simple temp = new Simple();		
+		AutomationAndersenConfigurations temp = new AutomationAndersenConfigurations();		
 	}
 	
 

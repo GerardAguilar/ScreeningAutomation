@@ -1,0 +1,986 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20180127</FitNesseVersion>
+  <rootPath>FrontPage.SimpleFramework</rootPath>
+    <result>
+    <counts>
+      <right>2</right>
+      <wrong>1</wrong>
+      <ignores>0</ignores>
+      <exceptions>14</exceptions>
+    </counts>
+    <date>2018-05-04T10:34:15-07:00</date>
+    <runTimeInMillis>3510</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt; &lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\eclipse-workspace\ScreeningAutomation\target\classes&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\sikulix\sikulixapi.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-java\3.9.1\selenium-java-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-api\3.9.1\selenium-api-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.9.1\selenium-firefox-driver-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="exception closed"&gt;
+		&lt;td colspan="3" class="error"&gt;&lt;span class="pass"&gt;com.inhance.testFramework.SimpleFramework&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;ValueZero&lt;a title="create page" href="FrontPage.ValueZero?edit&amp;amp;nonExistent=true"&gt;[?]&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;ValueTwo&lt;a title="create page" href="FrontPage.ValueTwo?edit&amp;amp;nonExistent=true"&gt;[?]&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;greaterThan?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="exception closed"&gt;
+		&lt;td class="error"&gt;0&lt;/td&gt;
+		&lt;td class="error"&gt;2&lt;/td&gt;
+		&lt;td class="error"&gt;[&lt;span class="diff"&gt;fals&lt;/span&gt;e] &lt;span class="fail"&gt;expected [&lt;/span&gt;&lt;span class="diff"&gt;tru&lt;/span&gt;&lt;span class="fail"&gt;e]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.inhance.testFramework&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="exception closed"&gt;
+		&lt;td colspan="3" class="error"&gt;&lt;span class="pass"&gt;SimpleFramework&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;ValueZero&lt;/td&gt;
+		&lt;td&gt;ValueTwo&lt;/td&gt;
+		&lt;td&gt;greaterThan?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="exception closed"&gt;
+		&lt;td class="error"&gt;0&lt;/td&gt;
+		&lt;td class="error"&gt;2&lt;/td&gt;
+		&lt;td class="error"&gt;&lt;span class="pass"&gt;true&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr class="exception closed"&gt;
+		&lt;td class="error"&gt;4&lt;/td&gt;
+		&lt;td class="error"&gt;3&lt;/td&gt;
+		&lt;td class="error"&gt;&lt;span class="pass"&gt;false&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="3"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: Lorg/openqa/selenium/support/ui/WebDriverWait;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.support.ui.WebDriverWait
+	at java.net.URLClassLoader.findClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.8.0_161]
+	at java.lang.Class.privateGetDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at java.lang.Class.getDeclaredFields(Unknown Source) [rt.jar:1.8.0_161]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.findSystemUnderTest(SystemUnderTestMethodExecutor.java:23) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SystemUnderTestMethodExecutor.execute(SystemUnderTestMethodExecutor.java:19) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-20180127.jar:20180127]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-20180127.jar:20180127]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>SimpleFramework</relativePageName>
+            <instructions>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_0', instruction='make', instanceName='decisionTable_0', className='com.inhance.testFramework.SimpleFramework', args=[]}</instruction>
+        <slimResult>pass(com.inhance.testFramework.SimpleFramework)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>decisionTable_0_0</instructionId>
+                    <col>0</col>
+                              <row>0</row>
+                    <type>ConstructionExpectation</type>
+                                        <evaluationMessage>com.inhance.testFramework.SimpleFramework</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_1', instruction='call', instanceName='decisionTable_0', methodName='table', args=[[[ValueZero&lt;a title="create page" href="FrontPage.ValueZero?edit&amp;nonExistent=true"&gt;[?]&lt;/a&gt;, ValueTwo&lt;a title="create page" href="FrontPage.ValueTwo?edit&amp;nonExistent=true"&gt;[?]&lt;/a&gt;, greaterThan?], [0, 2, true]]]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_0_1</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_2', instruction='call', instanceName='decisionTable_0', methodName='beginTable', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_0_2</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_3', instruction='call', instanceName='decisionTable_0', methodName='reset', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_0_3</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_4', instruction='call', instanceName='decisionTable_0', methodName='setValueZeroATitleCreatePageHrefFrontPageValueZeroEditNonExistentTrueA', args=[0]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_0_4</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_5', instruction='call', instanceName='decisionTable_0', methodName='setValueTwoATitleCreatePageHrefFrontPageValueTwoEditNonExistentTrueA', args=[2]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_0_5</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_6', instruction='call', instanceName='decisionTable_0', methodName='execute', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_0_6</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_7', instruction='call', instanceName='decisionTable_0', methodName='greaterThan', args=[]}</instruction>
+        <slimResult>fail(a=false;e=true)</slimResult>
+                <expectation>
+                    <status>fail</status>
+                    <instructionId>decisionTable_0_7</instructionId>
+                    <col>2</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                    <actual>false</actual>
+                              <expected>true</expected>
+                            </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_8', instruction='call', instanceName='decisionTable_0', methodName='endTable', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_0_8</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='import_1_0', instruction='import', path='com.inhance.testFramework'}</instruction>
+        <slimResult>pass(com.inhance.testFramework)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_1_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>com.inhance.testFramework</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_0', instruction='make', instanceName='decisionTable_2', className='SimpleFramework', args=[]}</instruction>
+        <slimResult>pass(SimpleFramework)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>decisionTable_2_0</instructionId>
+                    <col>0</col>
+                              <row>0</row>
+                    <type>ConstructionExpectation</type>
+                                        <evaluationMessage>SimpleFramework</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_1', instruction='call', instanceName='decisionTable_2', methodName='table', args=[[[ValueZero, ValueTwo, greaterThan?], [0, 2, true], [4, 3, false]]]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_1</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_2', instruction='call', instanceName='decisionTable_2', methodName='beginTable', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_2</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_3', instruction='call', instanceName='decisionTable_2', methodName='reset', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_3</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_4', instruction='call', instanceName='decisionTable_2', methodName='setValueZero', args=[0]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_2_4</instructionId>
+                    <col>0</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_5', instruction='call', instanceName='decisionTable_2', methodName='setValueTwo', args=[2]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_2_5</instructionId>
+                    <col>1</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_6', instruction='call', instanceName='decisionTable_2', methodName='execute', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_6</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_7', instruction='call', instanceName='decisionTable_2', methodName='greaterThan', args=[]}</instruction>
+        <slimResult>pass(true)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>decisionTable_2_7</instructionId>
+                    <col>2</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>true</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_8', instruction='call', instanceName='decisionTable_2', methodName='reset', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_8</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_9', instruction='call', instanceName='decisionTable_2', methodName='setValueZero', args=[4]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_2_9</instructionId>
+                    <col>0</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_10', instruction='call', instanceName='decisionTable_2', methodName='setValueTwo', args=[3]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_2_10</instructionId>
+                    <col>1</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_11', instruction='call', instanceName='decisionTable_2', methodName='execute', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_11</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_12', instruction='call', instanceName='decisionTable_2', methodName='greaterThan', args=[]}</instruction>
+        <slimResult>pass(false)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>decisionTable_2_12</instructionId>
+                    <col>2</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>false</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_13', instruction='call', instanceName='decisionTable_2', methodName='endTable', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_13</instructionId>
+                              <type>SilentReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+          </instructions>
+      </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp C:\Users\gaguilar\.m2\repository\org\fitnesse\fitnesse\20180127\fitnesse-20180127.jar;C:\eclipse-workspace\ScreeningAutomation\target\classes;C:\sikulix\sikulixapi.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-java\3.9.1\selenium-java-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-api\3.9.1\selenium-api-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.9.1\selenium-firefox-driver-3.9.1.jar fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut>[error] RobotDesktop: checkMousePosition: should be L(960,540)@S(0)[0,0 1920x1080]
+but after move is L(768,432)@S(0)[0,0 1920x1080]
+Possible cause in case you did not touch the mouse while script was running:
+ Mouse actions are blocked generally or by the frontmost application.
+You might try to run the SikuliX stuff as admin.
+[error] RobotDesktop: checkMousePosition: should be L(1201,-750)@S(1)[1,-1500 2400x1500]
+but after move is L(1636,-1306)@S(1)[1,-1500 2400x1500]
+Possible cause in case you did not touch the mouse while script was running:
+ Mouse actions are blocked generally or by the frontmost application.
+You might try to run the SikuliX stuff as admin.
+</stdOut>
+    <stdErr>Slim  Map converter not loaded: could not find class org/htmlparser/NodeFilter
+</stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>1</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>3984</totalRunTimeInMillis>
+</testResults>
+

@@ -8,10 +8,12 @@ Test
 !path C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-java\3.9.1\selenium-java-3.9.1.jar
 !path C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-api\3.9.1\selenium-api-3.9.1.jar
 !path C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.9.1\selenium-firefox-driver-3.9.1.jar
+!path C:\commons-io-2.6\commons-io-2.6.jar
+!path C:\image-comparison-1.0.jar
+!path C:\sikulix\sikulixapi.jar
+!path C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.9.1\selenium-chrome-driver-3.9.1.jar
+!path C:\users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-support\3.9.1\selenium-support-3.9.1.jar
 
-| com.inhance.testFramework.SimpleFramework|
-| ValueZero | ValueTwo | greaterThan? |
-| 0|2|true|
 
 |import|
 | com.inhance.testFramework|

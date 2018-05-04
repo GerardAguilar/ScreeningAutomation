@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20180127</FitNesseVersion>
+  <rootPath>FrontPage.SimpleFramework</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>3</wrong>
+      <ignores>0</ignores>
+      <exceptions>2</exceptions>
+    </counts>
+    <date>2018-05-04T10:44:06-07:00</date>
+    <runTimeInMillis>1827</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt; &lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\eclipse-workspace\ScreeningAutomation\target\classes&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\sikulix\sikulixapi.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-java\3.9.1\selenium-java-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-api\3.9.1\selenium-api-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.9.1\selenium-firefox-driver-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\commons-io-2.6\commons-io-2.6.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\image-comparison-1.0.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\sikulix\sikulixapi.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.9.1\selenium-chrome-driver-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-support\3.9.1\selenium-support-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td colspan="3"&gt;&lt;span class="pass"&gt;com.inhance.testFramework.SimpleFramework&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;ValueZero&lt;a title="create page" href="FrontPage.ValueZero?edit&amp;amp;nonExistent=true"&gt;[?]&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;ValueTwo&lt;a title="create page" href="FrontPage.ValueTwo?edit&amp;amp;nonExistent=true"&gt;[?]&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;greaterThan?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;0 &lt;span class="error"&gt;Method setValueZeroATitleCreatePageHrefFrontPageValueZeroEditNonExistentTrueA[1] not found in com.inhance.testFramework.SimpleFramework.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;2 &lt;span class="error"&gt;Method setValueTwoATitleCreatePageHrefFrontPageValueTwoEditNonExistentTrueA[1] not found in com.inhance.testFramework.SimpleFramework.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;[&lt;span class="diff"&gt;fals&lt;/span&gt;e] &lt;span class="fail"&gt;expected [&lt;/span&gt;&lt;span class="diff"&gt;tru&lt;/span&gt;&lt;span class="fail"&gt;e]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.inhance.testFramework&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td colspan="3"&gt;&lt;span class="pass"&gt;SimpleFramework&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;ValueZero&lt;/td&gt;
+		&lt;td&gt;ValueTwo&lt;/td&gt;
+		&lt;td&gt;greaterThan?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;0&lt;/td&gt;
+		&lt;td&gt;2&lt;/td&gt;
+		&lt;td&gt;[&lt;span class="diff"&gt;fals&lt;/span&gt;e] &lt;span class="fail"&gt;expected [&lt;/span&gt;&lt;span class="diff"&gt;tru&lt;/span&gt;&lt;span class="fail"&gt;e]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;4&lt;/td&gt;
+		&lt;td&gt;3&lt;/td&gt;
+		&lt;td&gt;[&lt;span class="diff"&gt;tru&lt;/span&gt;e] &lt;span class="fail"&gt;expected [&lt;/span&gt;&lt;span class="diff"&gt;fals&lt;/span&gt;&lt;span class="fail"&gt;e]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>SimpleFramework</relativePageName>
+            <instructions>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_0', instruction='make', instanceName='decisionTable_0', className='com.inhance.testFramework.SimpleFramework', args=[]}</instruction>
+        <slimResult>pass(com.inhance.testFramework.SimpleFramework)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>decisionTable_0_0</instructionId>
+                    <col>0</col>
+                              <row>0</row>
+                    <type>ConstructionExpectation</type>
+                                        <evaluationMessage>com.inhance.testFramework.SimpleFramework</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_4', instruction='call', instanceName='decisionTable_0', methodName='setValueZeroATitleCreatePageHrefFrontPageValueZeroEditNonExistentTrueA', args=[0]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_0_4</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setValueZeroATitleCreatePageHrefFrontPageValueZeroEditNonExistentTrueA[1] not found in com.inhance.testFramework.SimpleFramework.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_5', instruction='call', instanceName='decisionTable_0', methodName='setValueTwoATitleCreatePageHrefFrontPageValueTwoEditNonExistentTrueA', args=[2]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_0_5</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setValueTwoATitleCreatePageHrefFrontPageValueTwoEditNonExistentTrueA[1] not found in com.inhance.testFramework.SimpleFramework.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_0_7', instruction='call', instanceName='decisionTable_0', methodName='greaterThan', args=[]}</instruction>
+        <slimResult>fail(a=false;e=true)</slimResult>
+                <expectation>
+                    <status>fail</status>
+                    <instructionId>decisionTable_0_7</instructionId>
+                    <col>2</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                    <actual>false</actual>
+                              <expected>true</expected>
+                            </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='import_1_0', instruction='import', path='com.inhance.testFramework'}</instruction>
+        <slimResult>pass(com.inhance.testFramework)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_1_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>com.inhance.testFramework</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_0', instruction='make', instanceName='decisionTable_2', className='SimpleFramework', args=[]}</instruction>
+        <slimResult>pass(SimpleFramework)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>decisionTable_2_0</instructionId>
+                    <col>0</col>
+                              <row>0</row>
+                    <type>ConstructionExpectation</type>
+                                        <evaluationMessage>SimpleFramework</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_4', instruction='call', instanceName='decisionTable_2', methodName='setValueZero', args=[0]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_2_4</instructionId>
+                    <col>0</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_5', instruction='call', instanceName='decisionTable_2', methodName='setValueTwo', args=[2]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_2_5</instructionId>
+                    <col>1</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_7', instruction='call', instanceName='decisionTable_2', methodName='greaterThan', args=[]}</instruction>
+        <slimResult>fail(a=false;e=true)</slimResult>
+                <expectation>
+                    <status>fail</status>
+                    <instructionId>decisionTable_2_7</instructionId>
+                    <col>2</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                    <actual>false</actual>
+                              <expected>true</expected>
+                            </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_9', instruction='call', instanceName='decisionTable_2', methodName='setValueZero', args=[4]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_2_9</instructionId>
+                    <col>0</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_10', instruction='call', instanceName='decisionTable_2', methodName='setValueTwo', args=[3]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_2_10</instructionId>
+                    <col>1</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_12', instruction='call', instanceName='decisionTable_2', methodName='greaterThan', args=[]}</instruction>
+        <slimResult>fail(a=true;e=false)</slimResult>
+                <expectation>
+                    <status>fail</status>
+                    <instructionId>decisionTable_2_12</instructionId>
+                    <col>2</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                    <actual>true</actual>
+                              <expected>false</expected>
+                            </expectation>
+              </instructionResult>
+          </instructions>
+      </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp C:\Users\gaguilar\.m2\repository\org\fitnesse\fitnesse\20180127\fitnesse-20180127.jar;C:\eclipse-workspace\ScreeningAutomation\target\classes;C:\sikulix\sikulixapi.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-java\3.9.1\selenium-java-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-api\3.9.1\selenium-api-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.9.1\selenium-firefox-driver-3.9.1.jar;C:\commons-io-2.6\commons-io-2.6.jar;C:\image-comparison-1.0.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.9.1\selenium-chrome-driver-3.9.1.jar;C:\users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-support\3.9.1\selenium-support-3.9.1.jar fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut>[error] RobotDesktop: checkMousePosition: should be L(960,540)@S(0)[0,0 1920x1080]
+but after move is L(768,432)@S(0)[0,0 1920x1080]
+Possible cause in case you did not touch the mouse while script was running:
+ Mouse actions are blocked generally or by the frontmost application.
+You might try to run the SikuliX stuff as admin.
+[error] RobotDesktop: checkMousePosition: should be L(1201,-750)@S(1)[1,-1500 2400x1500]
+but after move is L(1637,-1307)@S(1)[1,-1500 2400x1500]
+Possible cause in case you did not touch the mouse while script was running:
+ Mouse actions are blocked generally or by the frontmost application.
+You might try to run the SikuliX stuff as admin.
+</stdOut>
+    <stdErr>Slim  Map converter not loaded: could not find class org/htmlparser/NodeFilter
+</stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>1</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>2264</totalRunTimeInMillis>
+</testResults>
+
