@@ -32,7 +32,8 @@ public class FitnesseTestFixture {
 	public int valueTwo;
 	
 	public String globalAddress;
-	
+	public String elementId;
+	public String xpath;
 	
 	public FitnesseTestFixture(){	
 			try {
@@ -80,6 +81,21 @@ public class FitnesseTestFixture {
 	public String getGlobalAddress(String temp) {
 		return globalAddress;
 	}
+	
+	public void setElementId(String temp) {
+		elementId = temp;
+	}
+	public String getElementId() {
+		return elementId;
+	}
+	
+	public void setXpath(String temp) {
+		xpath = temp;
+	}
+	public String getXpath() {
+		return xpath;
+	}
+	
 
 //	@BeforeClass(alwaysRun = true)
 	public boolean initialize(String home) throws Exception {
@@ -147,7 +163,6 @@ public class FitnesseTestFixture {
 		return true;
 	}
 //	
-//	@Test
 //	public void imageButtonTest() {
 //		clickElementBySikulixReferenceImageInLocalArea("Im feeling lucky button.PNG", s);
 //	}
@@ -164,17 +179,23 @@ public class FitnesseTestFixture {
 		return;
 	}
 //	
-//	public void clickElementByXpath(String xpath) {
-//		System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
-//		WebElement element = driver.findElement(By.xpath(xpath));
-//		element.click();
-//	}
+	public void clickElementByXpath() {
+		System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
+		WebElement element = driver.findElement(By.xpath(xpath));
+		element.click();
+	}
 //	
 //	public void clickElementById(String id) {
 //		System.out.println("clickElementById(String id): id = " + id);
 //		WebElement element = driver.findElement(By.id(id));
 //		element.click();		
 //	}
+	
+	public void clickElementById() {
+		System.out.println("clickElementById(String id): elementId = " + elementId);
+		WebElement element = driver.findElement(By.id(elementId));
+		element.click();		
+	}
 //	
 //	public void clickElementBySikulixReferenceImage(String imageFileLocation) {
 //		System.out.println("clickElementBySikulixReferenceImage(String imageFileLocation): imageFileLocation = " + imageFileLocation);
