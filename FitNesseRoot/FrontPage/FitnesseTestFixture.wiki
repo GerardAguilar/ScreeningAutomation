@@ -84,12 +84,10 @@ Test
 |import           |
 |fitnesse.fixtures|
 ***!
-!| FitnesseTestFixture                                                                                                                                                                                 |
-|global address         |navigate by global address?|xpath                  |click element by xpath?|image file location|verify image by sikuli?|taking baseline set|enable screenshot|take screenshot?|
-|http://www.inhance.com/|                           |//div[@class='cross']  |                       |                   |false                  |false              |false            |                |
-|                       |                           |                       |                       |HamburgerMenu.png  |true                   |false              |true             |                |
-|                       |                           |//div[@section='work'] |                       |                   |false                  |false              |false            |                |
-|                       |                           |                       |                       |workBackground2.png|true                   |false              |true             |                |
-|                       |                           |//div[@class='cross']  |                       |                   |false                  |false              |false            |                |
-|                       |                           |                       |                       |HamburgerMenu.png  |true                   |false              |true             |                |
-|                       |                           |//div[@section='about']|                       |                   |false                  |false              |false            |                |
+!| FitnesseTestFixture                                                                                                                                                                                        |
+|global address         |navigate by global address?|xpath                  |click element by xpath?|image file location|verify image by sikuli?|taking baseline set|enable screenshot|take screenshot?|image?|
+|http://www.inhance.com/|                           |//div[@class='cross']  |                       |                   |false                  |false              |false            |                |      |
+|                       |                           |                       |                       |HamburgerMenu.png  |true                   |false              |true             |                |      |
+|                       |                           |//div[@section='work'] |                       |                   |false                  |false              |false            |                |      |
+|                       |                           |                       |                       |workBackground2.png|true                   |false              |true             |                |      |
+

@@ -62,6 +62,8 @@ public class FitnesseTestFixture {
 	
 	public boolean takingBaselineSet;
 	
+	String currentDiffFilename;
+	
 	public void setTakingBaselineSet(boolean temp) {
 		takingBaselineSet = temp;
 	}
@@ -323,6 +325,26 @@ public class FitnesseTestFixture {
 		enableScreenshot = false;
 	}
 	
+	public String image() {
+//		String htmlImage = "<div><img src=\"" + "https://codecademy-production.s3.amazonaws.com/profile_thumbnail/5168e70f720111040f002066_65523160.jpg?AWSAccessKeyId=AKIAJKZ7QVQFD72XNJ3Q&Expires=1525740677&Signature=t3Ui9kI8MyA%2B%2Fyj8vM38QIIhUlg%3D" + "\"/></div>";
+//		String htmlImage = "<div><img src=\"" + "http://localhost/files/HamburgerMenuModified.PNG" + "\"/></div>";
+		String htmlImage="";
+		String elementId="1";
+		htmlImage = "<div><img id= "+elementId+" src=\"" + "" + "\"/></div>";
+		return htmlImage;
+	}
+	
+	
+	/***
+	 * To get away from using a local webserver, I can try using javascript to create IMG element, then appent the IMG to Fitnesse page
+	 * For fitnesse, we'll need to have 2 columns. 
+	 * The first column is to set the ID of the cell
+	 * The second column is to call the below JS method to populate the above mentioned cell
+	 */
+	public void displayDiff() {
+		
+	}
+	
 
 	
 	public void clickElementByXpathPreparation(String xpath) {
@@ -443,6 +465,8 @@ public class FitnesseTestFixture {
 	    // Now return
 	    return outImg;
 	}
+	
+
 	
 	public static void main(String[] args) {		
 		FitnesseTestFixture temp = new FitnesseTestFixture();
