@@ -4,20 +4,31 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
+import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -37,7 +48,7 @@ import junit.framework.Assert;
 /***
  * 
  * @author gaguilar
- * Should be very shallow
+ * Need to create a shallow fixture
  */
 public class FitnesseTestFixture {
 	protected WebDriver driver;
@@ -63,6 +74,7 @@ public class FitnesseTestFixture {
 	public boolean takingBaselineSet;
 	
 	String currentDiffFilename;
+	int id;
 	
 	public void setTakingBaselineSet(boolean temp) {
 		takingBaselineSet = temp;
@@ -126,44 +138,53 @@ public class FitnesseTestFixture {
 	}
 	
 
-//	@BeforeClass(alwaysRun = true)
 	public boolean initialize(String home) throws Exception {
-//	public void setUp() throws Exception {	
-		ClassLoader classLoader = getClass().getClassLoader();
-        URL resource = classLoader.getResource("geckodriver.exe");
-        String os = System.getProperty("os.name").toLowerCase();
-        
-        //Make a directory to place Drivers in
-        //This is used for later where we want multiple drivers
-        File f = new File("Driver");
-        if (!f.exists()) {
-            f.mkdirs();
-        }
-        
-        File geckodriver;
-        geckodriver = new File("Driver" + "\\geckodriver.exe"); 
-        //In the case of a MAC, we may need to copy the tar.gz file and then reference the resulting geckodriver application
-        if(os.contains("mac")) {
-            geckodriver = new File(System.getProperty("user.dir") + "/geckodriver");  
-        }else {
-        	geckodriver = new File("Driver" + "\\geckodriver.exe"); 
-            if (!geckodriver.exists()) {
-            	geckodriver.createNewFile();
-                FileUtils.copyURLToFile(resource, geckodriver);
-            }
-        }
+		boolean setupFirefoxDriver = true;
+		boolean setupChromeDriver = false;
+		if(setupFirefoxDriver) {
+			ClassLoader classLoader = getClass().getClassLoader();
+	        URL resource = classLoader.getResource("geckodriver.exe");
+	        String os = System.getProperty("os.name").toLowerCase();
+	        
+	        //Make a directory to place Drivers in
+	        //This is used for later where we want multiple drivers
+	        File f = new File("Driver");
+	        if (!f.exists()) {
+	            f.mkdirs();
+	        }
+	        
+	        File geckodriver;
+	        geckodriver = new File("Driver" + "\\geckodriver.exe"); 
+	        //In the case of a MAC, we may need to copy the tar.gz file and then reference the resulting geckodriver application
+	        if(os.contains("mac")) {
+	            geckodriver = new File(System.getProperty("user.dir") + "/geckodriver");  
+	        }else {
+	        	geckodriver = new File("Driver" + "\\geckodriver.exe"); 
+	            if (!geckodriver.exists()) {
+	            	geckodriver.createNewFile();
+	                FileUtils.copyURLToFile(resource, geckodriver);
+	            }
+	        }
+	        String geckodriverLocation = geckodriver.getAbsolutePath();        
+	        System.setProperty("webdriver.gecko.driver", geckodriverLocation);
+		    driver = new FirefoxDriver();
+		}
 
-        String geckodriverLocation = geckodriver.getAbsolutePath();        
-        System.setProperty("webdriver.gecko.driver", geckodriverLocation);
-        
-	    driver = new FirefoxDriver();
+	    if(setupChromeDriver) {
+			ChromeOptions options = new ChromeOptions();
+			options.setBinary("C:\\GoogleChromePortable\\GoogleChromePortable.exe");
+			options.addArguments("disable-infobars");
+			options.addArguments("--allow-file-access-from-files");
+			System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");              
+			driver = new ChromeDriver(options);
+	    }
+	    
+//	    driver.manage().window().setSize(new Dimension(1024, 768));
 //	    baseUrl = "http://www.google.com/";
 	    baseUrl = home;
 	    navigateByAddress(baseUrl);
 	    driver.manage().window().maximize(); 
-//	    driver.manage().window().setSize(new Dimension(1024, 768));
 	    wait = new WebDriverWait(driver, 20);
-	    
 	    //make sure to right click the resources\images folder, select Build Path -> Include
 	    ImagePath.add(SimpleFramework.class.getCanonicalName()+"/images");
 	    enableScreenshot = false;
@@ -175,11 +196,13 @@ public class FitnesseTestFixture {
         	baselineDirectory.mkdirs();
         }
         
-        File currentDirectory = new File("C:\\current"+instanceStartTime);
+        File currentDirectory = new File("C:\\current\\"+instanceStartTime);
         if (!currentDirectory.exists()) {
         	currentDirectory.mkdirs();
         }
 	    
+        id = 0;
+        
 	    return true;
 	}
 	
@@ -188,46 +211,44 @@ public class FitnesseTestFixture {
 //		driver.navigate().to("about:config");
 //		driver.navigate().to("about:blank");
 //		driver.quit();
-////		String verificationErrorString = verificationErrors.toString();
-////		if (!"".equals(verificationErrorString)) {
-////			fail(verificationErrorString);
-////		}
+//
 //	}
 	
 	public boolean simpleTest() {
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		return true;
 	}
-//	
-//	public void imageButtonTest() {
-//		clickElementBySikulixReferenceImageInLocalArea("Im feeling lucky button.PNG", s);
-//	}
-//	
+
 	public boolean navigateByAddress(String address) {
 		System.out.println("navigateByAddress(String address): address = " + address); 
 		driver.get(address);
 		return true;
 	}
 	
+	/***
+	 * Used by Fitnesse. Requires global variable
+	 */
 	public void navigateByGlobalAddress() {
-//		System.out.println("navigateByGlobalAddress(String address): address = " + globalAddress); 
 		if(globalAddress.length()>0) {
 			driver.get(globalAddress);
 		}else {
 			
 		}
 	}
-//	
+
+	/***
+	 * Clicks an xpath element AND stores the xpath for navigational purposes
+	 * TODO: Wouldn't this cause issues when branching out? Or keep track of entire path instead of branches?
+	 */
 	public void clickElementByXpath() {
 		if(xpath.length()>0) {
 			System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
-			WebElement element = driver.findElement(By.xpath(xpath));
+			WebElement element = driver.findElement(By.xpath(xpath));			
 			addXpathToNavigationPath(xpath);
 			element.click();			
 		}else {
@@ -240,12 +261,26 @@ public class FitnesseTestFixture {
 //		WebElement element = driver.findElement(By.id(id));
 //		element.click();		
 //	}
+	/***
+	 * 
+	 * @param newXpath
+	 * @return String with / replaced by ^
+	 * Since these xPaths would be used as file-names, we need to use a different divider, and just convert it at a later time
+	 * There's risk in the re-conversion, but since it's minimal, it will be considered on a case by case basis (i.e. Just change the xpath value to not have a ^)
+	 */
+	public String convertXpathToNotMakeFolders(String newXpath) {
+
+		return newXpath.replace('/', '^');
+	}
 	
+	/***
+	 * 
+	 * @param newXpath
+	 * Calls convertXpathToNotMakeFolders and finally adds to navigationPath
+	 */
 	public void addXpathToNavigationPath(String newXpath) {
-		//Since these xPaths would be used as file-names, we need to use a different divider, and just convert it at a later time
-		//There's risk in the re-conversion, but since it's minimal, it will be considered on a case by case basis (i.e. Just change the xpath value to not have a ^)
-//		newXpath.replace("\\", "^");
-		navigationPath.add(newXpath);
+		String convertedXpath = convertXpathToNotMakeFolders(newXpath);
+		navigationPath.add(convertedXpath);
 	}
 	
 	public String getNavigationPath() {
@@ -261,62 +296,44 @@ public class FitnesseTestFixture {
 		WebElement element = driver.findElement(By.id(elementId));
 		element.click();		
 	}
-//	
-//	public void clickElementBySikulixReferenceImage(String imageFileLocation) {
-//		System.out.println("clickElementBySikulixReferenceImage(String imageFileLocation): imageFileLocation = " + imageFileLocation);
-//		try {
-//			s.click(imageFileLocation, 0);
-//		} catch (FindFailed e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-//	
-//	public void clickElementBySikulixReferenceImageInLocalArea(String imageFileLocation, Region region) {
-//		System.out.println("clickElementBySikulixReferenceImage(String imageFileLocation): \nimageFileLocation = " + imageFileLocation + "\nregion = " + region.toString());
-//		try {
-//			region.click(imageFileLocation, 0);
-//		} catch (FindFailed e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-//	
-//	public Region generateRegion(int leftMostXCoordinate, int topMostYCoordinate, int regionWidth, int regionHeight) {
-//		Region r = new Region(leftMostXCoordinate, topMostYCoordinate, regionWidth, regionHeight);
-//		return r;
-//	}	
 	
+	/***
+	 * Uses enableScreenshot global variable to enable toggling in Fitnesse
+	 * Uses takingBaselineSet global variable to toggle baseline setup in Fitnesse
+	 * Takes a screenshot of current webdriver's view
+	 * Creates a folder with the instance's start time
+	 * Calls compareBaseLineWithImmediateScreenshot()
+	 * Updates baseline OR compares current with baseline
+	 * Outputs into C:\\baseline or C:\\current\\-instanceStartTime- (for current and diffs)
+	 */
 	public void takeScreenshot() {
 		if(enableScreenshot) {
-			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//			id++;
+			File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			Long timestamp = (new Timestamp(System.currentTimeMillis())).getTime();
-			System.out.println("Taking screenshot at: "+timestamp);
+//			System.out.println("Taking screenshot at: "+timestamp);
 			String navPath = getNavigationPath();
 			String newFilename = "c:\\baseline\\" + navPath + ".png";
-			String currentFilename = "c:\\current"+instanceStartTime+"\\"+ navPath +".png";
-			String currentDiffFilename = "c:\\current"+instanceStartTime+"\\"+ navPath +"_diff.png";
+			String currentFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +".png";
+			String currentDiffFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +"_diff.png";			
 			BufferedImage currentShot;
 			BufferedImage baselineShot;
 			
 			if(takingBaselineSet) {
 				try {
-					FileUtils.copyFile(scrFile, new File(newFilename));
-//					FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot"+ timestamp +".png"));
+					FileUtils.copyFile(screenshotFile, new File(newFilename));
 				} catch (IOException e) {
 					e.printStackTrace();
-//					Assert.fail();
 				}	
 			}else {
 				try {
-					FileUtils.copyFile(scrFile, new File(currentFilename));
-					currentShot = ImageIO.read(scrFile);
+					FileUtils.copyFile(screenshotFile, new File(currentFilename));					
+					currentShot = ImageIO.read(screenshotFile);
 					baselineShot = ImageIO.read(new File(newFilename));
 					compareBaseLineWithImmediateScreenshot(baselineShot,currentShot,currentDiffFilename);
 
 				} catch (IOException e) {
 					e.printStackTrace();
-//					Assert.fail();
 				}	
 			}
 			
@@ -324,49 +341,32 @@ public class FitnesseTestFixture {
 		//The below line should consistently default takeScreenshot as false
 		enableScreenshot = false;
 	}
-	
-	public String image() {
-//		String htmlImage = "<div><img src=\"" + "https://codecademy-production.s3.amazonaws.com/profile_thumbnail/5168e70f720111040f002066_65523160.jpg?AWSAccessKeyId=AKIAJKZ7QVQFD72XNJ3Q&Expires=1525740677&Signature=t3Ui9kI8MyA%2B%2Fyj8vM38QIIhUlg%3D" + "\"/></div>";
-//		String htmlImage = "<div><img src=\"" + "http://localhost/files/HamburgerMenuModified.PNG" + "\"/></div>";
-		String htmlImage="";
-		String elementId="1";
-		htmlImage = "<div><img id= "+elementId+" src=\"" + "" + "\"/></div>";
-		return htmlImage;
-	}
-	
+
+//	public void clickElementByXpathPreparation(String xpath) {
+//		WebElement el = driver.findElement(By.xpath(xpath));
+//		Wait<WebElement> wait = new FluentWait<WebElement>(el)
+//			    .withTimeout(6, TimeUnit.SECONDS)
+//			    .pollingEvery(1, TimeUnit.SECONDS)
+//			    .ignoring(NoSuchElementException.class);
+//
+//		initializeTestFixtureWeb(testWebFixture);
+//		wait.until(testWebFixture);//automatically feeds the parameter used to initialize wait into the testFixture	
+//	}
+//	
+//	public void initializeTestFixtureWeb(Function<WebElement,Boolean> testFixture) {	
+//		testFixture = new Function<WebElement,Boolean>(){
+//			public Boolean apply(WebElement el) {//shallow copy of address
+//				//wait until element is available					
+//				return el.isDisplayed();					
+//			}
+//		};			
+//	}
 	
 	/***
-	 * To get away from using a local webserver, I can try using javascript to create IMG element, then appent the IMG to Fitnesse page
-	 * For fitnesse, we'll need to have 2 columns. 
-	 * The first column is to set the ID of the cell
-	 * The second column is to call the below JS method to populate the above mentioned cell
+	 * Uses sikuli to wait for an image to appear before continuing with baseline/current screenshots and comparison
+	 * Wait length is currently hard coded as 6 seconds, with polling occuring every 1 second.
+	 * @return true if found, false if not found
 	 */
-	public void displayDiff() {
-		
-	}
-	
-
-	
-	public void clickElementByXpathPreparation(String xpath) {
-		WebElement el = driver.findElement(By.xpath(xpath));
-		Wait<WebElement> wait = new FluentWait<WebElement>(el)
-			    .withTimeout(6, TimeUnit.SECONDS)
-			    .pollingEvery(1, TimeUnit.SECONDS)
-			    .ignoring(NoSuchElementException.class);
-
-		initializeTestFixtureWeb(testWebFixture);
-		wait.until(testWebFixture);//automatically feeds the parameter used to initialize wait into the testFixture	
-	}
-	
-	public void initializeTestFixtureWeb(Function<WebElement,Boolean> testFixture) {	
-		testFixture = new Function<WebElement,Boolean>(){
-			public Boolean apply(WebElement el) {//shallow copy of address
-				//wait until element is available					
-				return el.isDisplayed();					
-			}
-		};			
-	}
-	
 	public boolean verifyImageBySikuli(){
 		boolean present = false;
 		if(imageFileLocation.length()>0) {			
@@ -388,6 +388,11 @@ public class FitnesseTestFixture {
 		return present;	
 	}
 	
+	/***
+	 * Used to separate setting up the wait and initializing the wait function
+	 * @param testFixture global variable
+	 * @throws FindFailed
+	 */
 	public void initializeTestFixtureSikuli(Function<String,Boolean> testFixture) throws FindFailed{
 		final Region r = s;
 		testSikuliFixture = new Function<String,Boolean>() {
@@ -400,12 +405,9 @@ public class FitnesseTestFixture {
 					}
 				} 
 				catch (FindFailed e) {
-//					e.printStackTrace();
 					try {
 						throw new FindFailed(imageFileLocation + " not found.");
 					} catch (FindFailed e1) {
-						// TODO Auto-generated catch block
-//						e1.printStackTrace();
 						return false;
 					}
 				}				
@@ -413,10 +415,15 @@ public class FitnesseTestFixture {
 		};	
 	}
 	
-	//output the diff into the proper location
-	public void compareBaseLineWithImmediateScreenshot(BufferedImage baselineImage, BufferedImage newImage, String someLocation) {
+	/***
+	 * Calls getDifferenceImage() and writes the image into an outputfile	 * 
+	 * @param baselineImage
+	 * @param newImage
+	 * @param someLocation
+	 */
+	public void compareBaseLineWithImmediateScreenshot(BufferedImage baselineImage, BufferedImage newImage, String diffFileName) {
 		BufferedImage diff = getDifferenceImage(baselineImage, newImage);
-		File outputfile = new File(someLocation); 
+		File outputfile = new File(diffFileName); 
 		try {
 			ImageIO.write(diff, "png", outputfile);
 		} catch (IOException e) {
@@ -424,7 +431,13 @@ public class FitnesseTestFixture {
 		}
 	}
 		
-	//generate the diff
+	/***
+	 * Found from https://stackoverflow.com/questions/25022578/highlight-differences-between-images/25151302
+	 * Compares two images' pixels and outputs a gray scale of the difference
+	 * @param img1
+	 * @param img2
+	 * @return
+	 */
 	public static BufferedImage getDifferenceImage(BufferedImage img1, BufferedImage img2) {
 	    int width1 = img1.getWidth(); // Change - getWidth() and getHeight() for BufferedImage
 	    int width2 = img2.getWidth(); // take no arguments
@@ -465,14 +478,10 @@ public class FitnesseTestFixture {
 	    // Now return
 	    return outImg;
 	}
-	
 
-	
+	//Needed to create an instance for Fitnesse to work with
 	public static void main(String[] args) {		
 		FitnesseTestFixture temp = new FitnesseTestFixture();
 	}
-	
 
-	
-	
 }

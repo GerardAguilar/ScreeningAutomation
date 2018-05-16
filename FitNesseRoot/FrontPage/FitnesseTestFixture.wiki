@@ -3,6 +3,7 @@ Test
 ---
 !***> paths
 !define TEST_SYSTEM {slim}
+!path C:\baseline
 !path C:\eclipse-workspace\ScreeningAutomation\target\classes
 !path C:\Program Files\Java\jre1.8.0_161\lib\resources.jar
 !path C:\Program Files\Java\jre1.8.0_161\lib\rt.jar
@@ -84,10 +85,11 @@ Test
 |import           |
 |fitnesse.fixtures|
 ***!
-!| FitnesseTestFixture                                                                                                                                                                                        |
-|global address         |navigate by global address?|xpath                  |click element by xpath?|image file location|verify image by sikuli?|taking baseline set|enable screenshot|take screenshot?|image?|
-|http://www.inhance.com/|                           |//div[@class='cross']  |                       |                   |false                  |false              |false            |                |      |
-|                       |                           |                       |                       |HamburgerMenu.png  |true                   |false              |true             |                |      |
-|                       |                           |//div[@section='work'] |                       |                   |false                  |false              |false            |                |      |
-|                       |                           |                       |                       |workBackground2.png|true                   |false              |true             |                |      |
+
+!| FitnesseTestFixture                                                                                                                                                                                |
+|global address         |navigate by global address?|xpath                 |click element by xpath?|image file location|verify image by sikuli?|taking baseline set|enable screenshot|take screenshot?|
+|http://www.inhance.com/|                           |//div[@class='cross'] |                       |                   |false                  |false              |false            |                |
+|                       |                           |                      |                       |HamburgerMenu.png  |true                   |false              |true             |                |
+|                       |                           |//div[@section='work']|                       |                   |false                  |false              |false            |                |
+|                       |                           |                      |                       |workBackground2.png|true                   |false              |true             |                |
 
