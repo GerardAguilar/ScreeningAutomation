@@ -2,6 +2,7 @@
 Test
 ---
 !***> paths
+
 !define TEST_SYSTEM {slim}
 !path C:\baseline
 !path C:\eclipse-workspace\ScreeningAutomation\target\classes
@@ -74,8 +75,9 @@ Test
 !path C:\Users\gaguilar\.p2\pool\plugins\com.beust.jcommander_1.72.0.jar
 !path C:\Users\gaguilar\.p2\pool\plugins\org.apache-extras.beanshell.bsh_2.0.0.b6.jar
 !path C:\Users\gaguilar\.p2\pool\plugins\org.yaml.snakeyaml_1.17.0.jar
-***!
+*!
 !***> imports
+
 |import                   |
 |com.inhance.testFramework|
 
@@ -84,12 +86,15 @@ Test
 
 |import           |
 |fitnesse.fixtures|
-***!
+*!
 
-!| FitnesseTestFixture                                                                                                                                                                                |
-|global address         |navigate by global address?|xpath                 |click element by xpath?|image file location|verify image by sikuli?|taking baseline set|enable screenshot|take screenshot?|
-|http://www.inhance.com/|                           |//div[@class='cross'] |                       |                   |false                  |false              |false            |                |
-|                       |                           |                      |                       |HamburgerMenu.png  |true                   |false              |true             |                |
-|                       |                           |//div[@section='work']|                       |                   |false                  |false              |false            |                |
-|                       |                           |                      |                       |workBackground2.png|true                   |false              |true             |                |
-
+!| FitnesseTestFixture                                                                                                                                                                                                                                                                    |
+|global address         |navigate by global address?|xpath                 |click element by xpath and wait for ready state?|pageScrollPosition|scrollDownXFullScreenPageHeightAndWait?|image file location|verify image by sikuli?|taking baseline set|enable screenshot|take screenshot?|
+|http://www.inhance.com/|                           |                      |                                                |0                 |                                       |                   |false                  |TRUE               |true             |                |
+|                       |                           |                      |                                                |1                 |                                       |                   |false                  |TRUE               |true             |                |
+|                       |                           |                      |                                                |2                 |                                       |                   |false                  |TRUE               |true             |                |
+|                       |                           |                      |                                                |3                 |                                       |                   |false                  |TRUE               |true             |                |
+|                       |                           |//div[@class='cross'] |                                                |0                 |                                       |                   |false                  |TRUE               |true             |                |
+|                       |                           |                      |                                                |0                 |                                       |HamburgerMenu.png  |true                   |TRUE               |true             |                |
+|                       |                           |//div[@section='work']|                                                |0                 |                                       |                   |false                  |TRUE               |true             |                |
+|                       |                           |                      |                                                |0                 |                                       |workBackground2.png|true                   |TRUE               |true             |                |

@@ -1,4 +1,4 @@
-|FrontPage.FitnesseTestFixture||13:08:11 Wed, May 16, 2018|
-|FrontPage||13:19:29 Tue, May 15, 2018|
+|FrontPage.FitnesseTestFixture||16:28:14 Thu, May 17, 2018|
+|FrontPage||16:27:42 Thu, May 17, 2018|
 |FrontPage.SimpleFrameworkWithWaitAndImageComparer||11:06:00 Fri, May 04, 2018|
 |FrontPage.SimpleFramework||10:45:22 Fri, May 04, 2018|

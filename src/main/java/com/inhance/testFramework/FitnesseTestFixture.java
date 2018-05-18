@@ -73,8 +73,19 @@ public class FitnesseTestFixture {
 	
 	public boolean takingBaselineSet;
 	
+	public int pageScrollPosition;
+	
 	String currentDiffFilename;
 	int id;
+//	protected String fullScreenPageHeight = "1086";
+	public int fullScreenPageHeight = 1086;
+	
+	public void setPageScrollPosition(int temp){
+		pageScrollPosition = temp;
+	}
+	public int getPageScrollPosition() {
+		return pageScrollPosition;
+	}
 	
 	public void setTakingBaselineSet(boolean temp) {
 		takingBaselineSet = temp;
@@ -206,13 +217,13 @@ public class FitnesseTestFixture {
 	    return true;
 	}
 	
-//	@AfterClass(alwaysRun = true)
-//	public void tearDown() throws Exception {
-//		driver.navigate().to("about:config");
-//		driver.navigate().to("about:blank");
-//		driver.quit();
-//
-//	}
+	@AfterClass(alwaysRun = true)
+	public void tearDown() throws Exception {
+		driver.navigate().to("about:config");
+		driver.navigate().to("about:blank");
+		driver.quit();
+
+	}
 	
 	public boolean simpleTest() {
 		try {
@@ -255,6 +266,37 @@ public class FitnesseTestFixture {
 			
 		}
 	}
+	
+	public void clickElementByXpathAndWaitForReadyState() {
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		if(xpath.length()>0) {
+			System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
+			WebElement element = driver.findElement(By.xpath(xpath));			
+			addXpathToNavigationPath(xpath);
+			element.click();			
+
+			Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
+				    .withTimeout(6, TimeUnit.SECONDS)
+				    .pollingEvery(1, TimeUnit.SECONDS)
+				    .ignoring(NoSuchElementException.class);
+	
+			wait.until(new Function<JavascriptExecutor, Boolean>() 
+			{
+				public Boolean apply(JavascriptExecutor jseCopy) {
+					boolean pageStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
+					if(pageStatus) {
+						System.out.println("Finally done with click anim: " + getPageYOffset());
+						return true;
+					}else {
+						System.out.println("Not done with click anim: " + getPageYOffset());
+						return false;
+					}
+				}
+			});	
+		}else {
+					
+		}
+	}
 //	
 //	public void clickElementById(String id) {
 //		System.out.println("clickElementById(String id): id = " + id);
@@ -281,6 +323,10 @@ public class FitnesseTestFixture {
 	public void addXpathToNavigationPath(String newXpath) {
 		String convertedXpath = convertXpathToNotMakeFolders(newXpath);
 		navigationPath.add(convertedXpath);
+	}
+	
+	public void addActionToNavigationPath(String action) {
+		navigationPath.add("^" + action + "^");
 	}
 	
 	public String getNavigationPath() {
@@ -477,6 +523,83 @@ public class FitnesseTestFixture {
 
 	    // Now return
 	    return outImg;
+	}
+	
+	//needs to be long to be run in another javascriptexecutor script call
+	protected Long getPageYOffset() {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		
+//		//java.lang.Long cannot be cast to java.lang.Double
+//		Object oVal = executor.executeScript("return window.pageYOffset;");
+//		Double dVal = (Double) oVal;
+//		Long lVal = dVal.longValue();
+//		return lVal;
+		
+//		//java.lang.Double cannot be cast to java.lang.Long
+//		Object oVal = executor.executeScript("return window.pageYOffset;");
+//		Long lVal = (Long) oVal;
+//		return lVal;
+		
+//		//java.lang.Double cannot be cast to java.lang.Long
+//		Object oVal = executor.executeScript("return window.pageYOffset;");
+//		long lVal = (long) oVal;
+//		return lVal;
+		
+//		//java.lang.Long cannot be cast to java.lang.Double
+//		Object oVal = executor.executeScript("return window.pageYOffset;");
+//		Long lVal = new Double((double) oVal).longValue();
+//		return lVal;
+		
+//		//java.lang.Double cannot be cast to java.lang.Long
+//		Object oVal = executor.executeScript("return window.pageYOffset;");
+//		Long lVal = new Double((Long) oVal).longValue();
+//		return lVal;
+		
+//		//java.lang.NumberFormatException: For input string: "750.4000244140624"
+//		Object oVal = executor.executeScript("return window.pageYOffset;");//maybe javascript has a better way to handle this?
+//		String sVal = oVal.toString();
+////		Long lVal = Long.valueOf(sVal);
+//		Long lVal = Long.parseLong(sVal);
+//		return lVal;
+		
+		//Yay, below code does not throw exceptions for Fitnesse to worry about
+		Long lVal = (Long) executor.executeScript("return document.documentElement.scrollTop");
+		return lVal;
+	}
+	
+	protected Long getPageHeight() {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		Long value = (long) executor.executeScript("return document.body.offsetHeight;");
+		return value;
+	}
+	
+	public void scrollDownXFullScreenPageHeightAndWait() {
+		addActionToNavigationPath("scroll"+pageScrollPosition);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+//		String scrollheight = (Integer.parseInt(fullScreenPageHeight)*x)+"";
+//		String scrollheight = (fullScreenPageHeight*x)+"";
+		String scrollheight = (getPageHeight()*pageScrollPosition)+"";
+		System.out.println("Scrolling start: " + getPageYOffset());
+		jse.executeScript("window.scrollBy(0,"+scrollheight+")", "");
+		
+		Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
+			    .withTimeout(6, TimeUnit.SECONDS)
+			    .pollingEvery(1, TimeUnit.SECONDS)
+			    .ignoring(NoSuchElementException.class);
+
+		wait.until(new Function<JavascriptExecutor, Boolean>() 
+		{
+			public Boolean apply(JavascriptExecutor jseCopy) {
+				boolean scrollStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
+				if(scrollStatus) {
+					System.out.println("Finally done scrolling: " + getPageYOffset());
+					return true;
+				}else {
+					System.out.println("Not done scrolling: " + getPageYOffset());
+					return false;
+				}
+			}
+		});	
 	}
 
 	//Needed to create an instance for Fitnesse to work with
