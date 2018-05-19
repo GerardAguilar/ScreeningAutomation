@@ -2,7 +2,9 @@ package com.inhance.testFramework;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -25,6 +27,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -62,6 +65,7 @@ public class FitnesseTestFixture {
 	public String elementId;
 	public String xpath;
 	public ArrayList<String> navigationPath;
+	public ArrayList<String> navigationPathAlternate;
 	
 	public boolean enableScreenshot;
 	
@@ -72,6 +76,7 @@ public class FitnesseTestFixture {
 	public String instanceStartTime;
 	
 	public boolean takingBaselineSet;
+	public boolean makeALogFile;
 	
 	public int pageScrollPosition;
 	
@@ -79,6 +84,13 @@ public class FitnesseTestFixture {
 	int id;
 //	protected String fullScreenPageHeight = "1086";
 	public int fullScreenPageHeight = 1086;
+	
+	public void setMakeALogFile(boolean temp) {
+		makeALogFile = temp;
+	}
+	public boolean getMakeALogFile() {
+		return makeALogFile;
+	}
 	
 	public void setPageScrollPosition(int temp){
 		pageScrollPosition = temp;
@@ -150,8 +162,8 @@ public class FitnesseTestFixture {
 	
 
 	public boolean initialize(String home) throws Exception {
-		boolean setupFirefoxDriver = true;
-		boolean setupChromeDriver = false;
+		boolean setupFirefoxDriver = false;
+		boolean setupChromeDriver = true;
 		if(setupFirefoxDriver) {
 			ClassLoader classLoader = getClass().getClassLoader();
 	        URL resource = classLoader.getResource("geckodriver.exe");
@@ -200,6 +212,7 @@ public class FitnesseTestFixture {
 	    ImagePath.add(SimpleFramework.class.getCanonicalName()+"/images");
 	    enableScreenshot = false;
 	    navigationPath = new ArrayList<String>();
+	    navigationPathAlternate = new ArrayList<String>();
 	    instanceStartTime = (new Timestamp(System.currentTimeMillis())).getTime()+"";
 	    
         File baselineDirectory = new File("C:\\baseline");
@@ -213,16 +226,37 @@ public class FitnesseTestFixture {
         }
 	    
         id = 0;
+        pageScrollPosition = -1;
         
 	    return true;
 	}
 	
-	@AfterClass(alwaysRun = true)
-	public void tearDown() throws Exception {
-		driver.navigate().to("about:config");
-		driver.navigate().to("about:blank");
-		driver.quit();
-
+////	@AfterClass(alwaysRun = true)
+//	public void tearDown() throws Exception {
+//		createLogFile();
+//		driver.quit();
+//	}
+	
+	public void createLogFile() {
+		String appendedIndex = "";
+		if(makeALogFile) {
+	        try {
+	        	String loc ="";
+	        	if(takingBaselineSet) {
+	        		loc = "C:\\baseline\\log.txt";
+	        	}else {
+	        		loc = "C:\\current\\"+instanceStartTime+"\\log.txt";
+	        	}
+				PrintWriter out = new PrintWriter(loc);
+		        for(int i=0; i<navigationPathAlternate.size(); i++) {
+		        	appendedIndex = String.format("%04d", i);
+		        	out.println(appendedIndex + ": " + navigationPathAlternate.get(i));
+		        }
+		        out.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public boolean simpleTest() {
@@ -251,6 +285,8 @@ public class FitnesseTestFixture {
 			
 		}
 	}
+	
+
 
 	/***
 	 * Clicks an xpath element AND stores the xpath for navigational purposes
@@ -260,49 +296,72 @@ public class FitnesseTestFixture {
 		if(xpath.length()>0) {
 			System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
 			WebElement element = driver.findElement(By.xpath(xpath));			
-			addXpathToNavigationPath(xpath);
+//			addXpathToNavigationPath(xpath);
+			addActionToNavigationPathAlternate(xpath);
 			element.click();			
 		}else {
 			
 		}
 	}
 	
+//	public void clickElementByXpathPreparation(String xpath) {
+//	WebElement el = driver.findElement(By.xpath(xpath));
+//	Wait<WebElement> wait = new FluentWait<WebElement>(el)
+//		    .withTimeout(6, TimeUnit.SECONDS)
+//		    .pollingEvery(1, TimeUnit.SECONDS)
+//		    .ignoring(NoSuchElementException.class);
+//
+//	initializeTestFixtureWeb(testWebFixture);
+//	wait.until(testWebFixture);//automatically feeds the parameter used to initialize wait into the testFixture	
+//}
+//
+	public boolean waitForElementToAppear() {
+		boolean appeared = false;
+		String xpathCopy = xpath;
+		WebElement el = driver.findElement(By.xpath(xpath));
+		Wait<WebElement> wait = new FluentWait<WebElement>(el)
+			    .withTimeout(6, TimeUnit.SECONDS)
+			    .pollingEvery(2, TimeUnit.SECONDS)
+			    .ignoring(NoSuchElementException.class);
+
+		wait.until(new Function<WebElement, Boolean>() 
+		{
+			public Boolean apply(WebElement elCopy) {//shallow copy of address
+			//wait until element is available		
+				boolean isDisplayed = elCopy.isDisplayed();
+				boolean hasOpacity = false;
+				if(elCopy.getCssValue("opacity")=="1"){
+					hasOpacity = true;
+				}
+				return isDisplayed&&hasOpacity;				
+		}
+		});	
+		return appeared;
+		
+	}
+	
+//public void initializeTestFixtureWeb(Function<WebElement,Boolean> testFixture) {	
+//	testFixture = new Function<WebElement,Boolean>(){
+//		public Boolean apply(WebElement el) {//shallow copy of address
+//			//wait until element is available					
+//			return el.isDisplayed();					
+//		}
+//	};			
+//}
+	
 	public void clickElementByXpathAndWaitForReadyState() {
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		if(xpath.length()>0) {
 			System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
 			WebElement element = driver.findElement(By.xpath(xpath));			
-			addXpathToNavigationPath(xpath);
+//			addXpathToNavigationPath(xpath);
+			addActionToNavigationPathAlternate(xpath);
 			element.click();			
-
-			Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
-				    .withTimeout(6, TimeUnit.SECONDS)
-				    .pollingEvery(1, TimeUnit.SECONDS)
-				    .ignoring(NoSuchElementException.class);
-	
-			wait.until(new Function<JavascriptExecutor, Boolean>() 
-			{
-				public Boolean apply(JavascriptExecutor jseCopy) {
-					boolean pageStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
-					if(pageStatus) {
-						System.out.println("Finally done with click anim: " + getPageYOffset());
-						return true;
-					}else {
-						System.out.println("Not done with click anim: " + getPageYOffset());
-						return false;
-					}
-				}
-			});	
 		}else {
 					
 		}
 	}
-//	
-//	public void clickElementById(String id) {
-//		System.out.println("clickElementById(String id): id = " + id);
-//		WebElement element = driver.findElement(By.id(id));
-//		element.click();		
-//	}
+
 	/***
 	 * 
 	 * @param newXpath
@@ -311,7 +370,6 @@ public class FitnesseTestFixture {
 	 * There's risk in the re-conversion, but since it's minimal, it will be considered on a case by case basis (i.e. Just change the xpath value to not have a ^)
 	 */
 	public String convertXpathToNotMakeFolders(String newXpath) {
-
 		return newXpath.replace('/', '^');
 	}
 	
@@ -322,11 +380,11 @@ public class FitnesseTestFixture {
 	 */
 	public void addXpathToNavigationPath(String newXpath) {
 		String convertedXpath = convertXpathToNotMakeFolders(newXpath);
-		navigationPath.add(convertedXpath);
+		navigationPath.add("^" + convertedXpath);
 	}
 	
 	public void addActionToNavigationPath(String action) {
-		navigationPath.add("^" + action + "^");
+		navigationPath.add("^" + action);
 	}
 	
 	public String getNavigationPath() {
@@ -336,11 +394,72 @@ public class FitnesseTestFixture {
 		}
 		return str;
 	}
+	
+	public void addActionToNavigationPathAlternate(String action) {
+		//instead of each cell containing an action
+		//have each cell contain the string of actions to get to that point
+		//use the index for the eventID
+		//then output the list into a log file, with ids
+		//later on, have the output in realtime
+		String str;
+		int size = navigationPathAlternate.size();
+		if(size==0) {
+			str = action;
+			navigationPathAlternate.add(str);			
+		}else {
+			str = navigationPathAlternate.get(size-1)+action;
+			navigationPathAlternate.add(str);
+		}
+	}
+	
+	public String getNavigationPathAlt() {
+		int size = navigationPathAlternate.size();
+		return navigationPathAlternate.get(size-1);
+	}
+	
+	public int getNavigationPathAltEventId() {
+		int size = navigationPathAlternate.size();
+		return size-1;
+	}
 
 	public void clickElementById() {
 		System.out.println("clickElementById(String id): elementId = " + elementId);
 		WebElement element = driver.findElement(By.id(elementId));
 		element.click();		
+	}
+	
+	public void waitForPageStability() {
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
+			    .withTimeout(6, TimeUnit.SECONDS)
+			    .pollingEvery(2, TimeUnit.SECONDS)
+			    .ignoring(NoSuchElementException.class);
+
+		wait.until(new Function<JavascriptExecutor, Boolean>() 
+		{
+			public Boolean apply(JavascriptExecutor jseCopy) {
+				boolean pageStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
+				boolean jqueryStatus = (boolean)jseCopy.executeScript("return jQuery.active == 0");
+				boolean notAnimatedStatus;
+				if(elementId != null) {
+					notAnimatedStatus = !(boolean)jseCopy.executeScript("return $('#+"+elementId+"+').is(':animated')");
+				}else {
+					notAnimatedStatus = true;
+				}
+
+				if(pageStatus && jqueryStatus && notAnimatedStatus) {
+					System.out.println("pageStatus: " + pageStatus + 
+							"\njqueryStatus: " + jqueryStatus +
+							"\nanimationStatus: " + notAnimatedStatus);
+					return true;
+				}else {
+					System.out.println("pageStatus: " + pageStatus + 
+							"\njqueryStatus: " + jqueryStatus +
+							"\nanimationStatus: " + notAnimatedStatus);
+					return false;
+				}
+			}
+		});	
 	}
 	
 	/***
@@ -354,14 +473,21 @@ public class FitnesseTestFixture {
 	 */
 	public void takeScreenshot() {
 		if(enableScreenshot) {
+			//wait for page to be in a ready state and jquery.active to be 0
+			waitForPageStability();
 //			id++;
 			File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			Long timestamp = (new Timestamp(System.currentTimeMillis())).getTime();
 //			System.out.println("Taking screenshot at: "+timestamp);
-			String navPath = getNavigationPath();
-			String newFilename = "c:\\baseline\\" + navPath + ".png";
-			String currentFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +".png";
-			String currentDiffFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +"_diff.png";			
+//			String navPath = getNavigationPath();
+//			String navPath = getNavigationPathAlt();
+			String navId = getNavigationPathAltEventId()+"";
+//			String newFilename = "c:\\baseline\\" + navPath + ".png";
+//			String currentFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +".png";
+//			String currentDiffFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +"_diff.png";			
+			String newFilename = "c:\\baseline\\" + navId + ".png";
+			String currentFilename = "c:\\current\\"+instanceStartTime+"\\"+ navId +".png";
+			String currentDiffFilename = "c:\\current\\"+instanceStartTime+"\\"+ navId +"_diff.png";	
 			BufferedImage currentShot;
 			BufferedImage baselineShot;
 			
@@ -388,25 +514,7 @@ public class FitnesseTestFixture {
 		enableScreenshot = false;
 	}
 
-//	public void clickElementByXpathPreparation(String xpath) {
-//		WebElement el = driver.findElement(By.xpath(xpath));
-//		Wait<WebElement> wait = new FluentWait<WebElement>(el)
-//			    .withTimeout(6, TimeUnit.SECONDS)
-//			    .pollingEvery(1, TimeUnit.SECONDS)
-//			    .ignoring(NoSuchElementException.class);
-//
-//		initializeTestFixtureWeb(testWebFixture);
-//		wait.until(testWebFixture);//automatically feeds the parameter used to initialize wait into the testFixture	
-//	}
-//	
-//	public void initializeTestFixtureWeb(Function<WebElement,Boolean> testFixture) {	
-//		testFixture = new Function<WebElement,Boolean>(){
-//			public Boolean apply(WebElement el) {//shallow copy of address
-//				//wait until element is available					
-//				return el.isDisplayed();					
-//			}
-//		};			
-//	}
+
 	
 	/***
 	 * Uses sikuli to wait for an image to appear before continuing with baseline/current screenshots and comparison
@@ -422,7 +530,7 @@ public class FitnesseTestFixture {
 				    .ignoring(NoSuchElementException.class);
 			
 			try {
-				initializeTestFixtureSikuli(testSikuliFixture);
+				initializeTestFixtureSikuli();
 				wait.until(testSikuliFixture);
 				present = true;
 			} catch (FindFailed e) {
@@ -431,15 +539,16 @@ public class FitnesseTestFixture {
 				present = false;
 			}					
 		}
+		imageFileLocation = "";
 		return present;	
 	}
 	
 	/***
 	 * Used to separate setting up the wait and initializing the wait function
-	 * @param testFixture global variable
+	 * @param testSikuliFixture global variable, 
 	 * @throws FindFailed
 	 */
-	public void initializeTestFixtureSikuli(Function<String,Boolean> testFixture) throws FindFailed{
+	public void initializeTestFixtureSikuli() throws FindFailed{
 		final Region r = s;
 		testSikuliFixture = new Function<String,Boolean>() {
 			public Boolean apply (String imageFileLocation){
@@ -451,11 +560,11 @@ public class FitnesseTestFixture {
 					}
 				} 
 				catch (FindFailed e) {
-					try {
-						throw new FindFailed(imageFileLocation + " not found.");
-					} catch (FindFailed e1) {
+//					try {
+//						throw new FindFailed(imageFileLocation + " not found.");
+//					} catch (FindFailed e1) {
 						return false;
-					}
+//					}
 				}				
 			}	
 		};	
@@ -529,41 +638,11 @@ public class FitnesseTestFixture {
 	protected Long getPageYOffset() {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		
-//		//java.lang.Long cannot be cast to java.lang.Double
-//		Object oVal = executor.executeScript("return window.pageYOffset;");
-//		Double dVal = (Double) oVal;
-//		Long lVal = dVal.longValue();
-//		return lVal;
-		
-//		//java.lang.Double cannot be cast to java.lang.Long
-//		Object oVal = executor.executeScript("return window.pageYOffset;");
-//		Long lVal = (Long) oVal;
-//		return lVal;
-		
-//		//java.lang.Double cannot be cast to java.lang.Long
-//		Object oVal = executor.executeScript("return window.pageYOffset;");
-//		long lVal = (long) oVal;
-//		return lVal;
-		
-//		//java.lang.Long cannot be cast to java.lang.Double
-//		Object oVal = executor.executeScript("return window.pageYOffset;");
-//		Long lVal = new Double((double) oVal).longValue();
-//		return lVal;
-		
-//		//java.lang.Double cannot be cast to java.lang.Long
-//		Object oVal = executor.executeScript("return window.pageYOffset;");
-//		Long lVal = new Double((Long) oVal).longValue();
-//		return lVal;
-		
-//		//java.lang.NumberFormatException: For input string: "750.4000244140624"
-//		Object oVal = executor.executeScript("return window.pageYOffset;");//maybe javascript has a better way to handle this?
-//		String sVal = oVal.toString();
-////		Long lVal = Long.valueOf(sVal);
-//		Long lVal = Long.parseLong(sVal);
-//		return lVal;
-		
-		//Yay, below code does not throw exceptions for Fitnesse to worry about
-		Long lVal = (Long) executor.executeScript("return document.documentElement.scrollTop");
+		//Below code doesn't seem to be having issues with exceptions
+		//The parselong(sVal, 10) hopefully deals with our NumberFormatException
+		Object oVal = executor.executeScript("return window.pageYOffset;");
+		String sVal = oVal.toString();
+		Long lVal = Long.parseLong(sVal, 10);
 		return lVal;
 	}
 	
@@ -574,32 +653,39 @@ public class FitnesseTestFixture {
 	}
 	
 	public void scrollDownXFullScreenPageHeightAndWait() {
-		addActionToNavigationPath("scroll"+pageScrollPosition);
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-//		String scrollheight = (Integer.parseInt(fullScreenPageHeight)*x)+"";
-//		String scrollheight = (fullScreenPageHeight*x)+"";
-		String scrollheight = (getPageHeight()*pageScrollPosition)+"";
-		System.out.println("Scrolling start: " + getPageYOffset());
-		jse.executeScript("window.scrollBy(0,"+scrollheight+")", "");
-		
-		Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
-			    .withTimeout(6, TimeUnit.SECONDS)
-			    .pollingEvery(1, TimeUnit.SECONDS)
-			    .ignoring(NoSuchElementException.class);
+		if(pageScrollPosition>=0) {
 
-		wait.until(new Function<JavascriptExecutor, Boolean>() 
-		{
-			public Boolean apply(JavascriptExecutor jseCopy) {
-				boolean scrollStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
-				if(scrollStatus) {
-					System.out.println("Finally done scrolling: " + getPageYOffset());
-					return true;
-				}else {
-					System.out.println("Not done scrolling: " + getPageYOffset());
-					return false;
-				}
-			}
-		});	
+			addActionToNavigationPathAlternate("s"+pageScrollPosition);
+			JavascriptExecutor jse = (JavascriptExecutor)driver;
+
+			String scrollheight = (getPageHeight()*pageScrollPosition)+"";
+			System.out.println("Scrolling start: " + getPageYOffset());
+			jse.executeScript("window.scrollBy(0,"+scrollheight+")", "");
+			
+//			Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
+//				    .withTimeout(6, TimeUnit.SECONDS)
+//				    .pollingEvery(2, TimeUnit.SECONDS)
+//				    .ignoring(NoSuchElementException.class);
+//
+//			wait.until(new Function<JavascriptExecutor, Boolean>() 
+//			{
+//				public Boolean apply(JavascriptExecutor jseCopy) {
+//					boolean scrollStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
+//					boolean jqueryStatus = (boolean)jseCopy.executeScript("return jQuery.active == 0");
+//					if(scrollStatus&&jqueryStatus) {
+//						System.out.println("Finally done scrolling: " + getPageYOffset());
+//						return true;
+//					}else {
+//						System.out.println("Not done scrolling: " + getPageYOffset());
+//						return false;
+//					}
+//				}
+//			});	
+			
+			waitForPageStability();
+		}
+		//the reset to -1 is needed so that we can switch this functionality on and off in Fitnesse
+		pageScrollPosition = -1;
 	}
 
 	//Needed to create an instance for Fitnesse to work with
