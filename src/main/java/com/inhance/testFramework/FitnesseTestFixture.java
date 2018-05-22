@@ -79,7 +79,9 @@ public class FitnesseTestFixture {
 	public boolean takingBaselineSet;
 	public boolean makeALogFile;
 	
-	public int pageScrollPosition;
+	public String pageScrollPosition;
+	public boolean willClick;
+	public boolean willWaitFor;
 	
 	String currentDiffFilename;
 	int id;
@@ -92,6 +94,20 @@ public class FitnesseTestFixture {
 	//how much polling to do in the course of the wait 
 	float pollingFactor;
 	
+	public void setWillClick(boolean temp) {
+		willClick = temp;
+	}
+	public boolean getWillClick() {
+		return willClick;
+	}
+	
+	public void setWillWaitFor(boolean temp) {
+		willWaitFor = temp;
+	}
+	public boolean getWilLWaitFor() {
+		return willWaitFor;
+	}
+	
 	public void setMakeALogFile(boolean temp) {
 		makeALogFile = temp;
 	}
@@ -99,10 +115,10 @@ public class FitnesseTestFixture {
 		return makeALogFile;
 	}
 	
-	public void setPageScrollPosition(int temp){
+	public void setPageScrollPosition(String temp){
 		pageScrollPosition = temp;
 	}
-	public int getPageScrollPosition() {
+	public String getPageScrollPosition() {
 		return pageScrollPosition;
 	}
 	
@@ -233,7 +249,7 @@ public class FitnesseTestFixture {
         }
 	    
         id = 0;
-        pageScrollPosition = -1;
+        pageScrollPosition = "";
         waitForElement = (long) 0;
         waitFactor = 10;
         pollingFactor = 1; //the bigger the value the faster the polling
@@ -300,17 +316,17 @@ public class FitnesseTestFixture {
 	 * Clicks an xpath element AND stores the xpath for navigational purposes
 	 * TODO: Wouldn't this cause issues when branching out? Or keep track of entire path instead of branches?
 	 */
-	public void clickElementByXpath() {
-		if(xpath.length()>0) {
-//			System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
-			WebElement element = driver.findElement(By.xpath(xpath));			
-//			addXpathToNavigationPath(xpath);
-			addActionToNavigationPathAlternate(xpath);
-			element.click();			
-		}else {
-			
-		}
-	}
+//	public void clickElementByXpath() {
+//		if(xpath.length()>0) {
+////			System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
+//			WebElement element = driver.findElement(By.xpath(xpath));			
+////			addXpathToNavigationPath(xpath);
+//			addActionToNavigationPathAlternate(xpath);
+//			element.click();			
+//		}else {
+//			
+//		}
+//	}
 	
 //	public void clickElementByXpathPreparation(String xpath) {
 //	WebElement el = driver.findElement(By.xpath(xpath));
@@ -324,21 +340,21 @@ public class FitnesseTestFixture {
 //}
 //
 	
-	public long getElementTransitionLength(WebElement el) {
-//		return Long.parseLong(el.getCssValue("transition"));
-//		return Long.parseLong(el.getCssValue("-webkit-transition"));
-		String cssValue = el.getCssValue("transition-duration");
-		String trimmedCssValue = cssValue.substring(0, cssValue.length()-1);
-		if(trimmedCssValue.length()>0) {
-//			return Long.valueOf(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
-//			return Long.parseLong(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
-//			System.out.println("Waiting for " + el.toString() + " for "+trimmedCssValue + "s");
-			return (long)Double.parseDouble(trimmedCssValue);
-		}else {
-			return (long) 0;
-		}
-		
-	}
+//	public long getElementTransitionLength(WebElement el) {
+////		return Long.parseLong(el.getCssValue("transition"));
+////		return Long.parseLong(el.getCssValue("-webkit-transition"));
+//		String cssValue = el.getCssValue("transition-duration");
+//		String trimmedCssValue = cssValue.substring(0, cssValue.length()-1);
+//		if(trimmedCssValue.length()>0) {
+////			return Long.valueOf(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
+////			return Long.parseLong(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
+////			System.out.println("Waiting for " + el.toString() + " for "+trimmedCssValue + "s");
+//			return (long)Double.parseDouble(trimmedCssValue);
+//		}else {
+//			return (long) 0;
+//		}
+//		
+//	}
 	public boolean waitForElementToAppear() {
 		boolean appeared = false;
 		String xpathCopy = xpath;
@@ -375,18 +391,43 @@ public class FitnesseTestFixture {
 	
 	//Wait for image to appear
 	public void locateElementInPageByXpathAndWaitForNonZeroWidth() {
-		waitForPageStability3();
+		System.out.println("locateElementInPageByXpathAndWaitForNonZeroWidth: " + getNavigationPathAltEventId() + xpath.length() + willWaitFor);	
+		if(xpath.length()>0 && willWaitFor) {
+			System.out.println("actually locateElementInPageByXpathAndWaitForNonZeroWidth: " + xpath + "_wait");
+			addActionToNavigationPathAlternate(xpath + "_wait");			
+			Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)			    
+					.withTimeout(6, TimeUnit.SECONDS)
+				    .pollingEvery((long) .5, TimeUnit.SECONDS)
+				    .ignoring(NoSuchElementException.class);
+			
+			wait.until(new Function<WebDriver, Boolean>()
+			{
+				public Boolean apply(WebDriver driverCopy) {		
+					boolean nonZeroWidth = checkIfElementHasNonZeroWidth(driverCopy);//never seems to be true
+					
+					if(nonZeroWidth) {
+						return true;
+					}else {
+						return false;
+					}
+				}
+			});
+			xpath = "";
+			willWaitFor = false;
+		}
+
 	}
 	
 	//Click and then wait for transition to end
 	public void clickElementByXpathAndWaitForReadyState() {
+		System.out.println("clickElementByXpathAndWaitForReadyState: " + xpath);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;		
-		if(xpath.length()>0) {
-			System.out.println("clickElementByXpathAndWaitForReadyState(String xpath): xpath = " + xpath);
+		if(xpath.length()>0 && willClick) {
+			System.out.println("actually clickElementByXpathAndWaitForReadyState(String xpath): xpath = " + xpath);
 			WebElement element = driver.findElement(By.xpath(xpath));			
 			addActionToNavigationPathAlternate(xpath);
 			element.click();		
-			waitForElement = getElementTransitionLength(element);
+//			waitForElement = getElementTransitionLength(element);
 //			driver.manage().timeouts().implicitlyWait(waitForElement, TimeUnit.SECONDS);//doesn't pause
 //			driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);//doesn't pause
 //			new WebDriverWait(driver, waitForElement*3).until(new ExpectedCondition<Boolean>() {
@@ -395,9 +436,12 @@ public class FitnesseTestFixture {
 //					return false;//force the timeout in WebDriverWait(driver, timeout)
 //				}
 //			});
+			xpath = "";
+			willClick=false;
 		}else {
 			//don't click anything
 		}
+
 	}
 
 	/***
@@ -456,42 +500,19 @@ public class FitnesseTestFixture {
 	}
 	
 	public int getNavigationPathAltEventId() {
-		int size = navigationPathAlternate.size();
-		return size-1;
+		int eventId = navigationPathAlternate.size()-1;
+		System.out.println("getNavigationPathAltEventId: " + (eventId));
+		return eventId;
 	}
 
-	public void clickElementById() {
-//		System.out.println("clickElementById(String id): elementId = " + elementId);
-		WebElement element = driver.findElement(By.id(elementId));
-		element.click();		
-	}
-	
-	public void waitForPageStability3() {
-		System.out.println("waitForPageStability3");	
-		if(xpath.length()>0) {
-			Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)			    
-					.withTimeout(4, TimeUnit.SECONDS)
-				    .pollingEvery((long) .5, TimeUnit.SECONDS)
-				    .ignoring(NoSuchElementException.class);
-			
-			wait.until(new Function<WebDriver, Boolean>()
-			{
-				public Boolean apply(WebDriver driverCopy) {		
-					boolean nonZeroWidth = checkIfElementHasNonZeroWidth(driverCopy);//never seems to be true
-					
-					if(nonZeroWidth) {
-						return true;
-					}else {
-						return false;
-					}
-				}
-			});
-		}
-
-	}
-	
+//	public void clickElementById() {
+////		System.out.println("clickElementById(String id): elementId = " + elementId);
+//		WebElement element = driver.findElement(By.id(elementId));
+//		element.click();		
+//	}
+		
 	public boolean checkIfElementIsInsideWindowBounds(WebDriver driverCopy) {
-		System.out.println("checkIfElementIsInsideWindowBounds");
+//		System.out.println("checkIfElementIsInsideWindowBounds");
 		boolean inside = false;
 		boolean horizontallyContained = false;
 		boolean verticallyContained = false;
@@ -528,7 +549,7 @@ public class FitnesseTestFixture {
 		String width = el.getCssValue("width");
 		String trimmedWidth = width.substring(0,width.length()-2);
 		long elementWidth = (long)Double.parseDouble(trimmedWidth);
-		System.out.println("checkIfElementHasNonZeroWidth: " + xpath + ": " + elementWidth);
+//		System.out.println("checkIfElementHasNonZeroWidth: " + xpath + ": " + elementWidth);
 		if(elementWidth>0) {//always seem to be zero (like the cross/hamburger was never pressed.)
 			nonzero = true;
 		}
@@ -727,39 +748,41 @@ public class FitnesseTestFixture {
 	}
 	
 	public void scrollDownXFullScreenPageHeightAndWait() {
-		if(pageScrollPosition>=0) {
-
+		System.out.println("scrollDownXFullScreenPageHeightAndWait: " + pageScrollPosition);
+		if(pageScrollPosition.length()>0) {
 			addActionToNavigationPathAlternate("s"+pageScrollPosition);
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
 
-			String scrollheight = (getPageHeight()*pageScrollPosition)+"";
+			//we subtract 1 from pageScrollPosition in order to reserve the value "0" for Fitnesse as an empty cell in Fitnesse counts as "0"
+			//or we can take it as a string
+			String scrollheight = (getPageHeight()*(Integer.parseInt(pageScrollPosition)))+"";
 //			System.out.println("Scrolling start: " + getPageYOffset());
 			jse.executeScript("window.scrollBy(0,"+scrollheight+")", "");
 			
-//			Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
-//				    .withTimeout(6, TimeUnit.SECONDS)
-//				    .pollingEvery(2, TimeUnit.SECONDS)
-//				    .ignoring(NoSuchElementException.class);
-//
-//			wait.until(new Function<JavascriptExecutor, Boolean>() 
-//			{
-//				public Boolean apply(JavascriptExecutor jseCopy) {
-//					boolean scrollStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
-//					boolean jqueryStatus = (boolean)jseCopy.executeScript("return jQuery.active == 0");
-//					if(scrollStatus&&jqueryStatus) {
+			Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
+				    .withTimeout(6, TimeUnit.SECONDS)
+				    .pollingEvery(2, TimeUnit.SECONDS)
+				    .ignoring(NoSuchElementException.class);
+
+			wait.until(new Function<JavascriptExecutor, Boolean>() 
+			{
+				public Boolean apply(JavascriptExecutor jseCopy) {
+					boolean scrollStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
+					boolean jqueryStatus = (boolean)jseCopy.executeScript("return jQuery.active == 0");
+					if(scrollStatus&&jqueryStatus) {
 //						System.out.println("Finally done scrolling: " + getPageYOffset());
-//						return true;
-//					}else {
+						return true;
+					}else {
 //						System.out.println("Not done scrolling: " + getPageYOffset());
-//						return false;
-//					}
-//				}
-//			});	
-			
-//			waitForPageStability();
+						return false;
+					}
+				}
+			});	
+			//the reset to "" is needed so that we can switch this functionality on and off in Fitnesse
+			pageScrollPosition = "";
 		}
-		//the reset to -1 is needed so that we can switch this functionality on and off in Fitnesse
-		pageScrollPosition = -1;
+		
+		
 	}
 
 	//Needed to create an instance for Fitnesse to work with
