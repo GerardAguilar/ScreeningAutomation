@@ -33,6 +33,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -84,6 +85,12 @@ public class FitnesseTestFixture {
 	int id;
 //	protected String fullScreenPageHeight = "1086";
 	public int fullScreenPageHeight = 1086;
+	
+	Long waitForElement;
+	//waitFactor multiplies the transition-duration of the element we're currently interacting with
+	float waitFactor;
+	//how much polling to do in the course of the wait 
+	float pollingFactor;
 	
 	public void setMakeALogFile(boolean temp) {
 		makeALogFile = temp;
@@ -227,6 +234,9 @@ public class FitnesseTestFixture {
 	    
         id = 0;
         pageScrollPosition = -1;
+        waitForElement = (long) 0;
+        waitFactor = 10;
+        pollingFactor = 1; //the bigger the value the faster the polling
         
 	    return true;
 	}
@@ -270,7 +280,7 @@ public class FitnesseTestFixture {
 	}
 
 	public boolean navigateByAddress(String address) {
-		System.out.println("navigateByAddress(String address): address = " + address); 
+//		System.out.println("navigateByAddress(String address): address = " + address); 
 		driver.get(address);
 		return true;
 	}
@@ -285,8 +295,6 @@ public class FitnesseTestFixture {
 			
 		}
 	}
-	
-
 
 	/***
 	 * Clicks an xpath element AND stores the xpath for navigational purposes
@@ -294,7 +302,7 @@ public class FitnesseTestFixture {
 	 */
 	public void clickElementByXpath() {
 		if(xpath.length()>0) {
-			System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
+//			System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
 			WebElement element = driver.findElement(By.xpath(xpath));			
 //			addXpathToNavigationPath(xpath);
 			addActionToNavigationPathAlternate(xpath);
@@ -315,6 +323,22 @@ public class FitnesseTestFixture {
 //	wait.until(testWebFixture);//automatically feeds the parameter used to initialize wait into the testFixture	
 //}
 //
+	
+	public long getElementTransitionLength(WebElement el) {
+//		return Long.parseLong(el.getCssValue("transition"));
+//		return Long.parseLong(el.getCssValue("-webkit-transition"));
+		String cssValue = el.getCssValue("transition-duration");
+		String trimmedCssValue = cssValue.substring(0, cssValue.length()-1);
+		if(trimmedCssValue.length()>0) {
+//			return Long.valueOf(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
+//			return Long.parseLong(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
+//			System.out.println("Waiting for " + el.toString() + " for "+trimmedCssValue + "s");
+			return (long)Double.parseDouble(trimmedCssValue);
+		}else {
+			return (long) 0;
+		}
+		
+	}
 	public boolean waitForElementToAppear() {
 		boolean appeared = false;
 		String xpathCopy = xpath;
@@ -330,14 +354,14 @@ public class FitnesseTestFixture {
 			//wait until element is available		
 				boolean isDisplayed = elCopy.isDisplayed();
 				boolean hasOpacity = false;
+				//what if Opacity is not present in CSS?
 				if(elCopy.getCssValue("opacity")=="1"){
 					hasOpacity = true;
 				}
 				return isDisplayed&&hasOpacity;				
 		}
 		});	
-		return appeared;
-		
+		return appeared;		
 	}
 	
 //public void initializeTestFixtureWeb(Function<WebElement,Boolean> testFixture) {	
@@ -349,16 +373,30 @@ public class FitnesseTestFixture {
 //	};			
 //}
 	
+	//Wait for image to appear
+	public void locateElementInPageByXpathAndWaitForNonZeroWidth() {
+		waitForPageStability3();
+	}
+	
+	//Click and then wait for transition to end
 	public void clickElementByXpathAndWaitForReadyState() {
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		JavascriptExecutor jse = (JavascriptExecutor)driver;		
 		if(xpath.length()>0) {
-			System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
+			System.out.println("clickElementByXpathAndWaitForReadyState(String xpath): xpath = " + xpath);
 			WebElement element = driver.findElement(By.xpath(xpath));			
-//			addXpathToNavigationPath(xpath);
 			addActionToNavigationPathAlternate(xpath);
-			element.click();			
+			element.click();		
+			waitForElement = getElementTransitionLength(element);
+//			driver.manage().timeouts().implicitlyWait(waitForElement, TimeUnit.SECONDS);//doesn't pause
+//			driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);//doesn't pause
+//			new WebDriverWait(driver, waitForElement*3).until(new ExpectedCondition<Boolean>() {
+//				@Override
+//				public Boolean apply(WebDriver webDriver) {
+//					return false;//force the timeout in WebDriverWait(driver, timeout)
+//				}
+//			});
 		}else {
-					
+			//don't click anything
 		}
 	}
 
@@ -423,43 +461,78 @@ public class FitnesseTestFixture {
 	}
 
 	public void clickElementById() {
-		System.out.println("clickElementById(String id): elementId = " + elementId);
+//		System.out.println("clickElementById(String id): elementId = " + elementId);
 		WebElement element = driver.findElement(By.id(elementId));
 		element.click();		
 	}
 	
-	public void waitForPageStability() {
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
-			    .withTimeout(6, TimeUnit.SECONDS)
-			    .pollingEvery(2, TimeUnit.SECONDS)
-			    .ignoring(NoSuchElementException.class);
-
-		wait.until(new Function<JavascriptExecutor, Boolean>() 
-		{
-			public Boolean apply(JavascriptExecutor jseCopy) {
-				boolean pageStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
-				boolean jqueryStatus = (boolean)jseCopy.executeScript("return jQuery.active == 0");
-				boolean notAnimatedStatus;
-				if(elementId != null) {
-					notAnimatedStatus = !(boolean)jseCopy.executeScript("return $('#+"+elementId+"+').is(':animated')");
-				}else {
-					notAnimatedStatus = true;
+	public void waitForPageStability3() {
+		System.out.println("waitForPageStability3");	
+		if(xpath.length()>0) {
+			Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)			    
+					.withTimeout(4, TimeUnit.SECONDS)
+				    .pollingEvery((long) .5, TimeUnit.SECONDS)
+				    .ignoring(NoSuchElementException.class);
+			
+			wait.until(new Function<WebDriver, Boolean>()
+			{
+				public Boolean apply(WebDriver driverCopy) {		
+					boolean nonZeroWidth = checkIfElementHasNonZeroWidth(driverCopy);//never seems to be true
+					
+					if(nonZeroWidth) {
+						return true;
+					}else {
+						return false;
+					}
 				}
+			});
+		}
 
-				if(pageStatus && jqueryStatus && notAnimatedStatus) {
-					System.out.println("pageStatus: " + pageStatus + 
-							"\njqueryStatus: " + jqueryStatus +
-							"\nanimationStatus: " + notAnimatedStatus);
-					return true;
-				}else {
-					System.out.println("pageStatus: " + pageStatus + 
-							"\njqueryStatus: " + jqueryStatus +
-							"\nanimationStatus: " + notAnimatedStatus);
-					return false;
-				}
-			}
-		});	
+	}
+	
+	public boolean checkIfElementIsInsideWindowBounds(WebDriver driverCopy) {
+		System.out.println("checkIfElementIsInsideWindowBounds");
+		boolean inside = false;
+		boolean horizontallyContained = false;
+		boolean verticallyContained = false;
+		WebElement el = driverCopy.findElement(By.xpath(xpath));
+		Dimension windowDimension = driverCopy.manage().window().getSize();
+		float elementX = el.getRect().getX();
+		float elementY= el.getRect().getY();
+		float elementWidth = el.getRect().getWidth();
+		float elementHeight = el.getRect().getHeight();
+		
+		if(elementX<0 || elementX+elementWidth>windowDimension.width) {
+			horizontallyContained = false;
+		}else {
+			horizontallyContained = true;
+		}
+		
+		if(elementY<0 || elementY+elementHeight>windowDimension.height) {
+			verticallyContained = false;
+		}else {
+			verticallyContained = true;
+		}
+		
+		if(horizontallyContained && verticallyContained) {
+			inside = true;
+		}		
+		
+		return inside;
+	}
+	
+	public boolean checkIfElementHasNonZeroWidth(WebDriver driverCopy) {
+		
+		boolean nonzero = false;
+		WebElement el = driverCopy.findElement(By.xpath(xpath));
+		String width = el.getCssValue("width");
+		String trimmedWidth = width.substring(0,width.length()-2);
+		long elementWidth = (long)Double.parseDouble(trimmedWidth);
+		System.out.println("checkIfElementHasNonZeroWidth: " + xpath + ": " + elementWidth);
+		if(elementWidth>0) {//always seem to be zero (like the cross/hamburger was never pressed.)
+			nonzero = true;
+		}
+		return nonzero;		
 	}
 	
 	/***
@@ -474,7 +547,9 @@ public class FitnesseTestFixture {
 	public void takeScreenshot() {
 		if(enableScreenshot) {
 			//wait for page to be in a ready state and jquery.active to be 0
-			waitForPageStability();
+//			waitForPageStability();
+//			waitForPageStability2(xpath);
+//			waitForPageStability3();
 //			id++;
 			File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			Long timestamp = (new Timestamp(System.currentTimeMillis())).getTime();
@@ -513,8 +588,6 @@ public class FitnesseTestFixture {
 		//The below line should consistently default takeScreenshot as false
 		enableScreenshot = false;
 	}
-
-
 	
 	/***
 	 * Uses sikuli to wait for an image to appear before continuing with baseline/current screenshots and comparison
@@ -552,20 +625,21 @@ public class FitnesseTestFixture {
 		final Region r = s;
 		testSikuliFixture = new Function<String,Boolean>() {
 			public Boolean apply (String imageFileLocation){
-				try {
-					if(r.find(imageFileLocation)!=null) {
+//				try {
+//					if(r.find(imageFileLocation)!=null) {
+					if(r.exists(imageFileLocation)!=null) {
 						return true;
 					}else {
 						return false;
 					}
-				} 
-				catch (FindFailed e) {
-//					try {
-//						throw new FindFailed(imageFileLocation + " not found.");
-//					} catch (FindFailed e1) {
-						return false;
-//					}
-				}				
+//				} 
+//				catch (FindFailed e) {
+////					try {
+////						throw new FindFailed(imageFileLocation + " not found.");
+////					} catch (FindFailed e1) {
+//						return false;
+////					}
+//				}				
 			}	
 		};	
 	}
@@ -659,7 +733,7 @@ public class FitnesseTestFixture {
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
 
 			String scrollheight = (getPageHeight()*pageScrollPosition)+"";
-			System.out.println("Scrolling start: " + getPageYOffset());
+//			System.out.println("Scrolling start: " + getPageYOffset());
 			jse.executeScript("window.scrollBy(0,"+scrollheight+")", "");
 			
 //			Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
@@ -682,7 +756,7 @@ public class FitnesseTestFixture {
 //				}
 //			});	
 			
-			waitForPageStability();
+//			waitForPageStability();
 		}
 		//the reset to -1 is needed so that we can switch this functionality on and off in Fitnesse
 		pageScrollPosition = -1;
