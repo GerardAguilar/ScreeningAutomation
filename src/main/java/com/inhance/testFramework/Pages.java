@@ -1,5 +1,5 @@
 package com.inhance.testFramework;
-import java.awt.Image;
+
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +13,7 @@ import org.apache.poi.ss.usermodel.*;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Iterator;
 

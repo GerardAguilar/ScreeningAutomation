@@ -1,39 +1,32 @@
 package com.inhance.testFramework;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
-import javax.script.Invocable;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -41,13 +34,9 @@ import org.sikuli.script.FindFailed;
 import org.sikuli.script.ImagePath;
 import org.sikuli.script.Region;
 import org.sikuli.script.Screen;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 import com.google.common.base.Function;
 
-import junit.framework.Assert;
 
 /***
  * 
@@ -78,10 +67,17 @@ public class FitnesseTestFixture {
 	
 	public boolean takingBaselineSet;
 	public boolean makeALogFile;
-	
 	public String pageScrollPosition;
 	public boolean willClick;
 	public boolean willWaitFor;
+	public boolean checkVisibilityByClickability;
+	public boolean checkVisibilityByOpacity;
+	public boolean checkVisibilityBySelectability;
+	public boolean checkInvisibility;
+	public boolean checkVisibilityByVisibility;
+	public boolean checkVisibilityByWidth;
+	
+	public String chromeLocation;
 	
 	String currentDiffFilename;
 	int id;
@@ -90,9 +86,58 @@ public class FitnesseTestFixture {
 	
 	Long waitForElement;
 	//waitFactor multiplies the transition-duration of the element we're currently interacting with
-	float waitFactor;
+	long waitFactor;
 	//how much polling to do in the course of the wait 
 	float pollingFactor;
+	
+	public void setChromeLocation(String temp) {
+		chromeLocation = temp;
+	}
+	public String getChromeLocation() {
+		return chromeLocation;
+	}
+	
+	public void setCheckVisibilityByWidth(boolean temp) {
+		checkVisibilityByWidth = temp;
+	}
+	public boolean getCheckVisibilityByWidth() {
+		return checkVisibilityByWidth;
+	}
+	
+	public void setCheckVisibilityByVisbility(boolean temp) {
+		checkVisibilityByVisibility = temp;
+	}
+	public boolean getCheckVisibilityByVisbility() {
+		return checkVisibilityByVisibility;
+	}
+	
+	public void setCheckInvisibility(boolean temp) {
+		checkInvisibility = temp;
+	}
+	public boolean getCheckInvisibility() {
+		return checkInvisibility;
+	}
+	
+	public void setCheckVisibilityBySelectability(boolean temp) {
+		checkVisibilityBySelectability = temp;
+	}
+	public boolean getCheckVisibilityBySelectability() {
+		return checkVisibilityBySelectability;
+	}
+	
+	public void setCheckVisibilityByOpacity(boolean temp) {
+		checkVisibilityByOpacity = temp;
+	}
+	public boolean getCheckVisibilityByOpacity() {
+		return checkVisibilityByOpacity;
+	}
+	
+	public void setCheckVisibilityByClickability(boolean temp) {
+		checkVisibilityByClickability = temp;
+	}
+	public boolean getCheckVisibilityByClickability() {
+		return checkVisibilityByClickability;
+	}
 	
 	public void setWillClick(boolean temp) {
 		willClick = temp;
@@ -182,7 +227,6 @@ public class FitnesseTestFixture {
 	public String getXpath() {
 		return xpath;
 	}
-	
 
 	public boolean initialize(String home) throws Exception {
 		boolean setupFirefoxDriver = false;
@@ -228,7 +272,14 @@ public class FitnesseTestFixture {
 //	    driver.manage().window().setSize(new Dimension(1024, 768));
 //	    baseUrl = "http://www.google.com/";
 	    baseUrl = home;
+//	    baseUrl = "http://localhost:8024";
 	    navigateByAddress(baseUrl);
+	    System.out.println("Current Window Handle: " + driver.getWindowHandle() );
+	    System.out.println("Other handles: ");
+	    ArrayList<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+	    for(int i=0; i<windowHandles.size(); i++) {
+	    	System.out.println(windowHandles.get(i));
+	    }
 	    driver.manage().window().maximize(); 
 	    wait = new WebDriverWait(driver, 20);
 	    //make sure to right click the resources\images folder, select Build Path -> Include
@@ -251,7 +302,7 @@ public class FitnesseTestFixture {
         id = 0;
         pageScrollPosition = "";
         waitForElement = (long) 0;
-        waitFactor = 10;
+        waitFactor = 20;
         pollingFactor = 1; //the bigger the value the faster the polling
         
 	    return true;
@@ -355,30 +406,30 @@ public class FitnesseTestFixture {
 //		}
 //		
 //	}
-	public boolean waitForElementToAppear() {
-		boolean appeared = false;
-		String xpathCopy = xpath;
-		WebElement el = driver.findElement(By.xpath(xpath));
-		Wait<WebElement> wait = new FluentWait<WebElement>(el)
-			    .withTimeout(6, TimeUnit.SECONDS)
-			    .pollingEvery(2, TimeUnit.SECONDS)
-			    .ignoring(NoSuchElementException.class);
-
-		wait.until(new Function<WebElement, Boolean>() 
-		{
-			public Boolean apply(WebElement elCopy) {//shallow copy of address
-			//wait until element is available		
-				boolean isDisplayed = elCopy.isDisplayed();
-				boolean hasOpacity = false;
-				//what if Opacity is not present in CSS?
-				if(elCopy.getCssValue("opacity")=="1"){
-					hasOpacity = true;
-				}
-				return isDisplayed&&hasOpacity;				
-		}
-		});	
-		return appeared;		
-	}
+//	public boolean waitForElementToAppear() {
+//		boolean appeared = false;
+//		String xpathCopy = xpath;
+//		WebElement el = driver.findElement(By.xpath(xpath));
+//		Wait<WebElement> wait = new FluentWait<WebElement>(el)
+//			    .withTimeout(6, TimeUnit.SECONDS)
+//			    .pollingEvery(2, TimeUnit.SECONDS)
+//			    .ignoring(NoSuchElementException.class);
+//
+//		wait.until(new Function<WebElement, Boolean>() 
+//		{
+//			public Boolean apply(WebElement elCopy) {//shallow copy of address
+//			//wait until element is available		
+//				boolean isDisplayed = elCopy.isDisplayed();
+//				boolean hasOpacity = false;
+//				//what if Opacity is not present in CSS?
+//				if(elCopy.getCssValue("opacity")=="1"){
+//					hasOpacity = true;
+//				}
+//				return isDisplayed&&hasOpacity;				
+//		}
+//		});	
+//		return appeared;		
+//	}
 	
 //public void initializeTestFixtureWeb(Function<WebElement,Boolean> testFixture) {	
 //	testFixture = new Function<WebElement,Boolean>(){
@@ -390,28 +441,75 @@ public class FitnesseTestFixture {
 //}
 	
 	//Wait for image to appear
-	public void locateElementInPageByXpathAndWaitForNonZeroWidth() {
-		System.out.println("locateElementInPageByXpathAndWaitForNonZeroWidth: " + getNavigationPathAltEventId() + xpath.length() + willWaitFor);	
+	public void waitForElement() {
+//		System.out.println("locateElementInPageByXpathAndWaitForNonZeroWidth: " + getNavigationPathAltEventId() + xpath.length() + willWaitFor);	
 		if(xpath.length()>0 && willWaitFor) {
 			System.out.println("actually locateElementInPageByXpathAndWaitForNonZeroWidth: " + xpath + "_wait");
 			addActionToNavigationPathAlternate(xpath + "_wait");			
+
 			Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)			    
-					.withTimeout(6, TimeUnit.SECONDS)
+					.withTimeout(waitFactor, TimeUnit.SECONDS)
 				    .pollingEvery((long) .5, TimeUnit.SECONDS)
 				    .ignoring(NoSuchElementException.class);
 			
-			wait.until(new Function<WebDriver, Boolean>()
-			{
-				public Boolean apply(WebDriver driverCopy) {		
-					boolean nonZeroWidth = checkIfElementHasNonZeroWidth(driverCopy);//never seems to be true
-					
-					if(nonZeroWidth) {
-						return true;
-					}else {
-						return false;
+			
+			//wait for nonZeroWidth
+			if(checkVisibilityByWidth) {
+				wait.until(new Function<WebDriver, Boolean>()
+				{
+					public Boolean apply(WebDriver driverCopy) {		
+						boolean nonZeroWidth = checkIfElementHasNonZeroWidth(driverCopy);
+						
+						if(nonZeroWidth) {
+							return true;
+						}else {
+							return false;
+						}
 					}
+				});
+			}
+
+			//wait for element to be clickable
+			if(checkVisibilityByClickability) {
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+			}
+
+			//wait for element to be opaque
+			if(checkVisibilityByOpacity) {
+				final String xpathCopy = xpath;
+				wait.until(new Function<WebDriver, Boolean>() 
+				{
+					public Boolean apply(WebDriver driverCopy) {//shallow copy of address
+					//wait until element is available	
+						WebElement elCopy = driver.findElement(By.xpath(xpathCopy));
+						boolean hasOpacity = false;
+						//what if Opacity is not present in CSS?
+						if(elCopy.getCssValue("opacity")=="1"){
+							hasOpacity = true;
+						}
+						return hasOpacity;				
 				}
-			});
+				});	
+			}
+			
+			//wait for element to be selectable
+			if(checkVisibilityBySelectability) {
+				wait.until(ExpectedConditions.elementToBeSelected(By.xpath(xpath)));
+			}
+			
+			//wait for element to be visible
+			if(checkVisibilityByVisibility) {
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+			}
+
+			//wait for element to be invisible
+			if(checkInvisibility) {
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpath)));
+			}
+			
+			//wait for ...
+			
+			
 			xpath = "";
 			willWaitFor = false;
 		}
@@ -419,7 +517,7 @@ public class FitnesseTestFixture {
 	}
 	
 	//Click and then wait for transition to end
-	public void clickElementByXpathAndWaitForReadyState() {
+	public void clickElementByXpath() {
 		System.out.println("clickElementByXpathAndWaitForReadyState: " + xpath);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;		
 		if(xpath.length()>0 && willClick) {
@@ -550,7 +648,7 @@ public class FitnesseTestFixture {
 		String trimmedWidth = width.substring(0,width.length()-2);
 		long elementWidth = (long)Double.parseDouble(trimmedWidth);
 //		System.out.println("checkIfElementHasNonZeroWidth: " + xpath + ": " + elementWidth);
-		if(elementWidth>0) {//always seem to be zero (like the cross/hamburger was never pressed.)
+		if(elementWidth>0) {
 			nonzero = true;
 		}
 		return nonzero;		
@@ -565,6 +663,7 @@ public class FitnesseTestFixture {
 	 * Updates baseline OR compares current with baseline
 	 * Outputs into C:\\baseline or C:\\current\\-instanceStartTime- (for current and diffs)
 	 */
+	@SuppressWarnings("unused")
 	public void takeScreenshot() {
 		if(enableScreenshot) {
 			//wait for page to be in a ready state and jquery.active to be 0
@@ -597,7 +696,12 @@ public class FitnesseTestFixture {
 				try {
 					FileUtils.copyFile(screenshotFile, new File(currentFilename));					
 					currentShot = ImageIO.read(screenshotFile);
-					baselineShot = ImageIO.read(new File(newFilename));
+					File temp = new File(newFilename);
+					if(temp.exists()) {
+						baselineShot = ImageIO.read(temp);
+					}else {
+						baselineShot = null;
+					}
 					compareBaseLineWithImmediateScreenshot(baselineShot,currentShot,currentDiffFilename);
 
 				} catch (IOException e) {
@@ -688,42 +792,70 @@ public class FitnesseTestFixture {
 	 * @param img2
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	public static BufferedImage getDifferenceImage(BufferedImage img1, BufferedImage img2) {
-	    int width1 = img1.getWidth(); // Change - getWidth() and getHeight() for BufferedImage
+	    BufferedImage outImg;
 	    int width2 = img2.getWidth(); // take no arguments
-	    int height1 = img1.getHeight();
 	    int height2 = img2.getHeight();
-	    if ((width1 != width2) || (height1 != height2)) {
-	        System.err.println("Error: Images dimensions mismatch");
-	        System.exit(1);
-	    }
-
-	    // NEW - Create output Buffered image of type RGB
-	    BufferedImage outImg = new BufferedImage(width1, height1, BufferedImage.TYPE_INT_RGB);
-
-	    // Modified - Changed to int as pixels are ints
-	    int diff;
-	    int result; // Stores output pixel
-	    for (int i = 0; i < height1; i++) {
-	        for (int j = 0; j < width1; j++) {
-	            int rgb1 = img1.getRGB(j, i);
-	            int rgb2 = img2.getRGB(j, i);
-	            int r1 = (rgb1 >> 16) & 0xff;
-	            int g1 = (rgb1 >> 8) & 0xff;
-	            int b1 = (rgb1) & 0xff;
-	            int r2 = (rgb2 >> 16) & 0xff;
-	            int g2 = (rgb2 >> 8) & 0xff;
-	            int b2 = (rgb2) & 0xff;
-	            diff = Math.abs(r1 - r2); // Change
-	            diff += Math.abs(g1 - g2);
-	            diff += Math.abs(b1 - b2);
-	            diff /= 3; // Change - Ensure result is between 0 - 255
-	            // Make the difference image gray scale
-	            // The RGB components are all the same
-	            result = (diff << 16) | (diff << 8) | diff;
-	            outImg.setRGB(j, i, result); // Set result
+	    //if there's no baseline image
+	    if(img1==null) {
+	    	outImg = new BufferedImage(width2, height2, BufferedImage.TYPE_INT_RGB);
+	        for(int i=0; i<height2; i++) {
+	        	for(int j=0; j<width2; j++) {
+	        		int lightGrey =  Color.LIGHT_GRAY.getRGB();
+	        		outImg.setRGB(j, i, lightGrey);	   
+	        	}
 	        }
+	    }else {
+		    int width1 = img1.getWidth(); // Change - getWidth() and getHeight() for BufferedImage
+		    int height1 = img1.getHeight();
+	    	
+	    	//if the screenshot image does not have the same dimensions as the baseline image
+	    	if ((width1 != width2) || (height1 != height2)) {
+	    		//use the smaller of each dimension to create the outimg
+	    		int smallerWidth = Math.min(width1,  width2);
+	    		int smallerHeight = Math.min(height1, height2);
+	    		outImg = new BufferedImage(smallerWidth, smallerHeight, BufferedImage.TYPE_INT_RGB);
+		        System.err.println("Error: Images dimensions mismatch");
+		        //change diff output to grey
+		        for(int i=0; i<smallerHeight; i++) {
+		        	for(int j=0; j<smallerWidth; j++) {
+//		        		int white = img1.getRGB(j,i)*100;
+		        		int blue =  Color.BLUE.getRGB();
+		        		outImg.setRGB(j, i, blue);	   
+		        	}
+		        }
+		    //finally, if the baseline image exists and the screenshot image has the same dimensions.
+		    }else {
+		    	outImg = new BufferedImage(width1, height1, BufferedImage.TYPE_INT_RGB);
+			    // Modified - Changed to int as pixels are ints
+			    int diff;
+			    int result; // Stores output pixel
+			    for (int i = 0; i < height1; i++) {
+			        for (int j = 0; j < width1; j++) {
+			            int rgb1 = img1.getRGB(j, i);
+			            int rgb2 = img2.getRGB(j, i);
+			            int r1 = (rgb1 >> 16) & 0xff;
+			            int g1 = (rgb1 >> 8) & 0xff;
+			            int b1 = (rgb1) & 0xff;
+			            int r2 = (rgb2 >> 16) & 0xff;
+			            int g2 = (rgb2 >> 8) & 0xff;
+			            int b2 = (rgb2) & 0xff;
+			            diff = Math.abs(r1 - r2); // Change
+			            diff += Math.abs(g1 - g2);
+			            diff += Math.abs(b1 - b2);
+			            diff /= 3; // Change - Ensure result is between 0 - 255
+			            // Make the difference image gray scale
+			            // The RGB components are all the same
+			            result = (diff << 16) | (diff << 8) | diff;
+			            outImg.setRGB(j, i, result); // Set result
+			        }
+			    }
+		    }
 	    }
+	    
+
+	    
 
 	    // Now return
 	    return outImg;

@@ -1,0 +1,730 @@
+//From AutomationTestSeleniumFormatted.java
+
+//  public void given_PageIsHome_When_LogoIsPressed_Then_PageShouldBeHome() {         
+//      //Logo
+//      WebElement element = driver.findElement(By.id("logo"));
+//      element.click();
+//      String actualUrl = driver.getCurrentUrl();
+//      String expectedUrl = "http://www.inhance.com/";
+//      Assert.assertEquals(actualUrl, expectedUrl);
+//  }
+//  
+//  public void given_PageIsHome_When_PageIsLoaded_Then_BackgroundVideoSrcShouldBeAsGiven() {         
+//      //Background
+//      WebElement element = driver.findElement(By.id("background_video"));
+//      String actualSrc = element.getAttribute("src");
+//      String expectedSrc = "http://www.inhance.com/Inhance-library/mp4/cinematic_wallpaper_blue_v04-default.mp4";
+//      Assert.assertEquals(actualSrc, expectedSrc);  
+//  }
+//
+//  public void given_PageIsHome_When_BackgroundIsVideo_Then_BackgroundVideoShouldPlay() {       
+//      WebElement element = driver.findElement(By.id("background_video"));
+//      float currentPlayTime = Float.parseFloat(element.getAttribute("currentTime"));
+//      Assert.assertTrue(currentPlayTime>0);
+//  }
+
+
+//  @AfterMethod
+//  public void takeScreenShotOnFailure(ITestResult testResult) throws IOException { 
+//      System.out.println("takeScreenShotOnFailure()");
+//      if (testResult.getStatus() == ITestResult.FAILURE) { 
+//          File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); 
+//          Long timestamp = (new Timestamp(System.currentTimeMillis())).getTime();
+//          FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot"+ timestamp +".png"));
+//      } 
+//  }
+
+//In Constructor
+//      String path = AutomationTestSeleniumFormatted.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+//      String decodedPath;
+//      try {
+//          decodedPath = URLDecoder.decode(path, "UTF-8");
+//          ImagePath.setBundlePath(decodedPath);
+//          System.out.println("Decoded Path: " + decodedPath);
+//          System.out.println("Bundle Path: " + ImagePath.getBundlePath());
+//      } catch (UnsupportedEncodingException e) {
+//          // TODO Auto-generated catch block
+//          e.printStackTrace();
+//      }       
+
+//      System.out.println("Bundle Path: " + ImagePath.getBundlePath());
+//      ImagePath.add(new ClassPathResource("imgs").getURL());//ClassPathResource is Java Spring specific
+//      ImagePath.add(AutomationTestSeleniumFormatted.class.get"\\images\\");
+//      ImagePath.add("InhanceWebsiteTestAutomation"+"/imgs");
+
+//      workBackground = "/images/1518131732322.png";
+//      ImagePath.add(AutomationTestSeleniumFormatted.class.getCanonicalName()+workBackground);
+//      aboutBackground = "/images/1518138066238.png";
+//      ImagePath.add(AutomationTestSeleniumFormatted.class.getCanonicalName()+aboutBackground);
+//      newsBackground ="/images/1518138775741.png";
+//      ImagePath.add(AutomationTestSeleniumFormatted.class.getCanonicalName()+newsBackground);
+//      contactBackground = "/images/1518138158909.png";
+//      ImagePath.add(AutomationTestSeleniumFormatted.class.getCanonicalName()+contactBackground);
+//      System.out.println("Hello "+ImagePath.getBundlePath());
+        
+//      workBackground = "C:\\InhanceWebsiteTestAutomation.jar\\1518131732322.png";
+//      aboutBackground = "C:\\InhanceWebsiteTestAutomation.jar\\1518138066238.png";
+//      newsBackground ="C:\\InhanceWebsiteTestAutomation.jar\\1518138775741.png";
+//      contactBackground = "C:\\InhanceWebsiteTestAutomation.jar\\1518138158909.png";
+        
+//      workBackground = ImagePath.getBundlePath() + "/images/1518131732322.png";//for some reason, jar files error out on loading these images
+//      aboutBackground = ImagePath.getBundlePath() + "/images/1518138066238.png";
+//      newsBackground = ImagePath.getBundlePath() + "/images/1518138775741.png";
+//      contactBackground = ImagePath.getBundlePath() + "/images/1518138158909.png";        
+
+// In setUp()
+//      System.setProperty("webdriver.gecko.driver", "C:\\geckodriver-v0.19.1-win64\\geckodriver.exe");
+        
+//      String path = MainOne.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+//      String geckodriverLocation = URLDecoder.decode(path, "UTF-8");
+//      URL inputUrl = getClass().getResource(geckodriverLocation+"/geckodriver.exe");
+//      File dest = new File("C:/");
+//      FileUtils.copyURLToFile(inputUrl, dest);
+//        driver = new FirefoxDriver();//already at the bottom
+        
+//      String path = MainOne.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+//      String geckodriverLocation = URLDecoder.decode(path, "UTF-8");
+//      File scrFile = geckodriverLocation+"/geckdriver.exe";
+//      Long timestamp = (new Timestamp(System.currentTimeMillis())).getTime();
+//      System.out.println("Taking screenshot at: "+timestamp);
+//      try {
+//          FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot"+ timestamp +".png"));
+////            FileHandler.copy(scrFile, new File("c:\\tmp\\screenshot.png"));
+//      } catch (IOException e) {
+//          e.printStackTrace();
+//      }
+        
+//      String path = MainOne.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+//      String geckodriverLocation;
+//      geckodriverLocation = URLDecoder.decode(path, "UTF-8");
+//      System.setProperty("webdriver.gecko.driver", geckodriverLocation+"/geckodriver.exe");
+        
+//      String path = MainOne.class.getCanonicalName()+"/images";
+//      String geckodriverLocation = URLDecoder.decode(path, "UTF-8");
+//      System.setProperty("webdriver.gecko.driver", geckodriverLocation + "/geckodriver.exe");
+
+//From tests
+//  protected void checkTopBar() {
+//      WebElement element = driver.findElement(By.id("menu_cont"));
+//      element.isDisplayed();
+//  }
+    
+//  protected void checkInhanceLogo() {
+//      WebElement element = driver.findElement(By.id("logo"));
+//      org.sikuli.script.Pattern pattern = new org.sikuli.script.Pattern(logoButtonHighlighted).similar(0.01f);//clashes with Pattern from java.util.regex
+//      element.isDisplayed();
+//      
+//      //Hover and check highlight
+//      Actions builder = new Actions(driver);
+//      builder.moveToElement(element).perform();
+//      try {
+//            s.wait(pattern,waitForDynamicElement);
+//            assert(s.exists(pattern)!=null);            
+//      }catch(FindFailed e) {
+//          takeScreenshot();
+//          e.printStackTrace();
+//          Assert.fail();
+//      }
+//  }
+//From checkHomeBackground()
+//      try {
+////            assert(currentPlayTime==0);
+////            Assert.assertTrue(currentPlayTime>0);
+////            Assert.assertTrue(false);
+//      }catch(AssertionError e) {
+//          takeScreenshot();   
+//      }
+//From checkHomeFacebookButton()
+//      Set<String> windowHandles = driver.getWindowHandles();
+//      //the if here is there to deal with times when the driver's tab focus isn't consistent 
+//      if(!(driver.getTitle().equals(homePageAddress))) {
+//          for(String winHandle : windowHandles){//gets the last opened window
+//              //focuses the driver onto the last opened tab
+//              driver.switchTo().window(winHandle);
+//          }
+//      }
+//---
+//      //TODO need to check background of case study
+//      driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+//      try {
+//          Thread.sleep(5000);
+//      } catch (InterruptedException e) {
+//          // TODO Auto-generated catch block
+//          e.printStackTrace();
+//      }
+//      xpathExpression = "//html//div[@id='cs']/div[2]/div[2]";
+//      element = driver.findElement(By.xpath(xpathExpression));
+//      while(!(checkIfOnTopOfPage()));//this has the possibility of hanging
+//      wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("main:not([style*=\"margin-top\"])")));
+//---
+//        //the problem here is that the move to element moves to the image while it is still being moved by the autoscroll
+//      wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathExpression)));
+//      driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);//implicit waits are set for the life of the driver
+//      System.out.println("Finished implicitly waiting");
+//      Thread.sleep(3000);
+
+
+//      catch (InterruptedException e) {
+//          // TODO Auto-generated catch block
+//          e.printStackTrace();
+//      }
+//---
+//the below functions require dependencies on previous functions but the TestNG execution sequence is not top to bottom. 
+    //Unless we include priorities and dependencies. (Would allow us to view TestNG results)
+    //Another option is to make each test completely independent of the other (can still be modular)
+    
+//  @Test(priority = 0)
+//  protected void homeTest() {
+//      //TODO
+//      checkHomeBackground();      
+//      checkInhanceLogoHome();
+//      checkHamburgerMenu();
+//      checkHamburgerMenuWork();
+//      checkHamburgerMenuAbout();
+//      checkHamburgerMenuNews();
+//      checkHamburgerMenuContact();
+//      checkDownArrow();
+//      clickDownArrow();
+//      checkHomeBackground2();
+//      checkHomeBackground3();
+//      checkHomeBackground4();
+//  }
+//  @Test(priority = 1)
+//  protected void workSmokeTest() {
+//      clickHamburgerButton();
+//      clickWorkButton();
+//      checkWorkBackground();
+//      clickBackButton();      
+//  }
+//  @Test(priority = 1)
+//  protected void aboutSmokeTest() {
+//      checkHamburgerButton();
+//      clickHamburgerButton();
+//      clickAboutButton();
+//      checkAboutBackground();
+//      clickBackButton();
+//  }
+//  @Test(priority = 1)
+//  protected void newsSmokeTest() {
+//      checkHamburgerButton();
+//      clickHamburgerButton();
+//      clickNewsButton();
+//      checkNewsBackground();
+//      clickBackButton();
+//  }
+//  @Test(priority = 1)
+//  protected void contactSmokeTest() {
+//      checkHamburgerButton();
+//      clickHamburgerButton();
+//      clickContactButton();
+//      checkContactBackground();
+//      clickBackButton();
+//  }
+
+//  protected void headerTest() {//difficult to do with the movie background for the home page
+//      checkTopBar();
+//      checkHamburgerButton();
+//      checkHamburgerMenu();
+//      checkHamburgerMenuHighlights();
+//  }
+//---
+//      //clashes with Pattern from java.util.regex
+//      org.sikuli.script.Pattern pattern = new org.sikuli.script.Pattern(logoButtonHomeHighlighted).similar(0.5f);
+//      try {
+//          element.isDisplayed();
+//            s.wait(pattern,waitForDynamicElement);   
+//            element.click();
+//            waitForScrollToFinish();
+//      }catch(FindFailed e) {
+//          takeScreenshot();
+//          e.printStackTrace();
+//          Assert.fail();
+//      }   
+//      driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//---
+//      JavascriptExecutor executor = (JavascriptExecutor) driver;
+//      Wait<JavascriptExecutor, Boolean> fluentWait = new FluentWait<JavascriptExecutor, Boolean>(executor)
+//              .withTimeout(30, TimeUnit.SECONDS)
+//              .pollingEvery(5, TimeUnit.SECONDS)
+//              .ignoring(NoSuchElementException.class);
+//      Boolean scrolling = wait.until(new Function<JavascriptExecutor, Boolean>(){
+//          public Boolean apply(javascriptExecutor executor) {
+//              return true;
+//          }
+//      });
+//---
+//  protected void waitForScrollToFinish(int y) {       
+//      Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(executor)
+//              .withTimeout(6, TimeUnit.SECONDS)
+//              .pollingEvery(1, TimeUnit.SECONDS)
+//              .ignoring(NoSuchElementException.class);
+//
+//      wait.until(new Function<JavascriptExecutor, Boolean>() 
+//      {
+//          public Boolean apply(JavascriptExecutor executor) {
+//              boolean scrollStatus = executor.executeScript("return document.readyState").toString().equals("complete");
+//              if(scrollStatus) {
+//                  System.out.println("Finally: " + getPageYOffset());
+//                  return true;
+//              }else {
+//                  System.out.println("Not Zero: " + getPageYOffset());
+//                  return false;
+//              }
+//          }
+//      });     
+//  }
+//---
+//      graphics2D.drawRenderedImage(originalImage, at);
+//      AffineTransform at = AffineTransform.getScaleInstance(2.0, 2.0);        
+//      drawer.drawImage(originalImage, 0, 0, null);
+
+//          BufferedImage newImage = new BufferedImage(
+//                  in.getWidth(), in.getHeight(), BufferedImage.TYPE_INT_ARGB);
+//          Graphics2D g = newImage.createGraphics();
+//          g.drawImage(in, 0, 0, null);
+//          g.dispose();    
+
+//  @BeforeClass(alwaysRun = true)
+//  public void setUp() throws Exception {  
+//      ClassLoader classLoader = getClass().getClassLoader();
+//        URL resource = classLoader.getResource("geckodriver.exe");
+//        String os = System.getProperty("os.name").toLowerCase();
+//        
+//        //Make a directory to place Drivers in
+//        //This is used for later where we want multiple drivers
+//        File f = new File("Driver");
+//        if (!f.exists()) {
+//            f.mkdirs();
+//        }
+//        
+//        File geckodriver;
+////        geckodriver = new File("Driver" + "\\geckodriver.exe"); 
+//        //In the case of a MAC, we may need to copy the tar.gz file and then reference the resulting geckodriver application
+//        if(os.contains("mac")) {
+//            geckodriver = new File(System.getProperty("user.dir") + "/geckodriver");  
+//        }else {
+//          geckodriver = new File("Driver" + "\\geckodriver.exe"); 
+//            if (!geckodriver.exists()) {
+//              geckodriver.createNewFile();
+//                FileUtils.copyURLToFile(resource, geckodriver);
+//            }
+//        }
+//
+//        String geckodriverLocation = geckodriver.getAbsolutePath();        
+//        System.setProperty("webdriver.gecko.driver", geckodriverLocation);
+//        
+//      driver = new FirefoxDriver();
+//      baseUrl = "https://www.google.com";
+////        baseUrl = "https://www.google.com/imghp?hl=en&tab=wi";
+////        baseUrl = "https://app.mavenlink.com/login?from_redirect=true";
+////        baseUrl = "https://myapps.paychex.com/landing_remote/login.do?TYPE=33554433&REALMOID=06-fd3ba6b8-7a2f-1013-ba03-83af2ce30cb3&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=09PZJoiHr8jiAF1z4DL6SopY5OyRzoKSeZ4yIhpJe7nkRdeIwtlMrg0rd7X3FRDM&TARGET=-SM-https%3a%2f%2fmyapps.paychex.com%2flanding_remote%2findex.do";
+//      navigateByAddress(baseUrl);
+//      driver.manage().window().maximize(); 
+////        driver.manage().window().setSize(new Dimension(800, 600));
+//      wait = new WebDriverWait(driver, 20);
+//      
+//      //make sure to right click the resources\images folder, select Build Path -> Include
+//      ImagePath.add(SimpleFrameworkWithWaitAndImageChecker.class.getCanonicalName()+"/images");
+//      
+////        pageList.add(new Pages("/Baseline.xlsx"));
+//      
+//      pageArrayList = new ArrayList<Pages>();
+//      pageArrayList.add(new Pages("/Baseline.xlsx"));
+//      
+//      diffCount = 0;
+//  }
+
+//                  FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot"+ timestamp +".png"));
+
+//  
+//  public void imageButtonTest() {
+//      clickElementBySikulixReferenceImageInLocalArea("Im feeling lucky button.PNG", s);
+//  }
+//  //      String verificationErrorString = verificationErrors.toString();
+//      if (!"".equals(verificationErrorString)) {
+//          fail(verificationErrorString);
+//      }
+
+
+//      newXpath.replace("\\", "^");
+//      return newXpath;
+
+//  
+//  public void clickElementBySikulixReferenceImage(String imageFileLocation) {
+//      System.out.println("clickElementBySikulixReferenceImage(String imageFileLocation): imageFileLocation = " + imageFileLocation);
+//      try {
+//          s.click(imageFileLocation, 0);
+//      } catch (FindFailed e) {
+//          // TODO Auto-generated catch block
+//          e.printStackTrace();
+//      }
+//  }
+//  
+//  public void clickElementBySikulixReferenceImageInLocalArea(String imageFileLocation, Region region) {
+//      System.out.println("clickElementBySikulixReferenceImage(String imageFileLocation): \nimageFileLocation = " + imageFileLocation + "\nregion = " + region.toString());
+//      try {
+//          region.click(imageFileLocation, 0);
+//      } catch (FindFailed e) {
+//          // TODO Auto-generated catch block
+//          e.printStackTrace();
+//      }
+//  }
+//  
+//  public Region generateRegion(int leftMostXCoordinate, int topMostYCoordinate, int regionWidth, int regionHeight) {
+//      Region r = new Region(leftMostXCoordinate, topMostYCoordinate, regionWidth, regionHeight);
+//      return r;
+//  }   
+
+//          String idWithLeadingZeroes = StringUtils.leftPad(id+"", 3, '0');
+//          String newFilename = "c:\\baseline\\" + idWithLeadingZeroes + navPath + ".png";
+//          String currentFilename = "c:\\current"+instanceStartTime+"\\"+ idWithLeadingZeroes + navPath +".png";
+//          String currentDiffFilename = "c:\\current"+instanceStartTime+"\\"+ idWithLeadingZeroes + navPath +"_diff.png";
+            
+            
+//          String currentDiffFilename = "localhost/files/"+instanceStartTime+"/"+ navPath +"_diff.png";
+
+//                  FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot"+ timestamp +".png"));
+
+//                  Assert.fail();
+
+    
+//  public String image() {
+////        String htmlImage = "<div><img src=\"" + "https://codecademy-production.s3.amazonaws.com/profile_thumbnail/5168e70f720111040f002066_65523160.jpg?AWSAccessKeyId=AKIAJKZ7QVQFD72XNJ3Q&Expires=1525740677&Signature=t3Ui9kI8MyA%2B%2Fyj8vM38QIIhUlg%3D" + "\"/></div>";
+////        String htmlImage = "<div><img src=\"" + "http://localhost/files/HamburgerMenuModified.PNG" + "\"/></div>";
+//      String htmlImage="file:///C:/Users/gaguilar/Downloads/Capture.PNG";
+//      String elementId="1";
+//      return "<div><img id= "+elementId+" src=\"" + htmlImage + "\"/></div>";
+//  }
+    
+//  public void image() {
+//      showImageInFitnesseThroughJavascript();
+//  }
+//  
+//  public void image() {
+//      
+//  }
+//  
+//  public void displayDiff() {
+//      
+//  }
+
+    /***
+     * To get away from using a local webserver, I can try using javascript to create IMG element, then appent the IMG to Fitnesse page
+     * For fitnesse, we'll need to have 2 columns. 
+     * The first column is to set the ID of the cell
+     * The second column is to call the below JS method to populate the above mentioned cell
+     */
+//  public void showImageInFitnesseThroughJavascript() {
+        //load image
+        //append to
+//      String script = "var img = document.createElement(\"img\");" +
+//                      "var imgSocket = document.getElementById(\"1\");" +
+//                      "img.src = window.URL.createObjectURL(C:\\Users\\gaguilar\\Downloads\\Capture.png);" +
+//                      "img.height = 200;" +
+//                      "img.onload = function() {window.URL.revokeObjectURL(this.src);}" +
+//                      "imgSocket.appendChild(img);";
+        
+        
+//      String script = "window.URL = window.URL || window.webkitURL;"+ 
+//              "var img = document.createElement(\"img\");"+
+//              "var imgSocket = document.getElementById(\"1\");"+
+//              "img.src = window.URL.createObjectURL(\"C:\\Users\\gaguilar\\Downloads\\Capture.png\");";
+//      
+//      ((JavascriptExecutor) driver).executeScript(script);
+//      
+//  }
+
+//      //java.lang.Long cannot be cast to java.lang.Double
+//      Object oVal = executor.executeScript("return window.pageYOffset;");
+//      Double dVal = (Double) oVal;
+//      Long lVal = dVal.longValue();
+//      return lVal;
+        
+//      //java.lang.Double cannot be cast to java.lang.Long
+//      Object oVal = executor.executeScript("return window.pageYOffset;");
+//      Long lVal = (Long) oVal;
+//      return lVal;
+        
+//      //java.lang.Double cannot be cast to java.lang.Long
+//      Object oVal = executor.executeScript("return window.pageYOffset;");
+//      long lVal = (long) oVal;
+//      return lVal;
+        
+//      //java.lang.Long cannot be cast to java.lang.Double
+//      Object oVal = executor.executeScript("return window.pageYOffset;");
+//      Long lVal = new Double((double) oVal).longValue();
+//      return lVal;
+        
+//      //java.lang.Double cannot be cast to java.lang.Long
+//      Object oVal = executor.executeScript("return window.pageYOffset;");
+//      Long lVal = new Double((Long) oVal).longValue();
+//      return lVal;
+        
+//      //java.lang.NumberFormatException: For input string: "750.4000244140624"
+//      Object oVal = executor.executeScript("return window.pageYOffset;");//maybe javascript has a better way to handle this?
+//      String sVal = oVal.toString();
+////        Long lVal = Long.valueOf(sVal);
+//      Long lVal = Long.parseLong(sVal);
+//      return lVal;
+        
+        //Yay, below code does not throw exceptions for Fitnesse to worry about
+        //Nope, still does: java.lang.Double cannot be cast to java.lang.Long
+//      Long lVal = (Long) executor.executeScript("return document.documentElement.scrollTop");
+//      return lVal;
+
+//  
+//  public void clickElementById(String id) {
+//      System.out.println("clickElementById(String id): id = " + id);
+//      WebElement element = driver.findElement(By.id(id));
+//      element.click();        
+//  }
+
+//          String scrollheight = (Integer.parseInt(fullScreenPageHeight)*x)+"";
+//          String scrollheight = (fullScreenPageHeight*x)+"";
+
+//          addActionToNavigationPath("s"+pageScrollPosition);
+
+//      //hardcoded wait :(
+//      //waitForElement is a global variable
+//      try {
+//          Thread.sleep(waitForElement*1000*10);//pauses but we really shouldn't use this, we should use explicit waits, but we don't have what we want to wait for solidly in place
+//      } catch (InterruptedException e) {
+//          // TODO Auto-generated catch block
+//          e.printStackTrace();
+//      }   
+
+public void waitForPageStability() {
+//      
+//      //hardcoded wait :(
+//      try {
+//          Thread.sleep(waitForElement*1000*10);//pauses but we really shouldn't use this, we should use explicit waits, but we don't have what we want to wait for solidly in place
+//      } catch (InterruptedException e) {
+//          // TODO Auto-generated catch block
+//          e.printStackTrace();
+//      }
+//      
+//      //fluent wait
+//      JavascriptExecutor jse = (JavascriptExecutor)driver;
+//      Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
+//              .withTimeout(6, TimeUnit.SECONDS)
+//              .pollingEvery(2, TimeUnit.SECONDS)
+//              .ignoring(NoSuchElementException.class);    
+//      
+//      wait.until(new Function<JavascriptExecutor, Boolean>() 
+//      {
+//          public Boolean apply(JavascriptExecutor jseCopy) {
+//              boolean pageStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
+//              boolean jqueryStatus = (boolean)jseCopy.executeScript("return jQuery.active == 0");
+//              boolean notAnimatedStatus;
+//              if(elementId != null) {
+//                  notAnimatedStatus = !(boolean)jseCopy.executeScript("return $('#+"+elementId+"+').is(':animated')");
+//              }else {
+//                  notAnimatedStatus = true;
+//              }
+//
+//              if(pageStatus && jqueryStatus && notAnimatedStatus) {
+//                  System.out.println("pageStatus: " + pageStatus + 
+//                          "\njqueryStatus: " + jqueryStatus +
+//                          "\nanimationStatus: " + notAnimatedStatus);
+//                  return true;
+//              }else {
+//                  System.out.println("pageStatus: " + pageStatus + 
+//                          "\njqueryStatus: " + jqueryStatus +
+//                          "\nanimationStatus: " + notAnimatedStatus);
+//                  return false;
+//              }
+//          }
+//      }); 
+//  }
+//  
+//  
+//  //I don't think the timeout should be based on a factor of the transition duration (which seems to be very short)
+//  public void waitForPageStability2(String targetXpath) {
+//      final String target = targetXpath;
+////        long pageStabilityWait = (long) (waitForElement*waitFactor*1000);
+//      long pageStabilityWait = (long) (6);
+//      long pageStabilityPolling = (long) pollingFactor;
+//              
+//      //fluent wait
+//      //wait for: pageStatus == readyState
+//      //wait for: jQuery.active == 0
+//      //wait for: element.isDisplayed()
+//      //wait for: !element.isAnimated
+//      //wait for: el.getCssValue("opacity")==1
+//      Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+//              .withTimeout(pageStabilityWait, TimeUnit.SECONDS)
+//              .pollingEvery(pageStabilityWait/pageStabilityPolling, TimeUnit.SECONDS)
+//              .ignoring(NoSuchElementException.class);    
+//      
+//      wait.until(new Function<WebDriver, Boolean>() 
+//      {
+//          public Boolean apply(WebDriver driverCopy) {
+//              boolean pageStatus = false;
+//              boolean jqueryStatus = false;
+//              boolean elementDisplayStatus = false;
+////                boolean animatedStatus = true;
+//              boolean elementOpacityStatus = false;
+//              boolean elementNonZeroWidth = false;
+////                boolean elementNonZeroHeight = false;
+////                boolean elementWithinWindowBounds = false;
+//              
+//              JavascriptExecutor jse = (JavascriptExecutor)driverCopy;
+//              pageStatus = jse.executeScript("return document.readyState").toString().equals("complete");
+//              jqueryStatus = (boolean)jse.executeScript("return jQuery.active == 0");
+//              
+//              if(target.length()>0) {
+//                  WebElement el = driver.findElement(By.xpath(target));
+//                  elementDisplayStatus = el.isDisplayed();
+////                    if(elementDisplayStatus) {
+////                        animatedStatus = (boolean)jse.executeScript("return $('#+"+elementId+"+').is(':animated')");
+////                    }else {
+////                        animatedStatus = true;
+////                    }
+//                  String opacity = el.getCssValue("opacity");
+//                  if(opacity.equals("1")) {
+//                      elementOpacityStatus = true;
+//                  }else {
+//                      System.out.println("opacity: " + opacity);
+//                      elementOpacityStatus = false;
+//                  }
+//                  
+////                    System.out.println(el.getCssValue("width"));
+////                    System.out.println(el.getCssValue("height"));
+//                  
+//                  String width = el.getCssValue("width");
+//                  String trimmedWidth = width.substring(0,width.length()-2);
+//                  long elementWidth = (long)Double.parseDouble(trimmedWidth);
+//                  
+//                  if(elementWidth>0) {
+//                      elementNonZeroWidth = true;
+//                  }else {
+//                      elementNonZeroWidth = false;
+//                  }
+//                  
+//              }else {
+//                  elementDisplayStatus = true;
+////                    animatedStatus = false;
+//                  elementOpacityStatus = true;
+//              }
+//              
+////                if(pageStatus && jqueryStatus && elementDisplayStatus && !animatedStatus && elementOpacityStatus) {
+//              if(pageStatus && jqueryStatus && elementDisplayStatus && elementNonZeroWidth && elementOpacityStatus) {
+//                  System.out.println("pageStatus: " + pageStatus + 
+//                          "\njqueryStatus: " + jqueryStatus +
+//                          "\nelementDisplayStatus: " + elementDisplayStatus +
+//                          "\nelementNonZeroWidth: " + elementNonZeroWidth + 
+//                          "\nelementOpacityStatus: " + elementOpacityStatus);
+//                  return true;
+//              }else {
+//                  System.out.println("pageStatus: " + pageStatus + 
+//                          "\njqueryStatus: " + jqueryStatus +
+//                          "\nelementDisplayStatus: " + elementDisplayStatus +
+//                          "\nelementNonZeroWidth: " + elementNonZeroWidth + 
+//                          "\nelementOpacityStatus: " + elementOpacityStatus);
+//                  return false;
+//              }
+//          }
+//      });     
+//  }
+
+    /***
+     * Clicks an xpath element AND stores the xpath for navigational purposes
+     * TODO: Wouldn't this cause issues when branching out? Or keep track of entire path instead of branches?
+     */
+//  public void clickElementByXpath() {
+//      if(xpath.length()>0) {
+////            System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
+//          WebElement element = driver.findElement(By.xpath(xpath));           
+////            addXpathToNavigationPath(xpath);
+//          addActionToNavigationPathAlternate(xpath);
+//          element.click();            
+//      }else {
+//          
+//      }
+//  }
+    
+//  public void clickElementByXpathPreparation(String xpath) {
+//  WebElement el = driver.findElement(By.xpath(xpath));
+//  Wait<WebElement> wait = new FluentWait<WebElement>(el)
+//          .withTimeout(6, TimeUnit.SECONDS)
+//          .pollingEvery(1, TimeUnit.SECONDS)
+//          .ignoring(NoSuchElementException.class);
+//
+//  initializeTestFixtureWeb(testWebFixture);
+//  wait.until(testWebFixture);//automatically feeds the parameter used to initialize wait into the testFixture 
+//}
+//
+    
+//  public long getElementTransitionLength(WebElement el) {
+////        return Long.parseLong(el.getCssValue("transition"));
+////        return Long.parseLong(el.getCssValue("-webkit-transition"));
+//      String cssValue = el.getCssValue("transition-duration");
+//      String trimmedCssValue = cssValue.substring(0, cssValue.length()-1);
+//      if(trimmedCssValue.length()>0) {
+////            return Long.valueOf(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
+////            return Long.parseLong(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
+////            System.out.println("Waiting for " + el.toString() + " for "+trimmedCssValue + "s");
+//          return (long)Double.parseDouble(trimmedCssValue);
+//      }else {
+//          return (long) 0;
+//      }
+//      
+//  }
+
+//public void initializeTestFixtureWeb(Function<WebElement,Boolean> testFixture) {  
+//  testFixture = new Function<WebElement,Boolean>(){
+//      public Boolean apply(WebElement el) {//shallow copy of address
+//          //wait until element is available                   
+//          return el.isDisplayed();                    
+//      }
+//  };          
+//}
+
+////    @AfterClass(alwaysRun = true)
+//  public void tearDown() throws Exception {
+//      createLogFile();
+//      driver.quit();
+//  }
+
+            //wait for page to be in a ready state and jquery.active to be 0
+//          waitForPageStability();
+//          waitForPageStability2(xpath);
+//          waitForPageStability3();
+//          id++;
+
+//          System.out.println("Taking screenshot at: "+timestamp);
+//          String navPath = getNavigationPath();
+//          String navPath = getNavigationPathAlt();
+
+//          String newFilename = "c:\\baseline\\" + navPath + ".png";
+//          String currentFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +".png";
+//          String currentDiffFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +"_diff.png";      
+
+//          Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)                
+//                  .withTimeout(waitFactor, TimeUnit.SECONDS)
+//                  .pollingEvery((long) .5, TimeUnit.SECONDS)
+//                  .ignoring(NoSuchElementException.class);
+//          
+//          wait.until(new Function<WebDriver, Boolean>()
+//          {
+//              public Boolean apply(WebDriver driverCopy) {        
+//                  boolean nonZeroWidth = checkIfElementHasNonZeroWidth(driverCopy);//never seems to be true
+//                  
+//                  if(nonZeroWidth) {
+//                      return true;
+//                  }else {
+//                      return false;
+//                  }
+//              }
+//          });
+
+//  public void waitForElementToDisappear() {
+//      //wait for zeroOpacity
+////        By loadingImage = By.id("loading image ID");
+//      By loadingImage = By.xpath("//div[@class='se-pre-con']");
+//      WebDriverWait wait = new WebDriverWait(driver, waitFactor);
+//      
+//      //wait until selectable
+//      //wait until clickable
+//      //wait for ...
+//  }

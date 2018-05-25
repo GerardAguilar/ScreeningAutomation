@@ -1,5 +1,4 @@
 package com.inhance.testFramework;
-import static org.testng.Assert.fail;
 
 import java.io.File;
 import java.net.URL;
@@ -12,7 +11,6 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.ImagePath;
