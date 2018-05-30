@@ -728,3 +728,28 @@ public void waitForPageStability() {
 //      //wait until clickable
 //      //wait for ...
 //  }
+
+//  public boolean waitForElementToAppear() {
+//      boolean appeared = false;
+//      String xpathCopy = xpath;
+//      WebElement el = driver.findElement(By.xpath(xpath));
+//      Wait<WebElement> wait = new FluentWait<WebElement>(el)
+//              .withTimeout(6, TimeUnit.SECONDS)
+//              .pollingEvery(2, TimeUnit.SECONDS)
+//              .ignoring(NoSuchElementException.class);
+//
+//      wait.until(new Function<WebElement, Boolean>() 
+//      {
+//          public Boolean apply(WebElement elCopy) {//shallow copy of address
+//          //wait until element is available       
+//              boolean isDisplayed = elCopy.isDisplayed();
+//              boolean hasOpacity = false;
+//              //what if Opacity is not present in CSS?
+//              if(elCopy.getCssValue("opacity")=="1"){
+//                  hasOpacity = true;
+//              }
+//              return isDisplayed&&hasOpacity;             
+//      }
+//      }); 
+//      return appeared;        
+//  }

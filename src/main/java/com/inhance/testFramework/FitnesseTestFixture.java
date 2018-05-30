@@ -20,12 +20,14 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -70,13 +72,23 @@ public class FitnesseTestFixture {
 	public String pageScrollPosition;
 	public boolean willClick;
 	public boolean willWaitFor;
+	public boolean willHover;
 	public boolean checkVisibilityByClickability;
 	public boolean checkVisibilityByOpacity;
 	public boolean checkVisibilityBySelectability;
-	public boolean checkInvisibility;
+	public boolean checkInvisibilityByInvisibility;
+	public boolean checkInvisibilityByOpacity;
 	public boolean checkVisibilityByVisibility;
 	public boolean checkVisibilityByWidth;
+	public boolean checkDocumentReady;
+	public boolean willCheckCssAttributeValuePair;
+	public boolean willCheckExpectedCondition;
+	public boolean willCheckJavascriptResult;
 	
+	public String javascriptExecutorString;
+	public String cssAttributeValuePair;
+	public String expectedConditionType;
+	public String notes;	
 	public String chromeLocation;
 	
 	String currentDiffFilename;
@@ -89,6 +101,69 @@ public class FitnesseTestFixture {
 	long waitFactor;
 	//how much polling to do in the course of the wait 
 	float pollingFactor;
+	
+	public void setJavascriptExecutorString(String temp) {
+		javascriptExecutorString = temp;
+	}
+	public String getJavascriptExecutorString() {
+		return javascriptExecutorString;
+	}
+	
+	public void setWillCheckJavascriptResult(boolean temp) {
+		willCheckJavascriptResult = temp;
+	}
+	public boolean getWillCheckJavascriptResult() {
+		return willCheckJavascriptResult;
+	}
+	
+	public void setExpectedConditionType(String temp) {
+		expectedConditionType = temp;
+	} 
+	public String getExpectedConditionType() {
+		return expectedConditionType;
+	}
+	
+	public void setWillCheckExpectedCondition(boolean temp) {
+		willCheckExpectedCondition = temp;
+	}
+	public boolean getWillCheckExpectedCondition() {
+		return willCheckExpectedCondition;
+	}
+	
+	public void setCssAttributeValuePair(String temp) {
+		cssAttributeValuePair = temp;
+	}
+	public String getCssAttributeValuePair() {
+		return cssAttributeValuePair;
+	}
+	
+	public void setWillCheckCssAttributeValuePair(boolean temp) {
+		willCheckCssAttributeValuePair = temp;
+	}
+	public boolean getWillCheckCssAttributeValuePair() {
+		return willCheckCssAttributeValuePair;
+	}
+	
+	public void setNotes(String temp) {
+		notes = temp;
+	}
+	public String getNotes() {
+		return notes;
+	}
+	
+	public void setWillHover(boolean temp) {
+		willHover = temp;
+	}
+	public boolean getWillHover() {
+		return willHover;
+	}
+	
+	public void setCheckDocumentReady(boolean temp) {
+		checkDocumentReady = temp;
+	}
+	public boolean getCheckDocumentReady() {
+		return checkDocumentReady;
+	}
 	
 	public void setChromeLocation(String temp) {
 		chromeLocation = temp;
@@ -111,11 +186,18 @@ public class FitnesseTestFixture {
 		return checkVisibilityByVisibility;
 	}
 	
-	public void setCheckInvisibility(boolean temp) {
-		checkInvisibility = temp;
+	public void setCheckInvisibilityByOpacity(boolean temp) {
+		checkInvisibilityByOpacity = temp;
 	}
-	public boolean getCheckInvisibility() {
-		return checkInvisibility;
+	public boolean getCheckInvisibilityByOpacity() {
+		return checkInvisibilityByOpacity;
+	}
+	
+	public void setCheckInvisibilityByInvisibility(boolean temp) {
+		checkInvisibilityByInvisibility = temp;
+	}
+	public boolean getcheckInvisibilityByInvisibility() {
+		return checkInvisibilityByInvisibility;
 	}
 	
 	public void setCheckVisibilityBySelectability(boolean temp) {
@@ -406,30 +488,7 @@ public class FitnesseTestFixture {
 //		}
 //		
 //	}
-//	public boolean waitForElementToAppear() {
-//		boolean appeared = false;
-//		String xpathCopy = xpath;
-//		WebElement el = driver.findElement(By.xpath(xpath));
-//		Wait<WebElement> wait = new FluentWait<WebElement>(el)
-//			    .withTimeout(6, TimeUnit.SECONDS)
-//			    .pollingEvery(2, TimeUnit.SECONDS)
-//			    .ignoring(NoSuchElementException.class);
-//
-//		wait.until(new Function<WebElement, Boolean>() 
-//		{
-//			public Boolean apply(WebElement elCopy) {//shallow copy of address
-//			//wait until element is available		
-//				boolean isDisplayed = elCopy.isDisplayed();
-//				boolean hasOpacity = false;
-//				//what if Opacity is not present in CSS?
-//				if(elCopy.getCssValue("opacity")=="1"){
-//					hasOpacity = true;
-//				}
-//				return isDisplayed&&hasOpacity;				
-//		}
-//		});	
-//		return appeared;		
-//	}
+
 	
 //public void initializeTestFixtureWeb(Function<WebElement,Boolean> testFixture) {	
 //	testFixture = new Function<WebElement,Boolean>(){
@@ -439,11 +498,31 @@ public class FitnesseTestFixture {
 //		}
 //	};			
 //}
+	public void hoverOverElement() {
+		if(xpath.length()>0 && willHover) {
+			addActionToNavigationPathAlternate(xpath + "_hover");		
+			WebElement el = driver.findElement(By.xpath(xpath));
+	        Point classname = el.getLocation();
+			Actions builder = new Actions(driver);
+					
+			//move cursor to displayed element
+			//Scrolling seems to mess with the bottom code
+//	        classname = el.getLocation();
+//	        xcordi = classname.getX();
+//	        ycordi = classname.getY();
+//	        System.out.println("Element is located at: " + xcordi + ": "+ycordi);
+
+			builder.moveToElement(el).perform();
+		}		
+	}
+	
+//	public void check
 	
 	//Wait for image to appear
 	public void waitForElement() {
 //		System.out.println("locateElementInPageByXpathAndWaitForNonZeroWidth: " + getNavigationPathAltEventId() + xpath.length() + willWaitFor);	
-		if(xpath.length()>0 && willWaitFor) {
+//		if(xpath.length()>0 && willWaitFor) {
+		if(xpath.length()>0 && (willCheckExpectedCondition | willCheckCssAttributeValuePair | willCheckJavascriptResult )) {
 			System.out.println("actually locateElementInPageByXpathAndWaitForNonZeroWidth: " + xpath + "_wait");
 			addActionToNavigationPathAlternate(xpath + "_wait");			
 
@@ -451,7 +530,12 @@ public class FitnesseTestFixture {
 					.withTimeout(waitFactor, TimeUnit.SECONDS)
 				    .pollingEvery((long) .5, TimeUnit.SECONDS)
 				    .ignoring(NoSuchElementException.class);
-			
+
+			JavascriptExecutor jseWait = (JavascriptExecutor)driver;
+			Wait<JavascriptExecutor> waitJse = new FluentWait<JavascriptExecutor>(jseWait)
+				    .withTimeout(6, TimeUnit.SECONDS)
+				    .pollingEvery(2, TimeUnit.SECONDS)
+				    .ignoring(NoSuchElementException.class);
 			
 			//wait for nonZeroWidth
 			if(checkVisibilityByWidth) {
@@ -484,7 +568,8 @@ public class FitnesseTestFixture {
 						WebElement elCopy = driver.findElement(By.xpath(xpathCopy));
 						boolean hasOpacity = false;
 						//what if Opacity is not present in CSS?
-						if(elCopy.getCssValue("opacity")=="1"){
+						System.out.println(elCopy.toString() + " opacity: " + elCopy.getCssValue("opacity"));
+						if(elCopy.getCssValue("opacity").equals("1")){
 							hasOpacity = true;
 						}
 						return hasOpacity;				
@@ -503,13 +588,128 @@ public class FitnesseTestFixture {
 			}
 
 			//wait for element to be invisible
-			if(checkInvisibility) {
+			if(checkInvisibilityByInvisibility) {
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpath)));
 			}
 			
+			if(checkInvisibilityByOpacity) {
+				final String xpathCopy = xpath;
+				wait.until(new Function<WebDriver, Boolean>() 
+				{
+					public Boolean apply(WebDriver driverCopy) {//shallow copy of address
+					//wait until element is available	
+						WebElement elCopy = driver.findElement(By.xpath(xpathCopy));
+						boolean hasOpacity = false;
+						//what if Opacity is not present in CSS?
+						System.out.println(elCopy.toString() + " opacity: " + elCopy.getCssValue("opacity"));
+						if(elCopy.getCssValue("opacity").equals("0")){
+							hasOpacity = true;
+						}
+						return hasOpacity;				
+				}
+				});	
+			}
+			
+			//wait for document to be ready
+			if(checkDocumentReady) {
+				waitJse.until(new Function<JavascriptExecutor, Boolean>() 
+				{
+					public Boolean apply(JavascriptExecutor jseCopy) {
+						boolean scrollStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
+						boolean jqueryStatus = (boolean)jseCopy.executeScript("return jQuery.active == 0");
+						if(scrollStatus&&jqueryStatus) {
+//							System.out.println("Finally done scrolling: " + getPageYOffset());
+							return true;
+						}else {
+//							System.out.println("Not done scrolling: " + getPageYOffset());
+							return false;
+						}
+					}
+				});	
+			}
+			
+			if(willCheckCssAttributeValuePair) {
+				final String xpathCopy = xpath;
+				final String cssAttributeCopy = cssAttributeValuePair;
+				wait.until(new Function<WebDriver, Boolean>() 
+				{
+					public Boolean apply(WebDriver driverCopy) {//shallow copy of address
+					//wait until element is available	
+						WebElement elCopy = driverCopy.findElement(By.xpath(xpathCopy));
+						boolean metCssCriteria = false;
+						String[] cssArray = new String[3];
+						cssArray = cssAttributeCopy.split(":");
+						String attr = cssArray[0];
+						String op = cssArray[1];
+						String expectedValue = cssArray[2];
+						//what if Opacity is not present in CSS?
+						String actualValue = elCopy.getCssValue(attr);
+						if(attr.equals("color")||attr.equals("background-color")) {
+							actualValue = org.openqa.selenium.support.Color.fromString(elCopy.getCssValue(attr)).asHex();
+						}
+						System.out.println(elCopy.toString() + attr + " " + op + " " + expectedValue + " (expected): " + actualValue + " (actual)");
+
+						if(op.equals("!=")) {							
+							if(!actualValue.equals(expectedValue)) {
+								metCssCriteria = true;
+							}
+						}else if(op.equals("==")) {
+							if(actualValue.equals(expectedValue)){
+								metCssCriteria = true;
+							}
+						}
+						return metCssCriteria;				
+				}
+				});	
+			}
+			
+			if(willCheckJavascriptResult) {
+				
+				final String javascriptExecutorStringCopy = javascriptExecutorString;
+				waitJse.until(new Function<JavascriptExecutor, Boolean>() 
+				{					
+					public Boolean apply(JavascriptExecutor jseCopy) {
+						boolean javascriptStatus = false;
+						if(javascriptExecutorStringCopy.equals("return document.readyState")) {
+							javascriptStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
+						}else if (javascriptExecutorStringCopy.equals("return jQuery.active == 0")) {
+							javascriptStatus = (boolean)jseCopy.executeScript("return jQuery.active == 0");
+						}else {
+							//this is untested, and will have to catch a number of other common results that gets returned from running Javascript
+							javascriptStatus = (boolean)jseCopy.executeScript(javascriptExecutorStringCopy);
+						}
+						return javascriptStatus;
+					}
+				});	
+			}
+			
+			
+			if(willCheckExpectedCondition) {
+				expectedConditionType = expectedConditionType.toLowerCase();
+				switch(expectedConditionType) {
+					case "":
+						System.out.println("Expected Condition Type is empty");
+						break;
+					case "elementtobeselected":
+						wait.until(ExpectedConditions.elementToBeSelected(By.xpath(xpath)));
+						break;
+					case "elementtobeclickable":
+						wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+						break;
+					case "visibilityofelementlocated":
+						wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+						break;
+					case "invisibilityofelementlocated":
+						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpath)));
+						break;
+					default:
+						System.out.println("Unable to determine expected condition type: " + expectedConditionType);
+						break;
+				}
+			}
+			
 			//wait for ...
-			
-			
+
 			xpath = "";
 			willWaitFor = false;
 		}
@@ -585,10 +785,10 @@ public class FitnesseTestFixture {
 		int size = navigationPathAlternate.size();
 		if(size==0) {
 			str = action;
-			navigationPathAlternate.add(str);			
+			navigationPathAlternate.add(str+"\n");			
 		}else {
 			str = navigationPathAlternate.get(size-1)+action;
-			navigationPathAlternate.add(str);
+			navigationPathAlternate.add(str+"\n");
 		}
 	}
 	
@@ -883,33 +1083,12 @@ public class FitnesseTestFixture {
 		System.out.println("scrollDownXFullScreenPageHeightAndWait: " + pageScrollPosition);
 		if(pageScrollPosition.length()>0) {
 			addActionToNavigationPathAlternate("s"+pageScrollPosition);
-			JavascriptExecutor jse = (JavascriptExecutor)driver;
-
-			//we subtract 1 from pageScrollPosition in order to reserve the value "0" for Fitnesse as an empty cell in Fitnesse counts as "0"
-			//or we can take it as a string
+			JavascriptExecutor jseScroll = (JavascriptExecutor)driver;			
 			String scrollheight = (getPageHeight()*(Integer.parseInt(pageScrollPosition)))+"";
 //			System.out.println("Scrolling start: " + getPageYOffset());
-			jse.executeScript("window.scrollBy(0,"+scrollheight+")", "");
+//			jseScroll.executeScript("window.scrollBy(0,"+scrollheight+")", "");
+			jseScroll.executeScript("window.scroll(0,"+scrollheight+")", "");
 			
-			Wait<JavascriptExecutor> wait = new FluentWait<JavascriptExecutor>(jse)
-				    .withTimeout(6, TimeUnit.SECONDS)
-				    .pollingEvery(2, TimeUnit.SECONDS)
-				    .ignoring(NoSuchElementException.class);
-
-			wait.until(new Function<JavascriptExecutor, Boolean>() 
-			{
-				public Boolean apply(JavascriptExecutor jseCopy) {
-					boolean scrollStatus = jseCopy.executeScript("return document.readyState").toString().equals("complete");
-					boolean jqueryStatus = (boolean)jseCopy.executeScript("return jQuery.active == 0");
-					if(scrollStatus&&jqueryStatus) {
-//						System.out.println("Finally done scrolling: " + getPageYOffset());
-						return true;
-					}else {
-//						System.out.println("Not done scrolling: " + getPageYOffset());
-						return false;
-					}
-				}
-			});	
 			//the reset to "" is needed so that we can switch this functionality on and off in Fitnesse
 			pageScrollPosition = "";
 		}
