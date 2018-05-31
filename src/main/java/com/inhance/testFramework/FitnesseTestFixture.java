@@ -2,25 +2,23 @@ package com.inhance.testFramework;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import javax.imageio.ImageIO;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,9 +34,7 @@ import org.sikuli.script.FindFailed;
 import org.sikuli.script.ImagePath;
 import org.sikuli.script.Region;
 import org.sikuli.script.Screen;
-
 import com.google.common.base.Function;
-
 
 /***
  * 
@@ -67,8 +63,8 @@ public class FitnesseTestFixture {
 	public String imageFileLocation;
 	public String instanceStartTime;
 	
-	public boolean takingBaselineSet;
-	public boolean makeALogFile;
+	public boolean willTakeBaselineSet;
+	public boolean willMakeALogFile;
 	public String pageScrollPosition;
 	public boolean willClick;
 	public boolean willWaitFor;
@@ -95,6 +91,7 @@ public class FitnesseTestFixture {
 	public String notes;	
 	public String chromeLocation;
 	public String resultingAddress;
+	public String chromeBinaryLocation;
 	
 	String currentDiffFilename;
 	int id;
@@ -106,6 +103,14 @@ public class FitnesseTestFixture {
 	float pollingFactor;	
 	PrintWriter out;
 	boolean baselineSet = false;
+	String loc;
+	
+	public void setChromeBinaryLocation(String temp) {
+		chromeBinaryLocation = temp;
+	}
+	public String getChromeBinaryLocation() {
+		return chromeBinaryLocation;
+	}
 	
 	public void setWillClickWithNewTab(boolean temp) {
 		willClickWithNewTab = temp;
@@ -275,11 +280,11 @@ public class FitnesseTestFixture {
 		return willWaitFor;
 	}
 	
-	public void setMakeALogFile(boolean temp) {
-		makeALogFile = temp;
+	public void setWillMakeALogFile(boolean temp) {
+		willMakeALogFile = temp;
 	}
-	public boolean getMakeALogFile() {
-		return makeALogFile;
+	public boolean getWillMakeALogFile() {
+		return willMakeALogFile;
 	}
 	
 	public void setPageScrollPosition(String temp){
@@ -289,12 +294,12 @@ public class FitnesseTestFixture {
 		return pageScrollPosition;
 	}
 	
-	public void setTakingBaselineSet(boolean temp) {
-		takingBaselineSet = temp;
+	public void setWillTakeBaselineSet(boolean temp) {
+		willTakeBaselineSet = temp;
 	}
 	
-	public boolean getTakingBaselineSet() {
-		return takingBaselineSet;
+	public boolean getWillTakeBaselineSet() {
+		return willTakeBaselineSet;
 	}
 	
 	public void setImageFileLocation(String temp) {
@@ -316,7 +321,6 @@ public class FitnesseTestFixture {
 			try {
 //				initialize("about:blank");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}
@@ -434,8 +438,8 @@ public class FitnesseTestFixture {
 	public void initializeAlt() throws Exception {
 		if(willInitialize) {
 			System.out.println("initializeAlt");
-			boolean setupFirefoxDriver = false;
-			boolean setupChromeDriver = true;
+			boolean setupFirefoxDriver = true;
+			boolean setupChromeDriver = false;
 			
 		    navigationPath = new ArrayList<String>();
 		    navigationPathAlternate = new ArrayList<String>();
@@ -451,7 +455,7 @@ public class FitnesseTestFixture {
 	        	currentDirectory.mkdirs();
 	        }
 	        
-	        if(takingBaselineSet){
+	        if(willTakeBaselineSet){
 	        	baselineSet = true;
 	        }
 	        
@@ -471,7 +475,6 @@ public class FitnesseTestFixture {
 		        }
 		        
 		        File geckodriver;
-		        geckodriver = new File("Driver" + "\\geckodriver.exe"); 
 		        //In the case of a MAC, we may need to copy the tar.gz file and then reference the resulting geckodriver application
 		        if(os.contains("mac")) {
 		            geckodriver = new File(System.getProperty("user.dir") + "/geckodriver");  
@@ -488,37 +491,50 @@ public class FitnesseTestFixture {
 			    addActionToNavigationPathAlternate("Initialize geckodriver.exe");
 			}
 
+			//chromeDriverLocation == "the driver"
+			//chromeBinaryLocation == "the car"
 		    if(setupChromeDriver) {
-		    	
-				ChromeOptions options = new ChromeOptions();
-				options.setBinary("C:\\GoogleChromePortable\\GoogleChromePortable.exe");
-				options.addArguments("disable-infobars");
-				options.addArguments("--allow-file-access-from-files");
-				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");              
-				driver = new ChromeDriver(options);
-				System.out.println("Chrome driver has been setup");
-				addActionToNavigationPathAlternate("Initialize GoogleChromePortable.exe");
+				if(chromeBinaryLocation.length()>0) {
+					/***
+					 * From our resources folder, copy chromedriver.exe into a Driver folder
+					 * Modify that chrome driver to attach to the chrome binary as designated in the Fitnesse table
+					 */
+					ClassLoader classLoader = getClass().getClassLoader();
+			        URL resource = classLoader.getResource("chromedriver.exe");
+					File chromedriver = new File("Driver"+"\\chromedriver.exe");
+		            if (!chromedriver.exists()) {
+		            	chromedriver.createNewFile();
+		                FileUtils.copyURLToFile(resource, chromedriver);
+		            }
+					String chromeDriverLocation = chromedriver.getAbsolutePath();
+			        
+					ChromeOptions options = new ChromeOptions();
+					options.setBinary(chromeBinaryLocation);
+					options.addArguments("disable-infobars");
+					options.addArguments("--allow-file-access-from-files");
+					
+					System.setProperty("webdriver.chrome.driver", chromeDriverLocation);              
+					driver = new ChromeDriver(options);
+					System.out.println("Chrome driver in " + chromeDriverLocation + " is paired with binary " + chromeBinaryLocation);
+					addActionToNavigationPathAlternate("Initialize GoogleChromePortable.exe");
+				}
 		    }
 		    
 //		    driver.manage().window().setSize(new Dimension(1024, 768));	    
 		    baseUrl = globalAddress;
 		    navigateByAddress(baseUrl);
 		    addActionToNavigationPathAlternate("Navigating to " + baseUrl);
-
 		    driver.manage().window().maximize(); 
-		    
 		    wait = new WebDriverWait(driver, 20);
 		    //make sure to right click the resources\images folder, select Build Path -> Include
 		    ImagePath.add(SimpleFramework.class.getCanonicalName()+"/images");
 
-		    
 	        id = 0;
 	        pageScrollPosition = "";
 	        waitForElement = (long) 0;
 	        waitFactor = 20;
 	        pollingFactor = 1; //the bigger the value the faster the polling
 	        
-//		    return;	
 		}
 		
 	}
@@ -542,9 +558,9 @@ public class FitnesseTestFixture {
 	
 	public void createLogFile() {
 //		String appendedIndex = "";
-		if(makeALogFile) {
+		if(willMakeALogFile) {
 	        try {
-	        	String loc ="";
+	        	loc ="";
 	        	if(baselineSet) {
 	        		loc = "C:\\baseline\\log.txt";
 	        	}else {
@@ -556,7 +572,7 @@ public class FitnesseTestFixture {
 //			        	appendedIndex = String.format("%04d", i);
 //			        	out.println(appendedIndex + ": " + navigationPathAlternate.get(i));
 //			        }
-//			        out.close();
+		        out.close();
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
@@ -564,9 +580,19 @@ public class FitnesseTestFixture {
 
 	}
 	
+	BufferedWriter test;
+	
 	public void populateLogFile(ArrayList<String> navArray) {
 		String appendedIndex = String.format("%04d", navArray.size()-1);
-    	out.println(appendedIndex + ": " + navigationPathAlternate.get(navArray.size()-1));
+		//open out for appending
+		try {
+			out = new PrintWriter(new BufferedWriter(new FileWriter(loc, true)));
+//	    	out.println(appendedIndex + ": " + navigationPathAlternate.get(navArray.size()-1));
+	    	out.append(appendedIndex + ": " + navigationPathAlternate.get(navArray.size()-1));
+	    	out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}    	
 	}
 	
 	public void endScreening() {
@@ -608,7 +634,6 @@ public class FitnesseTestFixture {
 		if(xpath.length()>0 && willHover) {
 			addActionToNavigationPathAlternate(xpath + "_hover");		
 			WebElement el = driver.findElement(By.xpath(xpath));
-	        Point classname = el.getLocation();
 			Actions builder = new Actions(driver);
 					
 			//move cursor to displayed element
@@ -852,7 +877,7 @@ public class FitnesseTestFixture {
 	//Click and then wait for transition to end
 	public void clickElementByXpath() {
 //		System.out.println("clickElementByXpathAndWaitForReadyState: " + xpath);
-		JavascriptExecutor jse = (JavascriptExecutor)driver;		
+//		JavascriptExecutor jse = (JavascriptExecutor)driver;		
 		if(xpath.length()>0 && willClick) {
 //			System.out.println("actually clickElementByXpathAndWaitForReadyState(String xpath): xpath = " + xpath);
 			WebElement element = driver.findElement(By.xpath(xpath));			
@@ -922,12 +947,10 @@ public class FitnesseTestFixture {
 		//use the index for the eventID
 		//then output the list into a log file, with ids
 		//later on, have the output in realtime
-		StringBuilder sb = new StringBuilder();
 		String str;
 		int size = navigationPathAlternate.size();
 		if(size==0) {
 			str = action;
-//			sb.append(str).append(System.getProperty("line.separator"));
 			navigationPathAlternate.add("\r\n\t"+str);		
 			populateLogFile(navigationPathAlternate);
 		}else {
