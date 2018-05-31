@@ -59,7 +59,7 @@ public class FitnesseTestFixture {
 	public ArrayList<String> navigationPath;
 	public ArrayList<String> navigationPathAlternate;
 	
-	public boolean enableScreenshot;
+//	public boolean enableScreenshot;
 	
 	public Function<WebElement,Boolean> testWebFixture;
 	public Function<String, Boolean> testSikuliFixture;
@@ -84,23 +84,63 @@ public class FitnesseTestFixture {
 	public boolean willCheckCssAttributeValuePair;
 	public boolean willCheckExpectedCondition;
 	public boolean willCheckJavascriptResult;
+	public boolean willEndScreening;
+	public boolean willInitialize;
+	public boolean willVerifyResultingAddress;
+	public boolean willClickWithNewTab;
 	
 	public String javascriptExecutorString;
 	public String cssAttributeValuePair;
 	public String expectedConditionType;
 	public String notes;	
 	public String chromeLocation;
+	public String resultingAddress;
 	
 	String currentDiffFilename;
 	int id;
-//	protected String fullScreenPageHeight = "1086";
 	public int fullScreenPageHeight = 1086;
-	
 	Long waitForElement;
 	//waitFactor multiplies the transition-duration of the element we're currently interacting with
 	long waitFactor;
 	//how much polling to do in the course of the wait 
-	float pollingFactor;
+	float pollingFactor;	
+	PrintWriter out;
+	boolean baselineSet = false;
+	
+	public void setWillClickWithNewTab(boolean temp) {
+		willClickWithNewTab = temp;
+	}
+	public boolean getWillClickWithNewTab() {
+		return willClickWithNewTab;
+	}
+	
+	public void setResultingAddress(String temp) {
+		resultingAddress = temp;
+	}
+	public String getResultingAddress() {
+		return resultingAddress;
+	}
+	
+	public void setWillVerifyResultingAddress(boolean temp) {
+		willVerifyResultingAddress = temp;
+	}
+	public boolean getWillVerifyResultingAddress() {
+		return willVerifyResultingAddress;
+	}
+	
+	public void setWillInitialize(boolean temp) {
+		willInitialize = temp;
+	}
+	public boolean getWillInitialize() {
+		return willInitialize;
+	}
+	
+	public void setWillEndScreening(boolean temp) {
+		willEndScreening = temp;
+	}
+	public boolean getWillEndScreening() {
+		return willEndScreening;
+	}
 	
 	public void setJavascriptExecutorString(String temp) {
 		javascriptExecutorString = temp;
@@ -264,17 +304,17 @@ public class FitnesseTestFixture {
 		return imageFileLocation;		
 	}
 		
-	public void setEnableScreenshot(boolean temp) {
-		enableScreenshot = temp;
-	}
-	
-	public boolean getEnableScreenshot() {
-		return enableScreenshot;
-	}
+//	public void setEnableScreenshot(boolean temp) {
+//		enableScreenshot = temp;
+//	}
+//	
+//	public boolean getEnableScreenshot() {
+//		return enableScreenshot;
+//	}
 	
 	public FitnesseTestFixture(){	
 			try {
-				initialize("about:blank");
+//				initialize("about:blank");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -310,85 +350,189 @@ public class FitnesseTestFixture {
 		return xpath;
 	}
 
-	public boolean initialize(String home) throws Exception {
-		boolean setupFirefoxDriver = false;
-		boolean setupChromeDriver = true;
-		if(setupFirefoxDriver) {
-			ClassLoader classLoader = getClass().getClassLoader();
-	        URL resource = classLoader.getResource("geckodriver.exe");
-	        String os = System.getProperty("os.name").toLowerCase();
-	        
-	        //Make a directory to place Drivers in
-	        //This is used for later where we want multiple drivers
-	        File f = new File("Driver");
-	        if (!f.exists()) {
-	            f.mkdirs();
+//	public boolean initialize(String home) throws Exception {
+//		boolean setupFirefoxDriver = false;
+//		boolean setupChromeDriver = true;
+//		if(setupFirefoxDriver) {
+//			ClassLoader classLoader = getClass().getClassLoader();
+//	        URL resource = classLoader.getResource("geckodriver.exe");
+//	        String os = System.getProperty("os.name").toLowerCase();
+//	        
+//	        //Make a directory to place Drivers in
+//	        //This is used for later where we want multiple drivers
+//	        File f = new File("Driver");
+//	        if (!f.exists()) {
+//	            f.mkdirs();
+//	        }
+//	        
+//	        File geckodriver;
+//	        geckodriver = new File("Driver" + "\\geckodriver.exe"); 
+//	        //In the case of a MAC, we may need to copy the tar.gz file and then reference the resulting geckodriver application
+//	        if(os.contains("mac")) {
+//	            geckodriver = new File(System.getProperty("user.dir") + "/geckodriver");  
+//	        }else {
+//	        	geckodriver = new File("Driver" + "\\geckodriver.exe"); 
+//	            if (!geckodriver.exists()) {
+//	            	geckodriver.createNewFile();
+//	                FileUtils.copyURLToFile(resource, geckodriver);
+//	            }
+//	        }
+//	        String geckodriverLocation = geckodriver.getAbsolutePath();        
+//	        System.setProperty("webdriver.gecko.driver", geckodriverLocation);
+//		    driver = new FirefoxDriver();
+//		}
+//
+//	    if(setupChromeDriver) {
+//			ChromeOptions options = new ChromeOptions();
+//			options.setBinary("C:\\GoogleChromePortable\\GoogleChromePortable.exe");
+//			options.addArguments("disable-infobars");
+//			options.addArguments("--allow-file-access-from-files");
+//			System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");              
+//			driver = new ChromeDriver(options);
+//	    }
+//	    
+////	    driver.manage().window().setSize(new Dimension(1024, 768));
+////	    baseUrl = "http://www.google.com/";
+//	    baseUrl = home;
+////	    baseUrl = "http://localhost:8024";
+//	    navigateByAddress(baseUrl);
+//	    System.out.println("Current Window Handle: " + driver.getWindowHandle() );
+//	    System.out.println("Other handles: ");
+//	    ArrayList<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+//	    for(int i=0; i<windowHandles.size(); i++) {
+//	    	System.out.println(windowHandles.get(i));
+//	    }
+//	    driver.manage().window().maximize(); 
+//	    wait = new WebDriverWait(driver, 20);
+//	    //make sure to right click the resources\images folder, select Build Path -> Include
+//	    ImagePath.add(SimpleFramework.class.getCanonicalName()+"/images");
+////	    enableScreenshot = false;
+//	    navigationPath = new ArrayList<String>();
+//	    navigationPathAlternate = new ArrayList<String>();
+//	    instanceStartTime = (new Timestamp(System.currentTimeMillis())).getTime()+"";
+//	    
+//        File baselineDirectory = new File("C:\\baseline");
+//        if (!baselineDirectory.exists()) {
+//        	baselineDirectory.mkdirs();
+//        }
+//        
+//        File currentDirectory = new File("C:\\current\\"+instanceStartTime);
+//        if (!currentDirectory.exists()) {
+//        	currentDirectory.mkdirs();
+//        }
+//	    
+//        id = 0;
+//        pageScrollPosition = "";
+//        waitForElement = (long) 0;
+//        waitFactor = 20;
+//        pollingFactor = 1; //the bigger the value the faster the polling
+//        
+//        createLogFile();
+//        
+//	    return true;
+//	}
+	public void initializeAlt() throws Exception {
+		if(willInitialize) {
+			System.out.println("initializeAlt");
+			boolean setupFirefoxDriver = false;
+			boolean setupChromeDriver = true;
+			
+		    navigationPath = new ArrayList<String>();
+		    navigationPathAlternate = new ArrayList<String>();
+		    instanceStartTime = (new Timestamp(System.currentTimeMillis())).getTime()+"";
+		    
+	        File baselineDirectory = new File("C:\\baseline");
+	        if (!baselineDirectory.exists()) {
+	        	baselineDirectory.mkdirs();
 	        }
 	        
-	        File geckodriver;
-	        geckodriver = new File("Driver" + "\\geckodriver.exe"); 
-	        //In the case of a MAC, we may need to copy the tar.gz file and then reference the resulting geckodriver application
-	        if(os.contains("mac")) {
-	            geckodriver = new File(System.getProperty("user.dir") + "/geckodriver");  
-	        }else {
-	        	geckodriver = new File("Driver" + "\\geckodriver.exe"); 
-	            if (!geckodriver.exists()) {
-	            	geckodriver.createNewFile();
-	                FileUtils.copyURLToFile(resource, geckodriver);
-	            }
+	        File currentDirectory = new File("C:\\current\\"+instanceStartTime);
+	        if (!currentDirectory.exists()) {
+	        	currentDirectory.mkdirs();
 	        }
-	        String geckodriverLocation = geckodriver.getAbsolutePath();        
-	        System.setProperty("webdriver.gecko.driver", geckodriverLocation);
-		    driver = new FirefoxDriver();
-		}
+	        
+	        if(takingBaselineSet){
+	        	baselineSet = true;
+	        }
+	        
+	        createLogFile();
+	        
+			if(setupFirefoxDriver) {
+				
+				ClassLoader classLoader = getClass().getClassLoader();
+		        URL resource = classLoader.getResource("geckodriver.exe");
+		        String os = System.getProperty("os.name").toLowerCase();
+		        
+		        //Make a directory to place Drivers in
+		        //This is used for later where we want multiple drivers
+		        File f = new File("Driver");
+		        if (!f.exists()) {
+		            f.mkdirs();
+		        }
+		        
+		        File geckodriver;
+		        geckodriver = new File("Driver" + "\\geckodriver.exe"); 
+		        //In the case of a MAC, we may need to copy the tar.gz file and then reference the resulting geckodriver application
+		        if(os.contains("mac")) {
+		            geckodriver = new File(System.getProperty("user.dir") + "/geckodriver");  
+		        }else {
+		        	geckodriver = new File("Driver" + "\\geckodriver.exe"); 
+		            if (!geckodriver.exists()) {
+		            	geckodriver.createNewFile();
+		                FileUtils.copyURLToFile(resource, geckodriver);
+		            }
+		        }
+		        String geckodriverLocation = geckodriver.getAbsolutePath();        
+		        System.setProperty("webdriver.gecko.driver", geckodriverLocation);
+			    driver = new FirefoxDriver();
+			    addActionToNavigationPathAlternate("Initialize geckodriver.exe");
+			}
 
-	    if(setupChromeDriver) {
-			ChromeOptions options = new ChromeOptions();
-			options.setBinary("C:\\GoogleChromePortable\\GoogleChromePortable.exe");
-			options.addArguments("disable-infobars");
-			options.addArguments("--allow-file-access-from-files");
-			System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");              
-			driver = new ChromeDriver(options);
-	    }
-	    
-//	    driver.manage().window().setSize(new Dimension(1024, 768));
-//	    baseUrl = "http://www.google.com/";
-	    baseUrl = home;
-//	    baseUrl = "http://localhost:8024";
-	    navigateByAddress(baseUrl);
+		    if(setupChromeDriver) {
+		    	
+				ChromeOptions options = new ChromeOptions();
+				options.setBinary("C:\\GoogleChromePortable\\GoogleChromePortable.exe");
+				options.addArguments("disable-infobars");
+				options.addArguments("--allow-file-access-from-files");
+				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");              
+				driver = new ChromeDriver(options);
+				System.out.println("Chrome driver has been setup");
+				addActionToNavigationPathAlternate("Initialize GoogleChromePortable.exe");
+		    }
+		    
+//		    driver.manage().window().setSize(new Dimension(1024, 768));	    
+		    baseUrl = globalAddress;
+		    navigateByAddress(baseUrl);
+		    addActionToNavigationPathAlternate("Navigating to " + baseUrl);
+
+		    driver.manage().window().maximize(); 
+		    
+		    wait = new WebDriverWait(driver, 20);
+		    //make sure to right click the resources\images folder, select Build Path -> Include
+		    ImagePath.add(SimpleFramework.class.getCanonicalName()+"/images");
+
+		    
+	        id = 0;
+	        pageScrollPosition = "";
+	        waitForElement = (long) 0;
+	        waitFactor = 20;
+	        pollingFactor = 1; //the bigger the value the faster the polling
+	        
+//		    return;	
+		}
+		
+	}
+	
+	public void getOtherWindowHandles() {
 	    System.out.println("Current Window Handle: " + driver.getWindowHandle() );
 	    System.out.println("Other handles: ");
 	    ArrayList<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
 	    for(int i=0; i<windowHandles.size(); i++) {
 	    	System.out.println(windowHandles.get(i));
 	    }
-	    driver.manage().window().maximize(); 
-	    wait = new WebDriverWait(driver, 20);
-	    //make sure to right click the resources\images folder, select Build Path -> Include
-	    ImagePath.add(SimpleFramework.class.getCanonicalName()+"/images");
-	    enableScreenshot = false;
-	    navigationPath = new ArrayList<String>();
-	    navigationPathAlternate = new ArrayList<String>();
-	    instanceStartTime = (new Timestamp(System.currentTimeMillis())).getTime()+"";
-	    
-        File baselineDirectory = new File("C:\\baseline");
-        if (!baselineDirectory.exists()) {
-        	baselineDirectory.mkdirs();
-        }
-        
-        File currentDirectory = new File("C:\\current\\"+instanceStartTime);
-        if (!currentDirectory.exists()) {
-        	currentDirectory.mkdirs();
-        }
-	    
-        id = 0;
-        pageScrollPosition = "";
-        waitForElement = (long) 0;
-        waitFactor = 20;
-        pollingFactor = 1; //the bigger the value the faster the polling
-        
-	    return true;
 	}
+	
+	
 	
 ////	@AfterClass(alwaysRun = true)
 //	public void tearDown() throws Exception {
@@ -397,24 +541,38 @@ public class FitnesseTestFixture {
 //	}
 	
 	public void createLogFile() {
-		String appendedIndex = "";
+//		String appendedIndex = "";
 		if(makeALogFile) {
 	        try {
 	        	String loc ="";
-	        	if(takingBaselineSet) {
+	        	if(baselineSet) {
 	        		loc = "C:\\baseline\\log.txt";
 	        	}else {
 	        		loc = "C:\\current\\"+instanceStartTime+"\\log.txt";
 	        	}
-				PrintWriter out = new PrintWriter(loc);
-		        for(int i=0; i<navigationPathAlternate.size(); i++) {
-		        	appendedIndex = String.format("%04d", i);
-		        	out.println(appendedIndex + ": " + navigationPathAlternate.get(i));
-		        }
-		        out.close();
+//					PrintWriter out = new PrintWriter(loc);
+	        	out = new PrintWriter(loc);
+//			        for(int i=0; i<navigationPathAlternate.size(); i++) {
+//			        	appendedIndex = String.format("%04d", i);
+//			        	out.println(appendedIndex + ": " + navigationPathAlternate.get(i));
+//			        }
+//			        out.close();
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
+		}
+
+	}
+	
+	public void populateLogFile(ArrayList<String> navArray) {
+		String appendedIndex = String.format("%04d", navArray.size()-1);
+    	out.println(appendedIndex + ": " + navigationPathAlternate.get(navArray.size()-1));
+	}
+	
+	public void endScreening() {
+		if(willEndScreening) {
+			out.close();
+			driver.quit();
 		}
 	}
 	
@@ -445,59 +603,7 @@ public class FitnesseTestFixture {
 		}
 	}
 
-	/***
-	 * Clicks an xpath element AND stores the xpath for navigational purposes
-	 * TODO: Wouldn't this cause issues when branching out? Or keep track of entire path instead of branches?
-	 */
-//	public void clickElementByXpath() {
-//		if(xpath.length()>0) {
-////			System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
-//			WebElement element = driver.findElement(By.xpath(xpath));			
-////			addXpathToNavigationPath(xpath);
-//			addActionToNavigationPathAlternate(xpath);
-//			element.click();			
-//		}else {
-//			
-//		}
-//	}
-	
-//	public void clickElementByXpathPreparation(String xpath) {
-//	WebElement el = driver.findElement(By.xpath(xpath));
-//	Wait<WebElement> wait = new FluentWait<WebElement>(el)
-//		    .withTimeout(6, TimeUnit.SECONDS)
-//		    .pollingEvery(1, TimeUnit.SECONDS)
-//		    .ignoring(NoSuchElementException.class);
-//
-//	initializeTestFixtureWeb(testWebFixture);
-//	wait.until(testWebFixture);//automatically feeds the parameter used to initialize wait into the testFixture	
-//}
-//
-	
-//	public long getElementTransitionLength(WebElement el) {
-////		return Long.parseLong(el.getCssValue("transition"));
-////		return Long.parseLong(el.getCssValue("-webkit-transition"));
-//		String cssValue = el.getCssValue("transition-duration");
-//		String trimmedCssValue = cssValue.substring(0, cssValue.length()-1);
-//		if(trimmedCssValue.length()>0) {
-////			return Long.valueOf(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
-////			return Long.parseLong(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
-////			System.out.println("Waiting for " + el.toString() + " for "+trimmedCssValue + "s");
-//			return (long)Double.parseDouble(trimmedCssValue);
-//		}else {
-//			return (long) 0;
-//		}
-//		
-//	}
 
-	
-//public void initializeTestFixtureWeb(Function<WebElement,Boolean> testFixture) {	
-//	testFixture = new Function<WebElement,Boolean>(){
-//		public Boolean apply(WebElement el) {//shallow copy of address
-//			//wait until element is available					
-//			return el.isDisplayed();					
-//		}
-//	};			
-//}
 	public void hoverOverElement() {
 		if(xpath.length()>0 && willHover) {
 			addActionToNavigationPathAlternate(xpath + "_hover");		
@@ -516,14 +622,12 @@ public class FitnesseTestFixture {
 		}		
 	}
 	
-//	public void check
-	
 	//Wait for image to appear
 	public void waitForElement() {
 //		System.out.println("locateElementInPageByXpathAndWaitForNonZeroWidth: " + getNavigationPathAltEventId() + xpath.length() + willWaitFor);	
 //		if(xpath.length()>0 && willWaitFor) {
 		if(xpath.length()>0 && (willCheckExpectedCondition | willCheckCssAttributeValuePair | willCheckJavascriptResult )) {
-			System.out.println("actually locateElementInPageByXpathAndWaitForNonZeroWidth: " + xpath + "_wait");
+//			System.out.println("actually locateElementInPageByXpathAndWaitForNonZeroWidth: " + xpath + "_wait");
 			addActionToNavigationPathAlternate(xpath + "_wait");			
 
 			Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)			    
@@ -536,6 +640,7 @@ public class FitnesseTestFixture {
 				    .withTimeout(6, TimeUnit.SECONDS)
 				    .pollingEvery(2, TimeUnit.SECONDS)
 				    .ignoring(NoSuchElementException.class);
+			
 			
 			//wait for nonZeroWidth
 			if(checkVisibilityByWidth) {
@@ -568,7 +673,7 @@ public class FitnesseTestFixture {
 						WebElement elCopy = driver.findElement(By.xpath(xpathCopy));
 						boolean hasOpacity = false;
 						//what if Opacity is not present in CSS?
-						System.out.println(elCopy.toString() + " opacity: " + elCopy.getCssValue("opacity"));
+//						System.out.println(elCopy.toString() + " opacity: " + elCopy.getCssValue("opacity"));
 						if(elCopy.getCssValue("opacity").equals("1")){
 							hasOpacity = true;
 						}
@@ -601,7 +706,7 @@ public class FitnesseTestFixture {
 						WebElement elCopy = driver.findElement(By.xpath(xpathCopy));
 						boolean hasOpacity = false;
 						//what if Opacity is not present in CSS?
-						System.out.println(elCopy.toString() + " opacity: " + elCopy.getCssValue("opacity"));
+//						System.out.println(elCopy.toString() + " opacity: " + elCopy.getCssValue("opacity"));
 						if(elCopy.getCssValue("opacity").equals("0")){
 							hasOpacity = true;
 						}
@@ -646,6 +751,8 @@ public class FitnesseTestFixture {
 						String actualValue = elCopy.getCssValue(attr);
 						if(attr.equals("color")||attr.equals("background-color")) {
 							actualValue = org.openqa.selenium.support.Color.fromString(elCopy.getCssValue(attr)).asHex();
+						}else if(expectedValue.contains("scale")) {
+							expectedValue=convertCssScaleToMatrix(expectedValue);
 						}
 						System.out.println(elCopy.toString() + attr + " " + op + " " + expectedValue + " (expected): " + actualValue + " (actual)");
 
@@ -681,8 +788,7 @@ public class FitnesseTestFixture {
 						return javascriptStatus;
 					}
 				});	
-			}
-			
+			}			
 			
 			if(willCheckExpectedCondition) {
 				expectedConditionType = expectedConditionType.toLowerCase();
@@ -707,6 +813,17 @@ public class FitnesseTestFixture {
 						break;
 				}
 			}
+			if(willVerifyResultingAddress) {
+				Wait<String> waitString = new FluentWait<String>(resultingAddress)					
+						.withTimeout(waitFactor, TimeUnit.SECONDS)
+					    .pollingEvery((long) .5, TimeUnit.SECONDS)
+					    .ignoring(NoSuchElementException.class);;
+				waitString.until(new Function<String, Boolean>(){
+					public Boolean apply(String address) {						
+						return (driver.getCurrentUrl().equals(resultingAddress));
+					}
+				});
+			}
 			
 			//wait for ...
 
@@ -716,12 +833,28 @@ public class FitnesseTestFixture {
 
 	}
 	
+	/***
+	 * Expects a string like the format scale(xxxx.xxxx, xxxx.xxxx) and converts to matrix(xxxx.xxxx, 0.0, xxxx.xxxx, 0.0)
+	 * scale(1.2, 1.2) -> matrix(1.2, 0, 0, 1.2, 0, 0)
+	 * @param scaleStr
+	 * @return
+	 */
+	protected String convertCssScaleToMatrix(String scaleStr) {
+		String matrixStr = "";
+		String tempStr = scaleStr.substring(6, scaleStr.length()-1);
+		String[] tempArray = new String[2];
+		tempStr = tempStr.replaceAll("\\s","");
+		tempArray = tempStr.split(",");
+		matrixStr = "matrix("+tempArray[0]+", 0, 0, "+tempArray[1]+", 0, 0)";
+		return matrixStr;
+	}
+	
 	//Click and then wait for transition to end
 	public void clickElementByXpath() {
-		System.out.println("clickElementByXpathAndWaitForReadyState: " + xpath);
+//		System.out.println("clickElementByXpathAndWaitForReadyState: " + xpath);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;		
 		if(xpath.length()>0 && willClick) {
-			System.out.println("actually clickElementByXpathAndWaitForReadyState(String xpath): xpath = " + xpath);
+//			System.out.println("actually clickElementByXpathAndWaitForReadyState(String xpath): xpath = " + xpath);
 			WebElement element = driver.findElement(By.xpath(xpath));			
 			addActionToNavigationPathAlternate(xpath);
 			element.click();		
@@ -736,7 +869,15 @@ public class FitnesseTestFixture {
 //			});
 			xpath = "";
 			willClick=false;
-		}else {
+		}else if(xpath.length()>0 && willClickWithNewTab) {
+			WebElement element = driver.findElement(By.xpath(xpath));			
+			addActionToNavigationPathAlternate(xpath+"_newTab");
+			element.click();	
+			String currentWindow = driver.getWindowHandle();
+			ArrayList<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+			driver.switchTo().window(windowHandles.get(windowHandles.size()-1));
+		}
+		else {
 			//don't click anything
 		}
 
@@ -781,14 +922,18 @@ public class FitnesseTestFixture {
 		//use the index for the eventID
 		//then output the list into a log file, with ids
 		//later on, have the output in realtime
+		StringBuilder sb = new StringBuilder();
 		String str;
 		int size = navigationPathAlternate.size();
 		if(size==0) {
 			str = action;
-			navigationPathAlternate.add(str+"\n");			
+//			sb.append(str).append(System.getProperty("line.separator"));
+			navigationPathAlternate.add("\r\n\t"+str);		
+			populateLogFile(navigationPathAlternate);
 		}else {
-			str = navigationPathAlternate.get(size-1)+action;
-			navigationPathAlternate.add(str+"\n");
+			str = navigationPathAlternate.get(size-1)+"\r\n\t"+action;
+			navigationPathAlternate.add(str);
+			populateLogFile(navigationPathAlternate);
 		}
 	}
 	
@@ -864,8 +1009,8 @@ public class FitnesseTestFixture {
 	 * Outputs into C:\\baseline or C:\\current\\-instanceStartTime- (for current and diffs)
 	 */
 	@SuppressWarnings("unused")
-	public void takeScreenshot() {
-		if(enableScreenshot) {
+	public void takeScreenshotAndGenerateDiff() {
+//		if(enableScreenshot) {
 			//wait for page to be in a ready state and jquery.active to be 0
 //			waitForPageStability();
 //			waitForPageStability2(xpath);
@@ -886,7 +1031,7 @@ public class FitnesseTestFixture {
 			BufferedImage currentShot;
 			BufferedImage baselineShot;
 			
-			if(takingBaselineSet) {
+			if(baselineSet) {
 				try {
 					FileUtils.copyFile(screenshotFile, new File(newFilename));
 				} catch (IOException e) {
@@ -902,6 +1047,7 @@ public class FitnesseTestFixture {
 					}else {
 						baselineShot = null;
 					}
+					//generates diff
 					compareBaseLineWithImmediateScreenshot(baselineShot,currentShot,currentDiffFilename);
 
 				} catch (IOException e) {
@@ -909,9 +1055,9 @@ public class FitnesseTestFixture {
 				}	
 			}
 			
-		}
+//		}
 		//The below line should consistently default takeScreenshot as false
-		enableScreenshot = false;
+//		enableScreenshot = false;
 	}
 	
 	/***
@@ -1080,7 +1226,7 @@ public class FitnesseTestFixture {
 	}
 	
 	public void scrollDownXFullScreenPageHeightAndWait() {
-		System.out.println("scrollDownXFullScreenPageHeightAndWait: " + pageScrollPosition);
+//		System.out.println("scrollDownXFullScreenPageHeightAndWait: " + pageScrollPosition);
 		if(pageScrollPosition.length()>0) {
 			addActionToNavigationPathAlternate("s"+pageScrollPosition);
 			JavascriptExecutor jseScroll = (JavascriptExecutor)driver;			

@@ -753,3 +753,57 @@ public void waitForPageStability() {
 //      }); 
 //      return appeared;        
 //  }
+
+    /***
+     * Clicks an xpath element AND stores the xpath for navigational purposes
+     * TODO: Wouldn't this cause issues when branching out? Or keep track of entire path instead of branches?
+     */
+//  public void clickElementByXpath() {
+//      if(xpath.length()>0) {
+////            System.out.println("clickElementByXpath(String xpath): xpath = " + xpath);
+//          WebElement element = driver.findElement(By.xpath(xpath));           
+////            addXpathToNavigationPath(xpath);
+//          addActionToNavigationPathAlternate(xpath);
+//          element.click();            
+//      }else {
+//          
+//      }
+//  }
+    
+//  public void clickElementByXpathPreparation(String xpath) {
+//  WebElement el = driver.findElement(By.xpath(xpath));
+//  Wait<WebElement> wait = new FluentWait<WebElement>(el)
+//          .withTimeout(6, TimeUnit.SECONDS)
+//          .pollingEvery(1, TimeUnit.SECONDS)
+//          .ignoring(NoSuchElementException.class);
+//
+//  initializeTestFixtureWeb(testWebFixture);
+//  wait.until(testWebFixture);//automatically feeds the parameter used to initialize wait into the testFixture 
+//}
+//
+    
+//  public long getElementTransitionLength(WebElement el) {
+////        return Long.parseLong(el.getCssValue("transition"));
+////        return Long.parseLong(el.getCssValue("-webkit-transition"));
+//      String cssValue = el.getCssValue("transition-duration");
+//      String trimmedCssValue = cssValue.substring(0, cssValue.length()-1);
+//      if(trimmedCssValue.length()>0) {
+////            return Long.valueOf(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
+////            return Long.parseLong(trimmedCssValue,10);//java.lang.NumberFormatException: For input string: "0.1"
+////            System.out.println("Waiting for " + el.toString() + " for "+trimmedCssValue + "s");
+//          return (long)Double.parseDouble(trimmedCssValue);
+//      }else {
+//          return (long) 0;
+//      }
+//      
+//  }
+
+    
+//public void initializeTestFixtureWeb(Function<WebElement,Boolean> testFixture) {  
+//  testFixture = new Function<WebElement,Boolean>(){
+//      public Boolean apply(WebElement el) {//shallow copy of address
+//          //wait until element is available                   
+//          return el.isDisplayed();                    
+//      }
+//  };          
+//}
