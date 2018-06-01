@@ -1,0 +1,2576 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20180127</FitNesseVersion>
+  <rootPath>FrontPage.FitnesseTestFixture</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>63</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <date>2018-05-31T17:41:49-07:00</date>
+    <runTimeInMillis>22295</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\eclipse-workspace\ScreeningAutomation\target\classes&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;paths&lt;/p&gt;
+	&lt;div&gt;&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\baseline&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\resources.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\rt.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\jsse.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\jce.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\charsets.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\jfr.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\access-bridge-64.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\cldrdata.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\dnsns.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\jaccess.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\jfxrt.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\localedata.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\nashorn.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\sunec.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\sunjce_provider.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\sunmscapi.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\sunpkcs11.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Program Files\Java\jre1.8.0_161\lib\ext\zipfs.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-java\3.9.1\selenium-java-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-api\3.9.1\selenium-api-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.9.1\selenium-chrome-driver-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.9.1\selenium-edge-driver-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.9.1\selenium-firefox-driver-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.9.1\selenium-ie-driver-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.9.1\selenium-opera-driver-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.9.1\selenium-remote-driver-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.9.1\selenium-safari-driver-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-support\3.9.1\selenium-support-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\net\bytebuddy\byte-buddy\1.7.9\byte-buddy-1.7.9.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\com\google\guava\guava\23.6-jre\guava-23.6-jre.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\httpcomponents\httpcore\4.4.6\httpcore-4.4.6.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\com\squareup\okhttp3\okhttp\3.9.1\okhttp-3.9.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\com\squareup\okio\okio\1.13.0\okio-1.13.0.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\poi\poi\3.17\poi-3.17.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\poi\poi-ooxml\3.17\poi-ooxml-3.17.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.17\poi-ooxml-schemas-3.17.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\com\github\virtuald\curvesapi\1.04\curvesapi-1.04.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\fitnesse\fitnesse\20180127\fitnesse-20180127.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\htmlparser\htmlparser\2.1\htmlparser-2.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\htmlparser\htmllexer\2.1\htmllexer-2.1.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\velocity\velocity\1.7\velocity-1.7.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\json\json\20151123\json-20151123.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\com\googlecode\java-diff-utils\diffutils\1.3.0\diffutils-1.3.0.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\ant\ant\1.9.6\ant-1.9.6.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\apache\ant\ant-launcher\1.9.6\ant-launcher-1.9.6.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\junit\junit\4.12\junit-4.12.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\commons-io-2.6\commons-io-2.6.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\image-comparison-1.0.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\sikulix\sikulixapi.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.p2\pool\plugins\org.testng_6.13.1.r201712040515.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.p2\pool\plugins\com.beust.jcommander_1.72.0.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.p2\pool\plugins\org.apache-extras.beanshell.bsh_2.0.0.b6.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: C:\Users\gaguilar\.p2\pool\plugins\org.yaml.snakeyaml_1.17.0.jar&lt;/span&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;imports&lt;/p&gt;
+	&lt;div&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.inhance.testFramework&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;fitnesse.slim.test&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;fitnesse.fixtures&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td colspan="29"&gt;&lt;span class="pass"&gt;FitnesseTestFixture&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;notes&lt;/td&gt;
+		&lt;td&gt;will initialize&lt;/td&gt;
+		&lt;td&gt;will make a log file&lt;/td&gt;
+		&lt;td&gt;will take baseline set&lt;/td&gt;
+		&lt;td&gt;chrome binary location&lt;/td&gt;
+		&lt;td&gt;global address&lt;/td&gt;
+		&lt;td&gt;initializeAlt?&lt;/td&gt;
+		&lt;td&gt;navigate by global address?&lt;/td&gt;
+		&lt;td&gt;page Scroll Position&lt;/td&gt;
+		&lt;td&gt;scroll Down X Full Screen Page Height And Wait?&lt;/td&gt;
+		&lt;td&gt;xpath&lt;/td&gt;
+		&lt;td&gt;will click&lt;/td&gt;
+		&lt;td&gt;will hover&lt;/td&gt;
+		&lt;td&gt;will check expected condition&lt;/td&gt;
+		&lt;td&gt;will check css attribute value pair&lt;/td&gt;
+		&lt;td&gt;will check javascript result&lt;/td&gt;
+		&lt;td&gt;will verify resulting address&lt;/td&gt;
+		&lt;td&gt;will generate new tab&lt;/td&gt;
+		&lt;td&gt;css attribute value pair&lt;/td&gt;
+		&lt;td&gt;expected condition type&lt;/td&gt;
+		&lt;td&gt;javascript executor string&lt;/td&gt;
+		&lt;td&gt;resulting address&lt;/td&gt;
+		&lt;td&gt;click element by xpath?&lt;/td&gt;
+		&lt;td&gt;hover over element?&lt;/td&gt;
+		&lt;td&gt;wait for element?&lt;/td&gt;
+		&lt;td&gt;take screenshot and generate diff?&lt;/td&gt;
+		&lt;td&gt;get navigation path alt event id?&lt;/td&gt;
+		&lt;td&gt;will end screening&lt;/td&gt;
+		&lt;td&gt;end screening?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;home&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;C:\GoogleChromePortable\GoogleChromePortable.exe&lt;/td&gt;
+		&lt;td&gt;http://www.inhance.com/&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;3&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;1&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;click on facebook icon (opens a new tab)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='fb']//a[@href='https://www.facebook.com/InhanceDigital/']//img[@src='/icons/facebook-lg.png']&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;2&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;wait on facebook page&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='fb']//a[@href='https://www.facebook.com/InhanceDigital/']//img[@src='/icons/facebook-lg.png']&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;https://www.facebook.com/InhanceDigital/&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;3&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;click on twitter icon (opens a new tab)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='tw']//a[@href='https://twitter.com/inhancedigital']//img[@src='/icons/twitter-lg.png']&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;4&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;wait on twitter page&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='tw']//a[@href='https://twitter.com/inhancedigital']//img[@src='/icons/twitter-lg.png']&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;https://twitter.com/inhancedigital&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;5&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;click on linkedin icon (opens a new tab)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='ln']//a[@href='https://www.linkedin.com/company/inhance-digital/']//img[@src='/icons/linkedin-lg.png']&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;6&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;wait on linkedin page&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='ln']//a[@href='https://www.linkedin.com/company/inhance-digital/']//img[@src='/icons/linkedin-lg.png']&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;https://www.linkedin.com/company/inhance-digital/&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;7&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;true&lt;/td&gt;
+		&lt;td&gt;&lt;span class="ignore"&gt;/__VOID__/&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>FitnesseTestFixture</relativePageName>
+            <instructions>
+            <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.inhance.testFramework'}</instruction>
+        <slimResult>pass(com.inhance.testFramework)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>com.inhance.testFramework</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='import_1_0', instruction='import', path='fitnesse.slim.test'}</instruction>
+        <slimResult>pass(fitnesse.slim.test)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_1_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>fitnesse.slim.test</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='import_2_0', instruction='import', path='fitnesse.fixtures'}</instruction>
+        <slimResult>pass(fitnesse.fixtures)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_2_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>fitnesse.fixtures</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_0', instruction='make', instanceName='decisionTable_3', className='FitnesseTestFixture', args=[]}</instruction>
+        <slimResult>pass(FitnesseTestFixture)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>decisionTable_3_0</instructionId>
+                    <col>0</col>
+                              <row>0</row>
+                    <type>ConstructionExpectation</type>
+                                        <evaluationMessage>FitnesseTestFixture</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_4', instruction='call', instanceName='decisionTable_3', methodName='setNotes', args=[home]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_4</instructionId>
+                    <col>0</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_5', instruction='call', instanceName='decisionTable_3', methodName='setWillInitialize', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_5</instructionId>
+                    <col>1</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_6', instruction='call', instanceName='decisionTable_3', methodName='setWillMakeALogFile', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_6</instructionId>
+                    <col>2</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_7', instruction='call', instanceName='decisionTable_3', methodName='setWillTakeBaselineSet', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_7</instructionId>
+                    <col>3</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_8', instruction='call', instanceName='decisionTable_3', methodName='setChromeBinaryLocation', args=[C:\GoogleChromePortable\GoogleChromePortable.exe]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_8</instructionId>
+                    <col>4</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_9', instruction='call', instanceName='decisionTable_3', methodName='setGlobalAddress', args=[http://www.inhance.com/]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_9</instructionId>
+                    <col>5</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_10', instruction='call', instanceName='decisionTable_3', methodName='setPageScrollPosition', args=[3]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_10</instructionId>
+                    <col>8</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_11', instruction='call', instanceName='decisionTable_3', methodName='setXpath', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_11</instructionId>
+                    <col>10</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_12', instruction='call', instanceName='decisionTable_3', methodName='setWillClick', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_12</instructionId>
+                    <col>11</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_13', instruction='call', instanceName='decisionTable_3', methodName='setWillHover', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_13</instructionId>
+                    <col>12</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_14', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckExpectedCondition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_14</instructionId>
+                    <col>13</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_15', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_15</instructionId>
+                    <col>14</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_16', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckJavascriptResult', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_16</instructionId>
+                    <col>15</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_17', instruction='call', instanceName='decisionTable_3', methodName='setWillVerifyResultingAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_17</instructionId>
+                    <col>16</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_18', instruction='call', instanceName='decisionTable_3', methodName='setWillGenerateNewTab', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_18</instructionId>
+                    <col>17</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_19', instruction='call', instanceName='decisionTable_3', methodName='setCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_19</instructionId>
+                    <col>18</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_20', instruction='call', instanceName='decisionTable_3', methodName='setExpectedConditionType', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_20</instructionId>
+                    <col>19</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_21', instruction='call', instanceName='decisionTable_3', methodName='setJavascriptExecutorString', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_21</instructionId>
+                    <col>20</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_22', instruction='call', instanceName='decisionTable_3', methodName='setResultingAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_22</instructionId>
+                    <col>21</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_23', instruction='call', instanceName='decisionTable_3', methodName='setWillEndScreening', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_23</instructionId>
+                    <col>27</col>
+                              <row>2</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_25', instruction='call', instanceName='decisionTable_3', methodName='initializeAlt', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_25</instructionId>
+                    <col>6</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_26', instruction='call', instanceName='decisionTable_3', methodName='navigateByGlobalAddress', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_26</instructionId>
+                    <col>7</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_27', instruction='call', instanceName='decisionTable_3', methodName='scrollDownXFullScreenPageHeightAndWait', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_27</instructionId>
+                    <col>9</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_28', instruction='call', instanceName='decisionTable_3', methodName='clickElementByXpath', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_28</instructionId>
+                    <col>22</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_29', instruction='call', instanceName='decisionTable_3', methodName='hoverOverElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_29</instructionId>
+                    <col>23</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_30', instruction='call', instanceName='decisionTable_3', methodName='waitForElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_30</instructionId>
+                    <col>24</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_31', instruction='call', instanceName='decisionTable_3', methodName='takeScreenshotAndGenerateDiff', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_31</instructionId>
+                    <col>25</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_32', instruction='call', instanceName='decisionTable_3', methodName='getNavigationPathAltEventId', args=[]}</instruction>
+        <slimResult>ignore(1)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_32</instructionId>
+                    <col>26</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>1</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_33', instruction='call', instanceName='decisionTable_3', methodName='endScreening', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_33</instructionId>
+                    <col>28</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_35', instruction='call', instanceName='decisionTable_3', methodName='setNotes', args=[click on facebook icon (opens a new tab)]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_35</instructionId>
+                    <col>0</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_36', instruction='call', instanceName='decisionTable_3', methodName='setWillInitialize', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_36</instructionId>
+                    <col>1</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_37', instruction='call', instanceName='decisionTable_3', methodName='setWillMakeALogFile', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_37</instructionId>
+                    <col>2</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_38', instruction='call', instanceName='decisionTable_3', methodName='setWillTakeBaselineSet', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_38</instructionId>
+                    <col>3</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_39', instruction='call', instanceName='decisionTable_3', methodName='setChromeBinaryLocation', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_39</instructionId>
+                    <col>4</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_40', instruction='call', instanceName='decisionTable_3', methodName='setGlobalAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_40</instructionId>
+                    <col>5</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_41', instruction='call', instanceName='decisionTable_3', methodName='setPageScrollPosition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_41</instructionId>
+                    <col>8</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_42', instruction='call', instanceName='decisionTable_3', methodName='setXpath', args=[//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='fb']//a[@href='https://www.facebook.com/InhanceDigital/']//img[@src='/icons/facebook-lg.png']]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_42</instructionId>
+                    <col>10</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_43', instruction='call', instanceName='decisionTable_3', methodName='setWillClick', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_43</instructionId>
+                    <col>11</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_44', instruction='call', instanceName='decisionTable_3', methodName='setWillHover', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_44</instructionId>
+                    <col>12</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_45', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckExpectedCondition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_45</instructionId>
+                    <col>13</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_46', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_46</instructionId>
+                    <col>14</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_47', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckJavascriptResult', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_47</instructionId>
+                    <col>15</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_48', instruction='call', instanceName='decisionTable_3', methodName='setWillVerifyResultingAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_48</instructionId>
+                    <col>16</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_49', instruction='call', instanceName='decisionTable_3', methodName='setWillGenerateNewTab', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_49</instructionId>
+                    <col>17</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_50', instruction='call', instanceName='decisionTable_3', methodName='setCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_50</instructionId>
+                    <col>18</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_51', instruction='call', instanceName='decisionTable_3', methodName='setExpectedConditionType', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_51</instructionId>
+                    <col>19</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_52', instruction='call', instanceName='decisionTable_3', methodName='setJavascriptExecutorString', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_52</instructionId>
+                    <col>20</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_53', instruction='call', instanceName='decisionTable_3', methodName='setResultingAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_53</instructionId>
+                    <col>21</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_54', instruction='call', instanceName='decisionTable_3', methodName='setWillEndScreening', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_54</instructionId>
+                    <col>27</col>
+                              <row>3</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_56', instruction='call', instanceName='decisionTable_3', methodName='initializeAlt', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_56</instructionId>
+                    <col>6</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_57', instruction='call', instanceName='decisionTable_3', methodName='navigateByGlobalAddress', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_57</instructionId>
+                    <col>7</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_58', instruction='call', instanceName='decisionTable_3', methodName='scrollDownXFullScreenPageHeightAndWait', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_58</instructionId>
+                    <col>9</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_59', instruction='call', instanceName='decisionTable_3', methodName='clickElementByXpath', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_59</instructionId>
+                    <col>22</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_60', instruction='call', instanceName='decisionTable_3', methodName='hoverOverElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_60</instructionId>
+                    <col>23</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_61', instruction='call', instanceName='decisionTable_3', methodName='waitForElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_61</instructionId>
+                    <col>24</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_62', instruction='call', instanceName='decisionTable_3', methodName='takeScreenshotAndGenerateDiff', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_62</instructionId>
+                    <col>25</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_63', instruction='call', instanceName='decisionTable_3', methodName='getNavigationPathAltEventId', args=[]}</instruction>
+        <slimResult>ignore(2)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_63</instructionId>
+                    <col>26</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>2</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_64', instruction='call', instanceName='decisionTable_3', methodName='endScreening', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_64</instructionId>
+                    <col>28</col>
+                              <row>3</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_66', instruction='call', instanceName='decisionTable_3', methodName='setNotes', args=[wait on facebook page]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_66</instructionId>
+                    <col>0</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_67', instruction='call', instanceName='decisionTable_3', methodName='setWillInitialize', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_67</instructionId>
+                    <col>1</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_68', instruction='call', instanceName='decisionTable_3', methodName='setWillMakeALogFile', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_68</instructionId>
+                    <col>2</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_69', instruction='call', instanceName='decisionTable_3', methodName='setWillTakeBaselineSet', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_69</instructionId>
+                    <col>3</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_70', instruction='call', instanceName='decisionTable_3', methodName='setChromeBinaryLocation', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_70</instructionId>
+                    <col>4</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_71', instruction='call', instanceName='decisionTable_3', methodName='setGlobalAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_71</instructionId>
+                    <col>5</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_72', instruction='call', instanceName='decisionTable_3', methodName='setPageScrollPosition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_72</instructionId>
+                    <col>8</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_73', instruction='call', instanceName='decisionTable_3', methodName='setXpath', args=[//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='fb']//a[@href='https://www.facebook.com/InhanceDigital/']//img[@src='/icons/facebook-lg.png']]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_73</instructionId>
+                    <col>10</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_74', instruction='call', instanceName='decisionTable_3', methodName='setWillClick', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_74</instructionId>
+                    <col>11</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_75', instruction='call', instanceName='decisionTable_3', methodName='setWillHover', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_75</instructionId>
+                    <col>12</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_76', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckExpectedCondition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_76</instructionId>
+                    <col>13</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_77', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_77</instructionId>
+                    <col>14</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_78', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckJavascriptResult', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_78</instructionId>
+                    <col>15</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_79', instruction='call', instanceName='decisionTable_3', methodName='setWillVerifyResultingAddress', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_79</instructionId>
+                    <col>16</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_80', instruction='call', instanceName='decisionTable_3', methodName='setWillGenerateNewTab', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_80</instructionId>
+                    <col>17</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_81', instruction='call', instanceName='decisionTable_3', methodName='setCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_81</instructionId>
+                    <col>18</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_82', instruction='call', instanceName='decisionTable_3', methodName='setExpectedConditionType', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_82</instructionId>
+                    <col>19</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_83', instruction='call', instanceName='decisionTable_3', methodName='setJavascriptExecutorString', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_83</instructionId>
+                    <col>20</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_84', instruction='call', instanceName='decisionTable_3', methodName='setResultingAddress', args=[https://www.facebook.com/InhanceDigital/]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_84</instructionId>
+                    <col>21</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_85', instruction='call', instanceName='decisionTable_3', methodName='setWillEndScreening', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_85</instructionId>
+                    <col>27</col>
+                              <row>4</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_87', instruction='call', instanceName='decisionTable_3', methodName='initializeAlt', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_87</instructionId>
+                    <col>6</col>
+                              <row>4</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_88', instruction='call', instanceName='decisionTable_3', methodName='navigateByGlobalAddress', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_88</instructionId>
+                    <col>7</col>
+                              <row>4</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_89', instruction='call', instanceName='decisionTable_3', methodName='scrollDownXFullScreenPageHeightAndWait', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_89</instructionId>
+                    <col>9</col>
+                              <row>4</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_90', instruction='call', instanceName='decisionTable_3', methodName='clickElementByXpath', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_90</instructionId>
+                    <col>22</col>
+                              <row>4</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_91', instruction='call', instanceName='decisionTable_3', methodName='hoverOverElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_91</instructionId>
+                    <col>23</col>
+                              <row>4</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_92', instruction='call', instanceName='decisionTable_3', methodName='waitForElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_92</instructionId>
+                    <col>24</col>
+                              <row>4</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_93', instruction='call', instanceName='decisionTable_3', methodName='takeScreenshotAndGenerateDiff', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_93</instructionId>
+                    <col>25</col>
+                              <row>4</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_94', instruction='call', instanceName='decisionTable_3', methodName='getNavigationPathAltEventId', args=[]}</instruction>
+        <slimResult>ignore(3)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_94</instructionId>
+                    <col>26</col>
+                              <row>4</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>3</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_95', instruction='call', instanceName='decisionTable_3', methodName='endScreening', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_95</instructionId>
+                    <col>28</col>
+                              <row>4</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_97', instruction='call', instanceName='decisionTable_3', methodName='setNotes', args=[click on twitter icon (opens a new tab)]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_97</instructionId>
+                    <col>0</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_98', instruction='call', instanceName='decisionTable_3', methodName='setWillInitialize', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_98</instructionId>
+                    <col>1</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_99', instruction='call', instanceName='decisionTable_3', methodName='setWillMakeALogFile', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_99</instructionId>
+                    <col>2</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_100', instruction='call', instanceName='decisionTable_3', methodName='setWillTakeBaselineSet', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_100</instructionId>
+                    <col>3</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_101', instruction='call', instanceName='decisionTable_3', methodName='setChromeBinaryLocation', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_101</instructionId>
+                    <col>4</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_102', instruction='call', instanceName='decisionTable_3', methodName='setGlobalAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_102</instructionId>
+                    <col>5</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_103', instruction='call', instanceName='decisionTable_3', methodName='setPageScrollPosition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_103</instructionId>
+                    <col>8</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_104', instruction='call', instanceName='decisionTable_3', methodName='setXpath', args=[//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='tw']//a[@href='https://twitter.com/inhancedigital']//img[@src='/icons/twitter-lg.png']]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_104</instructionId>
+                    <col>10</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_105', instruction='call', instanceName='decisionTable_3', methodName='setWillClick', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_105</instructionId>
+                    <col>11</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_106', instruction='call', instanceName='decisionTable_3', methodName='setWillHover', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_106</instructionId>
+                    <col>12</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_107', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckExpectedCondition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_107</instructionId>
+                    <col>13</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_108', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_108</instructionId>
+                    <col>14</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_109', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckJavascriptResult', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_109</instructionId>
+                    <col>15</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_110', instruction='call', instanceName='decisionTable_3', methodName='setWillVerifyResultingAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_110</instructionId>
+                    <col>16</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_111', instruction='call', instanceName='decisionTable_3', methodName='setWillGenerateNewTab', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_111</instructionId>
+                    <col>17</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_112', instruction='call', instanceName='decisionTable_3', methodName='setCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_112</instructionId>
+                    <col>18</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_113', instruction='call', instanceName='decisionTable_3', methodName='setExpectedConditionType', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_113</instructionId>
+                    <col>19</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_114', instruction='call', instanceName='decisionTable_3', methodName='setJavascriptExecutorString', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_114</instructionId>
+                    <col>20</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_115', instruction='call', instanceName='decisionTable_3', methodName='setResultingAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_115</instructionId>
+                    <col>21</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_116', instruction='call', instanceName='decisionTable_3', methodName='setWillEndScreening', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_116</instructionId>
+                    <col>27</col>
+                              <row>5</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_118', instruction='call', instanceName='decisionTable_3', methodName='initializeAlt', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_118</instructionId>
+                    <col>6</col>
+                              <row>5</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_119', instruction='call', instanceName='decisionTable_3', methodName='navigateByGlobalAddress', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_119</instructionId>
+                    <col>7</col>
+                              <row>5</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_120', instruction='call', instanceName='decisionTable_3', methodName='scrollDownXFullScreenPageHeightAndWait', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_120</instructionId>
+                    <col>9</col>
+                              <row>5</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_121', instruction='call', instanceName='decisionTable_3', methodName='clickElementByXpath', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_121</instructionId>
+                    <col>22</col>
+                              <row>5</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_122', instruction='call', instanceName='decisionTable_3', methodName='hoverOverElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_122</instructionId>
+                    <col>23</col>
+                              <row>5</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_123', instruction='call', instanceName='decisionTable_3', methodName='waitForElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_123</instructionId>
+                    <col>24</col>
+                              <row>5</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_124', instruction='call', instanceName='decisionTable_3', methodName='takeScreenshotAndGenerateDiff', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_124</instructionId>
+                    <col>25</col>
+                              <row>5</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_125', instruction='call', instanceName='decisionTable_3', methodName='getNavigationPathAltEventId', args=[]}</instruction>
+        <slimResult>ignore(4)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_125</instructionId>
+                    <col>26</col>
+                              <row>5</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>4</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_126', instruction='call', instanceName='decisionTable_3', methodName='endScreening', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_126</instructionId>
+                    <col>28</col>
+                              <row>5</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_128', instruction='call', instanceName='decisionTable_3', methodName='setNotes', args=[wait on twitter page]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_128</instructionId>
+                    <col>0</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_129', instruction='call', instanceName='decisionTable_3', methodName='setWillInitialize', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_129</instructionId>
+                    <col>1</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_130', instruction='call', instanceName='decisionTable_3', methodName='setWillMakeALogFile', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_130</instructionId>
+                    <col>2</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_131', instruction='call', instanceName='decisionTable_3', methodName='setWillTakeBaselineSet', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_131</instructionId>
+                    <col>3</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_132', instruction='call', instanceName='decisionTable_3', methodName='setChromeBinaryLocation', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_132</instructionId>
+                    <col>4</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_133', instruction='call', instanceName='decisionTable_3', methodName='setGlobalAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_133</instructionId>
+                    <col>5</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_134', instruction='call', instanceName='decisionTable_3', methodName='setPageScrollPosition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_134</instructionId>
+                    <col>8</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_135', instruction='call', instanceName='decisionTable_3', methodName='setXpath', args=[//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='tw']//a[@href='https://twitter.com/inhancedigital']//img[@src='/icons/twitter-lg.png']]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_135</instructionId>
+                    <col>10</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_136', instruction='call', instanceName='decisionTable_3', methodName='setWillClick', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_136</instructionId>
+                    <col>11</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_137', instruction='call', instanceName='decisionTable_3', methodName='setWillHover', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_137</instructionId>
+                    <col>12</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_138', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckExpectedCondition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_138</instructionId>
+                    <col>13</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_139', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_139</instructionId>
+                    <col>14</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_140', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckJavascriptResult', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_140</instructionId>
+                    <col>15</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_141', instruction='call', instanceName='decisionTable_3', methodName='setWillVerifyResultingAddress', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_141</instructionId>
+                    <col>16</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_142', instruction='call', instanceName='decisionTable_3', methodName='setWillGenerateNewTab', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_142</instructionId>
+                    <col>17</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_143', instruction='call', instanceName='decisionTable_3', methodName='setCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_143</instructionId>
+                    <col>18</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_144', instruction='call', instanceName='decisionTable_3', methodName='setExpectedConditionType', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_144</instructionId>
+                    <col>19</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_145', instruction='call', instanceName='decisionTable_3', methodName='setJavascriptExecutorString', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_145</instructionId>
+                    <col>20</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_146', instruction='call', instanceName='decisionTable_3', methodName='setResultingAddress', args=[https://twitter.com/inhancedigital]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_146</instructionId>
+                    <col>21</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_147', instruction='call', instanceName='decisionTable_3', methodName='setWillEndScreening', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_147</instructionId>
+                    <col>27</col>
+                              <row>6</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_149', instruction='call', instanceName='decisionTable_3', methodName='initializeAlt', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_149</instructionId>
+                    <col>6</col>
+                              <row>6</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_150', instruction='call', instanceName='decisionTable_3', methodName='navigateByGlobalAddress', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_150</instructionId>
+                    <col>7</col>
+                              <row>6</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_151', instruction='call', instanceName='decisionTable_3', methodName='scrollDownXFullScreenPageHeightAndWait', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_151</instructionId>
+                    <col>9</col>
+                              <row>6</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_152', instruction='call', instanceName='decisionTable_3', methodName='clickElementByXpath', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_152</instructionId>
+                    <col>22</col>
+                              <row>6</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_153', instruction='call', instanceName='decisionTable_3', methodName='hoverOverElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_153</instructionId>
+                    <col>23</col>
+                              <row>6</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_154', instruction='call', instanceName='decisionTable_3', methodName='waitForElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_154</instructionId>
+                    <col>24</col>
+                              <row>6</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_155', instruction='call', instanceName='decisionTable_3', methodName='takeScreenshotAndGenerateDiff', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_155</instructionId>
+                    <col>25</col>
+                              <row>6</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_156', instruction='call', instanceName='decisionTable_3', methodName='getNavigationPathAltEventId', args=[]}</instruction>
+        <slimResult>ignore(5)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_156</instructionId>
+                    <col>26</col>
+                              <row>6</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>5</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_157', instruction='call', instanceName='decisionTable_3', methodName='endScreening', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_157</instructionId>
+                    <col>28</col>
+                              <row>6</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_159', instruction='call', instanceName='decisionTable_3', methodName='setNotes', args=[click on linkedin icon (opens a new tab)]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_159</instructionId>
+                    <col>0</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_160', instruction='call', instanceName='decisionTable_3', methodName='setWillInitialize', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_160</instructionId>
+                    <col>1</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_161', instruction='call', instanceName='decisionTable_3', methodName='setWillMakeALogFile', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_161</instructionId>
+                    <col>2</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_162', instruction='call', instanceName='decisionTable_3', methodName='setWillTakeBaselineSet', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_162</instructionId>
+                    <col>3</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_163', instruction='call', instanceName='decisionTable_3', methodName='setChromeBinaryLocation', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_163</instructionId>
+                    <col>4</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_164', instruction='call', instanceName='decisionTable_3', methodName='setGlobalAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_164</instructionId>
+                    <col>5</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_165', instruction='call', instanceName='decisionTable_3', methodName='setPageScrollPosition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_165</instructionId>
+                    <col>8</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_166', instruction='call', instanceName='decisionTable_3', methodName='setXpath', args=[//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='ln']//a[@href='https://www.linkedin.com/company/inhance-digital/']//img[@src='/icons/linkedin-lg.png']]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_166</instructionId>
+                    <col>10</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_167', instruction='call', instanceName='decisionTable_3', methodName='setWillClick', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_167</instructionId>
+                    <col>11</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_168', instruction='call', instanceName='decisionTable_3', methodName='setWillHover', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_168</instructionId>
+                    <col>12</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_169', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckExpectedCondition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_169</instructionId>
+                    <col>13</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_170', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_170</instructionId>
+                    <col>14</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_171', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckJavascriptResult', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_171</instructionId>
+                    <col>15</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_172', instruction='call', instanceName='decisionTable_3', methodName='setWillVerifyResultingAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_172</instructionId>
+                    <col>16</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_173', instruction='call', instanceName='decisionTable_3', methodName='setWillGenerateNewTab', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_173</instructionId>
+                    <col>17</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_174', instruction='call', instanceName='decisionTable_3', methodName='setCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_174</instructionId>
+                    <col>18</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_175', instruction='call', instanceName='decisionTable_3', methodName='setExpectedConditionType', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_175</instructionId>
+                    <col>19</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_176', instruction='call', instanceName='decisionTable_3', methodName='setJavascriptExecutorString', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_176</instructionId>
+                    <col>20</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_177', instruction='call', instanceName='decisionTable_3', methodName='setResultingAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_177</instructionId>
+                    <col>21</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_178', instruction='call', instanceName='decisionTable_3', methodName='setWillEndScreening', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_178</instructionId>
+                    <col>27</col>
+                              <row>7</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_180', instruction='call', instanceName='decisionTable_3', methodName='initializeAlt', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_180</instructionId>
+                    <col>6</col>
+                              <row>7</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_181', instruction='call', instanceName='decisionTable_3', methodName='navigateByGlobalAddress', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_181</instructionId>
+                    <col>7</col>
+                              <row>7</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_182', instruction='call', instanceName='decisionTable_3', methodName='scrollDownXFullScreenPageHeightAndWait', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_182</instructionId>
+                    <col>9</col>
+                              <row>7</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_183', instruction='call', instanceName='decisionTable_3', methodName='clickElementByXpath', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_183</instructionId>
+                    <col>22</col>
+                              <row>7</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_184', instruction='call', instanceName='decisionTable_3', methodName='hoverOverElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_184</instructionId>
+                    <col>23</col>
+                              <row>7</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_185', instruction='call', instanceName='decisionTable_3', methodName='waitForElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_185</instructionId>
+                    <col>24</col>
+                              <row>7</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_186', instruction='call', instanceName='decisionTable_3', methodName='takeScreenshotAndGenerateDiff', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_186</instructionId>
+                    <col>25</col>
+                              <row>7</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_187', instruction='call', instanceName='decisionTable_3', methodName='getNavigationPathAltEventId', args=[]}</instruction>
+        <slimResult>ignore(6)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_187</instructionId>
+                    <col>26</col>
+                              <row>7</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>6</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_188', instruction='call', instanceName='decisionTable_3', methodName='endScreening', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_188</instructionId>
+                    <col>28</col>
+                              <row>7</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_190', instruction='call', instanceName='decisionTable_3', methodName='setNotes', args=[wait on linkedin page]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_190</instructionId>
+                    <col>0</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_191', instruction='call', instanceName='decisionTable_3', methodName='setWillInitialize', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_191</instructionId>
+                    <col>1</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_192', instruction='call', instanceName='decisionTable_3', methodName='setWillMakeALogFile', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_192</instructionId>
+                    <col>2</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_193', instruction='call', instanceName='decisionTable_3', methodName='setWillTakeBaselineSet', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_193</instructionId>
+                    <col>3</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_194', instruction='call', instanceName='decisionTable_3', methodName='setChromeBinaryLocation', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_194</instructionId>
+                    <col>4</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_195', instruction='call', instanceName='decisionTable_3', methodName='setGlobalAddress', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_195</instructionId>
+                    <col>5</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_196', instruction='call', instanceName='decisionTable_3', methodName='setPageScrollPosition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_196</instructionId>
+                    <col>8</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_197', instruction='call', instanceName='decisionTable_3', methodName='setXpath', args=[//div[@id='home']//div[@id='footer']//div[@class='popup_footer']//div[@id='landscape']//div[@class='top_b']//div[@class='footer_left']//div[@class='social_media']//div[@class='ln']//a[@href='https://www.linkedin.com/company/inhance-digital/']//img[@src='/icons/linkedin-lg.png']]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_197</instructionId>
+                    <col>10</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_198', instruction='call', instanceName='decisionTable_3', methodName='setWillClick', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_198</instructionId>
+                    <col>11</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_199', instruction='call', instanceName='decisionTable_3', methodName='setWillHover', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_199</instructionId>
+                    <col>12</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_200', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckExpectedCondition', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_200</instructionId>
+                    <col>13</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_201', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_201</instructionId>
+                    <col>14</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_202', instruction='call', instanceName='decisionTable_3', methodName='setWillCheckJavascriptResult', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_202</instructionId>
+                    <col>15</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_203', instruction='call', instanceName='decisionTable_3', methodName='setWillVerifyResultingAddress', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_203</instructionId>
+                    <col>16</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_204', instruction='call', instanceName='decisionTable_3', methodName='setWillGenerateNewTab', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_204</instructionId>
+                    <col>17</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_205', instruction='call', instanceName='decisionTable_3', methodName='setCssAttributeValuePair', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_205</instructionId>
+                    <col>18</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_206', instruction='call', instanceName='decisionTable_3', methodName='setExpectedConditionType', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_206</instructionId>
+                    <col>19</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_207', instruction='call', instanceName='decisionTable_3', methodName='setJavascriptExecutorString', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_207</instructionId>
+                    <col>20</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_208', instruction='call', instanceName='decisionTable_3', methodName='setResultingAddress', args=[https://www.linkedin.com/company/inhance-digital/]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_208</instructionId>
+                    <col>21</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_209', instruction='call', instanceName='decisionTable_3', methodName='setWillEndScreening', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <instructionId>decisionTable_3_209</instructionId>
+                    <col>27</col>
+                              <row>8</row>
+                    <type>VoidReturnExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_211', instruction='call', instanceName='decisionTable_3', methodName='initializeAlt', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_211</instructionId>
+                    <col>6</col>
+                              <row>8</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_212', instruction='call', instanceName='decisionTable_3', methodName='navigateByGlobalAddress', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_212</instructionId>
+                    <col>7</col>
+                              <row>8</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_213', instruction='call', instanceName='decisionTable_3', methodName='scrollDownXFullScreenPageHeightAndWait', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_213</instructionId>
+                    <col>9</col>
+                              <row>8</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_214', instruction='call', instanceName='decisionTable_3', methodName='clickElementByXpath', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_214</instructionId>
+                    <col>22</col>
+                              <row>8</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_215', instruction='call', instanceName='decisionTable_3', methodName='hoverOverElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_215</instructionId>
+                    <col>23</col>
+                              <row>8</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_216', instruction='call', instanceName='decisionTable_3', methodName='waitForElement', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_216</instructionId>
+                    <col>24</col>
+                              <row>8</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_217', instruction='call', instanceName='decisionTable_3', methodName='takeScreenshotAndGenerateDiff', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_217</instructionId>
+                    <col>25</col>
+                              <row>8</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_218', instruction='call', instanceName='decisionTable_3', methodName='getNavigationPathAltEventId', args=[]}</instruction>
+        <slimResult>ignore(7)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_218</instructionId>
+                    <col>26</col>
+                              <row>8</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>7</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_3_219', instruction='call', instanceName='decisionTable_3', methodName='endScreening', args=[]}</instruction>
+        <slimResult>ignore(/__VOID__/)</slimResult>
+                <expectation>
+                    <status>ignore</status>
+                    <instructionId>decisionTable_3_219</instructionId>
+                    <col>28</col>
+                              <row>8</row>
+                    <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>/__VOID__/</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+          </instructions>
+      </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp "C:\Users\gaguilar\.m2\repository\org\fitnesse\fitnesse\20180127\fitnesse-20180127.jar;C:\eclipse-workspace\ScreeningAutomation\target\classes;C:\baseline;C:\Program Files\Java\jre1.8.0_161\lib\resources.jar;C:\Program Files\Java\jre1.8.0_161\lib\rt.jar;C:\Program Files\Java\jre1.8.0_161\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_161\lib\jce.jar;C:\Program Files\Java\jre1.8.0_161\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_161\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\cldrdata.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\dnsns.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\jaccess.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\jfxrt.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\localedata.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\nashorn.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\sunec.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\sunmscapi.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jre1.8.0_161\lib\ext\zipfs.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-java\3.9.1\selenium-java-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-api\3.9.1\selenium-api-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.9.1\selenium-chrome-driver-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.9.1\selenium-edge-driver-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.9.1\selenium-firefox-driver-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.9.1\selenium-ie-driver-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.9.1\selenium-opera-driver-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.9.1\selenium-remote-driver-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.9.1\selenium-safari-driver-3.9.1.jar;C:\Users\gaguilar\.m2\repository\org\seleniumhq\selenium\selenium-support\3.9.1\selenium-support-3.9.1.jar;C:\Users\gaguilar\.m2\repository\net\bytebuddy\byte-buddy\1.7.9\byte-buddy-1.7.9.jar;C:\Users\gaguilar\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\gaguilar\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\gaguilar\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\gaguilar\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\gaguilar\.m2\repository\com\google\guava\guava\23.6-jre\guava-23.6-jre.jar;C:\Users\gaguilar\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\gaguilar\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\gaguilar\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\gaguilar\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\gaguilar\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\gaguilar\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\gaguilar\.m2\repository\org\apache\httpcomponents\httpcore\4.4.6\httpcore-4.4.6.jar;C:\Users\gaguilar\.m2\repository\com\squareup\okhttp3\okhttp\3.9.1\okhttp-3.9.1.jar;C:\Users\gaguilar\.m2\repository\com\squareup\okio\okio\1.13.0\okio-1.13.0.jar;C:\Users\gaguilar\.m2\repository\org\apache\poi\poi\3.17\poi-3.17.jar;C:\Users\gaguilar\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\gaguilar\.m2\repository\org\apache\poi\poi-ooxml\3.17\poi-ooxml-3.17.jar;C:\Users\gaguilar\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.17\poi-ooxml-schemas-3.17.jar;C:\Users\gaguilar\.m2\repository\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar;C:\Users\gaguilar\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\gaguilar\.m2\repository\com\github\virtuald\curvesapi\1.04\curvesapi-1.04.jar;C:\Users\gaguilar\.m2\repository\org\fitnesse\fitnesse\20180127\fitnesse-20180127.jar;C:\Users\gaguilar\.m2\repository\org\htmlparser\htmlparser\2.1\htmlparser-2.1.jar;C:\Users\gaguilar\.m2\repository\org\htmlparser\htmllexer\2.1\htmllexer-2.1.jar;C:\Users\gaguilar\.m2\repository\org\apache\velocity\velocity\1.7\velocity-1.7.jar;C:\Users\gaguilar\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\gaguilar\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\gaguilar\.m2\repository\org\json\json\20151123\json-20151123.jar;C:\Users\gaguilar\.m2\repository\com\googlecode\java-diff-utils\diffutils\1.3.0\diffutils-1.3.0.jar;C:\Users\gaguilar\.m2\repository\org\apache\ant\ant\1.9.6\ant-1.9.6.jar;C:\Users\gaguilar\.m2\repository\org\apache\ant\ant-launcher\1.9.6\ant-launcher-1.9.6.jar;C:\Users\gaguilar\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\gaguilar\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\commons-io-2.6\commons-io-2.6.jar;C:\image-comparison-1.0.jar;C:\sikulix\sikulixapi.jar;C:\Users\gaguilar\.p2\pool\plugins\org.testng_6.13.1.r201712040515.jar;C:\Users\gaguilar\.p2\pool\plugins\com.beust.jcommander_1.72.0.jar;C:\Users\gaguilar\.p2\pool\plugins\org.apache-extras.beanshell.bsh_2.0.0.b6.jar;C:\Users\gaguilar\.p2\pool\plugins\org.yaml.snakeyaml_1.17.0.jar" fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut>[error] RobotDesktop: checkMousePosition: should be L(960,540)@S(0)[0,0 1920x1080]
+but after move is L(768,432)@S(0)[0,0 1920x1080]
+Possible cause in case you did not touch the mouse while script was running:
+ Mouse actions are blocked generally or by the frontmost application.
+You might try to run the SikuliX stuff as admin.
+[error] RobotDesktop: checkMousePosition: should be L(1201,-750)@S(1)[1,-1500 2400x1500]
+but after move is L(1636,-1307)@S(1)[1,-1500 2400x1500]
+Possible cause in case you did not touch the mouse while script was running:
+ Mouse actions are blocked generally or by the frontmost application.
+You might try to run the SikuliX stuff as admin.
+initializeAlt
+Chrome driver in C:\eclipse-workspace\ScreeningAutomation\Driver\chromedriver.exe is paired with binary C:\GoogleChromePortable\GoogleChromePortable.exe
+waitForElement()
+getNavigationPathAltEventId(): 1
+getNavigationPathAltEventId(): 1
+waitForElement()
+getNavigationPathAltEventId(): 2
+getNavigationPathAltEventId(): 2
+waitForElement()
+willVerifyResultingAddress
+willGenerateNewTab
+window: CDwindow-(B3DD83DAD781E3C6D2A0D1A100505EC0) | newwindow: CDwindow-(1B1718E8662A14F39F228E4ECFD44090)
+window: CDwindow-(B3DD83DAD781E3C6D2A0D1A100505EC0)
+getNavigationPathAltEventId(): 3
+getNavigationPathAltEventId(): 3
+waitForElement()
+getNavigationPathAltEventId(): 4
+getNavigationPathAltEventId(): 4
+waitForElement()
+willVerifyResultingAddress
+willGenerateNewTab
+window: CDwindow-(B3DD83DAD781E3C6D2A0D1A100505EC0) | newwindow: CDwindow-(6052C0CB7FE311768F64A48D578EB7B)
+window: CDwindow-(B3DD83DAD781E3C6D2A0D1A100505EC0)
+getNavigationPathAltEventId(): 5
+getNavigationPathAltEventId(): 5
+waitForElement()
+getNavigationPathAltEventId(): 6
+getNavigationPathAltEventId(): 6
+waitForElement()
+willVerifyResultingAddress
+willGenerateNewTab
+window: CDwindow-(B3DD83DAD781E3C6D2A0D1A100505EC0) | newwindow: CDwindow-(1222ECA3957F9D21F52FB81DA93CB769)
+window: CDwindow-(B3DD83DAD781E3C6D2A0D1A100505EC0)
+getNavigationPathAltEventId(): 7
+getNavigationPathAltEventId(): 7
+</stdOut>
+    <stdErr>Starting ChromeDriver 2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73) on port 17919
+
+Only local connections are allowed.
+
+May 31, 2018 5:41:54 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+
+</stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>1</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>22801</totalRunTimeInMillis>
+</testResults>
+

@@ -83,7 +83,7 @@ public class FitnesseTestFixture {
 	public boolean willEndScreening;
 	public boolean willInitialize;
 	public boolean willVerifyResultingAddress;
-	public boolean willClickWithNewTab;
+	public boolean willGenerateNewTab;
 	
 	public String javascriptExecutorString;
 	public String cssAttributeValuePair;
@@ -112,11 +112,11 @@ public class FitnesseTestFixture {
 		return chromeBinaryLocation;
 	}
 	
-	public void setWillClickWithNewTab(boolean temp) {
-		willClickWithNewTab = temp;
+	public void setWillGenerateNewTab(boolean temp) {
+		willGenerateNewTab = temp;
 	}
-	public boolean getWillClickWithNewTab() {
-		return willClickWithNewTab;
+	public boolean getWillGenerateNewTab() {
+		return willGenerateNewTab;
 	}
 	
 	public void setResultingAddress(String temp) {
@@ -438,8 +438,8 @@ public class FitnesseTestFixture {
 	public void initializeAlt() throws Exception {
 		if(willInitialize) {
 			System.out.println("initializeAlt");
-			boolean setupFirefoxDriver = true;
-			boolean setupChromeDriver = false;
+			boolean setupFirefoxDriver = false;//currently has errors
+			boolean setupChromeDriver = true;
 			
 		    navigationPath = new ArrayList<String>();
 		    navigationPathAlternate = new ArrayList<String>();
@@ -588,12 +588,21 @@ public class FitnesseTestFixture {
 		try {
 			out = new PrintWriter(new BufferedWriter(new FileWriter(loc, true)));
 //	    	out.println(appendedIndex + ": " + navigationPathAlternate.get(navArray.size()-1));
-	    	out.append(appendedIndex + ": " + navigationPathAlternate.get(navArray.size()-1));
+	    	out.append("\r\n" + appendedIndex + ": " + navigationPathAlternate.get(navArray.size()-1));
 	    	out.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}    	
 	}
+	
+//	public void checkNewTab() {
+//		if(willGenerateNewTab) {
+//			WebElement element = driver.findElement(By.xpath(xpath));			
+//			addActionToNavigationPathAlternate(xpath+"_newTab");
+//			element.click();	
+//
+//		}
+//	}
 	
 	public void endScreening() {
 		if(willEndScreening) {
@@ -650,8 +659,9 @@ public class FitnesseTestFixture {
 	//Wait for image to appear
 	public void waitForElement() {
 //		System.out.println("locateElementInPageByXpathAndWaitForNonZeroWidth: " + getNavigationPathAltEventId() + xpath.length() + willWaitFor);	
+//		System.out.println("waitForElement()");
 //		if(xpath.length()>0 && willWaitFor) {
-		if(xpath.length()>0 && (willCheckExpectedCondition | willCheckCssAttributeValuePair | willCheckJavascriptResult )) {
+		if(xpath.length()>0 && (willCheckExpectedCondition | willCheckCssAttributeValuePair | willCheckJavascriptResult | willVerifyResultingAddress | willGenerateNewTab)) {
 //			System.out.println("actually locateElementInPageByXpathAndWaitForNonZeroWidth: " + xpath + "_wait");
 			addActionToNavigationPathAlternate(xpath + "_wait");			
 
@@ -839,16 +849,48 @@ public class FitnesseTestFixture {
 				}
 			}
 			if(willVerifyResultingAddress) {
+				System.out.println("willVerifyResultingAddress");
 				Wait<String> waitString = new FluentWait<String>(resultingAddress)					
 						.withTimeout(waitFactor, TimeUnit.SECONDS)
 					    .pollingEvery((long) .5, TimeUnit.SECONDS)
-					    .ignoring(NoSuchElementException.class);;
-				waitString.until(new Function<String, Boolean>(){
-					public Boolean apply(String address) {						
-						return (driver.getCurrentUrl().equals(resultingAddress));
-					}
-				});
+					    .ignoring(NoSuchElementException.class);
+				
+				/***
+				 * With will generate new tab opening, we need to switch tabs to verify the address, then close it, and switch back
+				 */
+				if(willGenerateNewTab) {
+					System.out.println("willGenerateNewTab");
+					final String currentWindow = driver.getWindowHandle();
+					ArrayList<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+					final String newWindow = windowHandles.get(windowHandles.size()-1);
+					driver.switchTo().window(newWindow);
+					waitString.until(new Function<String, Boolean>(){
+						public Boolean apply(String address) {						
+							Boolean rightAddress = driver.getCurrentUrl().equals(resultingAddress);
+							if(rightAddress) {
+								System.out.println("window: " + currentWindow + " | newwindow: " + newWindow);
+								driver.close();
+								driver.switchTo().window(currentWindow);
+								System.out.println("window: " + driver.getWindowHandle());
+								return true;
+							}else {
+								return false;
+							}
+						}
+					});
+				}else {
+					System.out.println("willVerifyResultingAddress: " + willVerifyResultingAddress + " | willGenerateNewTab: " + willGenerateNewTab);
+					waitString.until(new Function<String, Boolean>(){
+						public Boolean apply(String address) {						
+							return (driver.getCurrentUrl().equals(resultingAddress));
+						}
+					});
+				}
+
+
 			}
+			
+
 			
 			//wait for ...
 
@@ -894,13 +936,6 @@ public class FitnesseTestFixture {
 //			});
 			xpath = "";
 			willClick=false;
-		}else if(xpath.length()>0 && willClickWithNewTab) {
-			WebElement element = driver.findElement(By.xpath(xpath));			
-			addActionToNavigationPathAlternate(xpath+"_newTab");
-			element.click();	
-			String currentWindow = driver.getWindowHandle();
-			ArrayList<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window(windowHandles.get(windowHandles.size()-1));
 		}
 		else {
 			//don't click anything
@@ -967,7 +1002,7 @@ public class FitnesseTestFixture {
 	
 	public int getNavigationPathAltEventId() {
 		int eventId = navigationPathAlternate.size()-1;
-		System.out.println("getNavigationPathAltEventId: " + (eventId));
+		System.out.println("getNavigationPathAltEventId(): " + (eventId));
 		return eventId;
 	}
 
