@@ -633,6 +633,7 @@ public class FitnesseTestFixture {
 	public void navigateByGlobalAddress() {
 		if(globalAddress.length()>0) {
 			driver.get(globalAddress);
+			addActionToNavigationPathAlternate("navigate to: " + globalAddress);
 		}else {
 			
 		}
@@ -916,6 +917,14 @@ public class FitnesseTestFixture {
 		return matrixStr;
 	}
 	
+	public String Image() {
+//		return "hi";
+		String currentImageId = getNavigationPathAltEventId()+"";
+		return "<div><img src='http://localhost/files/"+currentImageId+".png' height='200'>hi</div>";
+//		return "<div><img src='http://localhost/files/1.png' height='200'>hi</div>";				
+
+	}
+	
 	//Click and then wait for transition to end
 	public void clickElementByXpath() {
 //		System.out.println("clickElementByXpathAndWaitForReadyState: " + xpath);
@@ -1085,7 +1094,10 @@ public class FitnesseTestFixture {
 //			String currentDiffFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +"_diff.png";			
 			String newFilename = "c:\\baseline\\" + navId + ".png";
 			String currentFilename = "c:\\current\\"+instanceStartTime+"\\"+ navId +".png";
-			String currentDiffFilename = "c:\\current\\"+instanceStartTime+"\\"+ navId +"_diff.png";	
+//			String currentDiffFilename = "c:\\current\\"+instanceStartTime+"\\"+ navId +"_diff.png";
+			String fitnesseRootFileDirectory = "C:\\eclipse-workspace\\ScreeningAutomation\\FitNesseRoot\\files\\";
+			String currentDiffFilename = fitnesseRootFileDirectory+""+navId+".png";
+			
 			BufferedImage currentShot;
 			BufferedImage baselineShot;
 			
@@ -1106,7 +1118,9 @@ public class FitnesseTestFixture {
 						baselineShot = null;
 					}
 					//generates diff
-					compareBaseLineWithImmediateScreenshot(baselineShot,currentShot,currentDiffFilename);
+//					compareBaseLineWithImmediateScreenshot(baselineShot,currentShot,currentDiffFilename);
+					//generates diff and places the new image in the local Fitnesse Root folder
+					compareBaseLineWithImmediateScreenshot(baselineShot, currentShot);
 
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -1182,6 +1196,16 @@ public class FitnesseTestFixture {
 	public void compareBaseLineWithImmediateScreenshot(BufferedImage baselineImage, BufferedImage newImage, String diffFileName) {
 		BufferedImage diff = getDifferenceImage(baselineImage, newImage);
 		File outputfile = new File(diffFileName); 
+		try {
+			ImageIO.write(diff, "png", outputfile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void compareBaseLineWithImmediateScreenshot(BufferedImage baselineImage, BufferedImage newImage) {
+		BufferedImage diff = getDifferenceImage(baselineImage, newImage);
+		File outputfile = new File("FitNesseRoot\\files\\"+getNavigationPathAltEventId()+".png");
 		try {
 			ImageIO.write(diff, "png", outputfile);
 		} catch (IOException e) {
