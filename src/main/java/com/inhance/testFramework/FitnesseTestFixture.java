@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.net.URL;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import javax.imageio.ImageIO;
 import org.apache.commons.io.FileUtils;
@@ -105,6 +106,7 @@ public class FitnesseTestFixture {
 	boolean baselineSet = false;
 	String loc;
 	
+
 	public void setChromeBinaryLocation(String temp) {
 		chromeBinaryLocation = temp;
 	}
@@ -595,19 +597,28 @@ public class FitnesseTestFixture {
 		}    	
 	}
 	
-//	public void checkNewTab() {
-//		if(willGenerateNewTab) {
-//			WebElement element = driver.findElement(By.xpath(xpath));			
-//			addActionToNavigationPathAlternate(xpath+"_newTab");
-//			element.click();	
-//
+	protected String getLastSetOfActions(ArrayList<String> navArray, int count) {
+		
+		int arraySize = navArray.size();
+		String temp=navArray.get(arraySize-1);
+		String tempArray[] = temp.split("\n");
+		int tempSize = tempArray.length;
+//		if(count>tempSize) {
+//			count = tempSize;
 //		}
-//	}
+//		//ex: with a count of 3 and an arraysize of 10
+//		//we get the indexes 7, 8, and 9
+		for(int i=0; i<tempSize; i++) {			
+			System.out.println("tempArray: " + tempArray[i]);
+		}
+		return temp;
+	}
 	
 	public void endScreening() {
 		if(willEndScreening) {
 			out.close();
-			driver.quit();
+			driver.close();
+//			driver.quit();
 		}
 	}
 	
@@ -920,10 +931,29 @@ public class FitnesseTestFixture {
 	public String Image() {
 //		return "hi";
 		String currentImageId = getNavigationPathAltEventId()+"";
-		return "<div><img src='http://localhost/files/"+currentImageId+".png' height='200'>hi</div>";
+		String currentImagePath = getLastSetOfActions(navigationPathAlternate, 1);
+		if(willClick) {
+			return "<div><details><summary>Actions</summary><p>"+currentImagePath+"</p></details></div><div><details><summary>Image</summary><img src='http://localhost/files/"+currentImageId+".png' height='150'></details>Element click may have caused movement. Verify next screenshot for result.</div>";
+		}else {
+			return "<div><details><summary>Actions</summary><p>"+currentImagePath+"</p></details></div><div><img src='http://localhost/files/"+currentImageId+".png' height='150'></div>";
+		}
+
 //		return "<div><img src='http://localhost/files/1.png' height='200'>hi</div>";				
 
 	}
+	
+//	//TODO: Use of Promises
+//	public void testFuture() {
+//		CompletableFuture.supplyAsync(this::supplier).thenAccept(this::consumer);
+//	}
+//	
+//	public String supplier() {
+//		return "";
+//	}
+//	
+//	public void consumer(String fromTestAsync) {
+//		System.out.println(fromTestAsync);
+//	}
 	
 	//Click and then wait for transition to end
 	public void clickElementByXpath() {
@@ -944,12 +974,12 @@ public class FitnesseTestFixture {
 //				}
 //			});
 			xpath = "";
-			willClick=false;
+			//the empty fitnesse cell should set the will click to false regularly
+//			willClick=false;
 		}
 		else {
 			//don't click anything
 		}
-
 	}
 
 	/***
@@ -1053,7 +1083,6 @@ public class FitnesseTestFixture {
 	}
 	
 	public boolean checkIfElementHasNonZeroWidth(WebDriver driverCopy) {
-		
 		boolean nonzero = false;
 		WebElement el = driverCopy.findElement(By.xpath(xpath));
 		String width = el.getCssValue("width");
@@ -1078,55 +1107,56 @@ public class FitnesseTestFixture {
 	@SuppressWarnings("unused")
 	public void takeScreenshotAndGenerateDiff() {
 //		if(enableScreenshot) {
+
 			//wait for page to be in a ready state and jquery.active to be 0
 //			waitForPageStability();
 //			waitForPageStability2(xpath);
 //			waitForPageStability3();
 //			id++;
-			File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			Long timestamp = (new Timestamp(System.currentTimeMillis())).getTime();
+		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		Long timestamp = (new Timestamp(System.currentTimeMillis())).getTime();
 //			System.out.println("Taking screenshot at: "+timestamp);
 //			String navPath = getNavigationPath();
 //			String navPath = getNavigationPathAlt();
-			String navId = getNavigationPathAltEventId()+"";
+		String navId = getNavigationPathAltEventId()+"";
 //			String newFilename = "c:\\baseline\\" + navPath + ".png";
 //			String currentFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +".png";
 //			String currentDiffFilename = "c:\\current\\"+instanceStartTime+"\\"+ navPath +"_diff.png";			
-			String newFilename = "c:\\baseline\\" + navId + ".png";
-			String currentFilename = "c:\\current\\"+instanceStartTime+"\\"+ navId +".png";
+		String newFilename = "c:\\baseline\\" + navId + ".png";
+		String currentFilename = "c:\\current\\"+instanceStartTime+"\\"+ navId +".png";
 //			String currentDiffFilename = "c:\\current\\"+instanceStartTime+"\\"+ navId +"_diff.png";
-			String fitnesseRootFileDirectory = "C:\\eclipse-workspace\\ScreeningAutomation\\FitNesseRoot\\files\\";
-			String currentDiffFilename = fitnesseRootFileDirectory+""+navId+".png";
-			
-			BufferedImage currentShot;
-			BufferedImage baselineShot;
-			
-			if(baselineSet) {
-				try {
-					FileUtils.copyFile(screenshotFile, new File(newFilename));
-				} catch (IOException e) {
-					e.printStackTrace();
-				}	
-			}else {
-				try {
-					FileUtils.copyFile(screenshotFile, new File(currentFilename));					
-					currentShot = ImageIO.read(screenshotFile);
-					File temp = new File(newFilename);
-					if(temp.exists()) {
-						baselineShot = ImageIO.read(temp);
-					}else {
-						baselineShot = null;
-					}
-					//generates diff
+		String fitnesseRootFileDirectory = "C:\\eclipse-workspace\\ScreeningAutomation\\FitNesseRoot\\files\\";
+		String currentDiffFilename = fitnesseRootFileDirectory+""+navId+".png";
+		
+		BufferedImage currentShot;
+		BufferedImage baselineShot;
+		
+		if(baselineSet) {
+			try {
+				FileUtils.copyFile(screenshotFile, new File(newFilename));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}	
+		}else {
+			try {
+				FileUtils.copyFile(screenshotFile, new File(currentFilename));					
+				currentShot = ImageIO.read(screenshotFile);
+				File temp = new File(newFilename);
+				if(temp.exists()) {
+					baselineShot = ImageIO.read(temp);
+				}else {
+					baselineShot = null;
+				}
+				//generates diff
 //					compareBaseLineWithImmediateScreenshot(baselineShot,currentShot,currentDiffFilename);
-					//generates diff and places the new image in the local Fitnesse Root folder
-					compareBaseLineWithImmediateScreenshot(baselineShot, currentShot);
+				//generates diff and places the new image in the local Fitnesse Root folder
+				compareBaseLineWithImmediateScreenshot(baselineShot, currentShot);
 
-				} catch (IOException e) {
-					e.printStackTrace();
-				}	
-			}
-			
+			} catch (IOException e) {
+				e.printStackTrace();
+			}	
+		}
+
 //		}
 		//The below line should consistently default takeScreenshot as false
 //		enableScreenshot = false;

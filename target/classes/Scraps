@@ -807,3 +807,13 @@ public void waitForPageStability() {
 //      }
 //  };          
 //}
+
+    
+//  public void checkNewTab() {
+//      if(willGenerateNewTab) {
+//          WebElement element = driver.findElement(By.xpath(xpath));           
+//          addActionToNavigationPathAlternate(xpath+"_newTab");
+//          element.click();    
+//
+//      }
+//  }
