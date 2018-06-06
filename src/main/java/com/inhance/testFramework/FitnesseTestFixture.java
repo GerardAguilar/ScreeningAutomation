@@ -490,7 +490,7 @@ public class FitnesseTestFixture {
 		        String geckodriverLocation = geckodriver.getAbsolutePath();        
 		        System.setProperty("webdriver.gecko.driver", geckodriverLocation);
 			    driver = new FirefoxDriver();
-			    addActionToNavigationPathAlternate("Initialize geckodriver.exe");
+			    addActionToNavigationPathAlternate("[Initialize " + geckodriverLocation + "]\r\n");
 			}
 
 			//chromeDriverLocation == "the driver"
@@ -518,14 +518,14 @@ public class FitnesseTestFixture {
 					System.setProperty("webdriver.chrome.driver", chromeDriverLocation);              
 					driver = new ChromeDriver(options);
 					System.out.println("Chrome driver in " + chromeDriverLocation + " is paired with binary " + chromeBinaryLocation);
-					addActionToNavigationPathAlternate("Initialize GoogleChromePortable.exe");
+					addActionToNavigationPathAlternate("[Initialize " + chromeDriverLocation + "]\r\n");
 				}
 		    }
 		    
 //		    driver.manage().window().setSize(new Dimension(1024, 768));	    
 		    baseUrl = globalAddress;
 		    navigateByAddress(baseUrl);
-		    addActionToNavigationPathAlternate("Navigating to " + baseUrl);
+		    addActionToNavigationPathAlternate("-navigate to " + baseUrl);
 		    driver.manage().window().maximize(); 
 		    wait = new WebDriverWait(driver, 20);
 		    //make sure to right click the resources\images folder, select Build Path -> Include
@@ -644,7 +644,7 @@ public class FitnesseTestFixture {
 	public void navigateByGlobalAddress() {
 		if(globalAddress.length()>0) {
 			driver.get(globalAddress);
-			addActionToNavigationPathAlternate("navigate to: " + globalAddress);
+			addActionToNavigationPathAlternate("-navigate to " + globalAddress);
 		}else {
 			
 		}
@@ -653,7 +653,7 @@ public class FitnesseTestFixture {
 
 	public void hoverOverElement() {
 		if(xpath.length()>0 && willHover) {
-			addActionToNavigationPathAlternate(xpath + "_hover");		
+			addActionToNavigationPathAlternate("-hover over " + xpath);		
 			WebElement el = driver.findElement(By.xpath(xpath));
 			Actions builder = new Actions(driver);
 					
@@ -675,7 +675,7 @@ public class FitnesseTestFixture {
 //		if(xpath.length()>0 && willWaitFor) {
 		if(xpath.length()>0 && (willCheckExpectedCondition | willCheckCssAttributeValuePair | willCheckJavascriptResult | willVerifyResultingAddress | willGenerateNewTab)) {
 //			System.out.println("actually locateElementInPageByXpathAndWaitForNonZeroWidth: " + xpath + "_wait");
-			addActionToNavigationPathAlternate(xpath + "_wait");			
+			addActionToNavigationPathAlternate("-wait for " + xpath);	
 
 			Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)			    
 					.withTimeout(waitFactor, TimeUnit.SECONDS)
@@ -962,7 +962,7 @@ public class FitnesseTestFixture {
 		if(xpath.length()>0 && willClick) {
 //			System.out.println("actually clickElementByXpathAndWaitForReadyState(String xpath): xpath = " + xpath);
 			WebElement element = driver.findElement(By.xpath(xpath));			
-			addActionToNavigationPathAlternate(xpath);
+			addActionToNavigationPathAlternate("-click " + xpath);
 			element.click();		
 //			waitForElement = getElementTransitionLength(element);
 //			driver.manage().timeouts().implicitlyWait(waitForElement, TimeUnit.SECONDS);//doesn't pause
@@ -1299,10 +1299,10 @@ public class FitnesseTestFixture {
 			            int r2 = (rgb2 >> 16) & 0xff;
 			            int g2 = (rgb2 >> 8) & 0xff;
 			            int b2 = (rgb2) & 0xff;
-			            diff = Math.abs(r1 - r2); // Change
+			            diff = Math.abs(r1 - r2);
 			            diff += Math.abs(g1 - g2);
 			            diff += Math.abs(b1 - b2);
-			            diff /= 3; // Change - Ensure result is between 0 - 255
+//			            diff /= 3; // Change - Ensure result is between 0 - 255
 			            // Make the difference image gray scale
 			            // The RGB components are all the same
 			            result = (diff << 16) | (diff << 8) | diff;
@@ -1340,7 +1340,7 @@ public class FitnesseTestFixture {
 	public void scrollDownXFullScreenPageHeightAndWait() {
 //		System.out.println("scrollDownXFullScreenPageHeightAndWait: " + pageScrollPosition);
 		if(pageScrollPosition.length()>0) {
-			addActionToNavigationPathAlternate("s"+pageScrollPosition);
+			addActionToNavigationPathAlternate("-scroll to page "+pageScrollPosition);
 			JavascriptExecutor jseScroll = (JavascriptExecutor)driver;			
 			String scrollheight = (getPageHeight()*(Integer.parseInt(pageScrollPosition)))+"";
 //			System.out.println("Scrolling start: " + getPageYOffset());
